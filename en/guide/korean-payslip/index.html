@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to Read a Korean Payslip: A Guide for Foreign Workers | EasyCalc</title>
+<meta name="description" content="What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.">
+<link rel="canonical" href="https://easycalc.co.kr/en/guide/korean-payslip/">
+<link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/guide/korean-payslip/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="EasyCalc">
+<meta property="og:title" content="How to Read a Korean Payslip: A Guide for Foreign Workers | EasyCalc">
+<meta property="og:description" content="What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.">
+<meta property="og:url" content="https://easycalc.co.kr/en/guide/korean-payslip/">
+<meta property="og:locale" content="en_US">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Read a Korean Payslip: A Guide for Foreign Workers", "description": "What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.", "datePublished": "2026-10-18", "dateModified": "2026-10-18", "inLanguage": "en", "author": {"@type": "Organization", "name": "EasyCalc"}, "publisher": {"@type": "Organization", "name": "EasyCalc"}, "mainEntityOfPage": "https://easycalc.co.kr/en/guide/korean-payslip/"}</script>
+<style>
+/* Layout: one narrow column (phone-first). Header with language menu, tabs, inputs card, then a receipt-style result. */
+:root{
+  --bg:#F2F5F3; --surface:#FFFFFF; --ink:#15201B; --muted:#5C6A64; --line:#D9E1DD;
+  --accent:#0E6A55; --accent-ink:#FFFFFF; --accent-soft:#E0EFE9; --interest:#B5532B; --interest-soft:#F6E6DE;
+  --f-lang:"IBM Plex Sans KR";
+  --f-body:var(--f-lang),"IBM Plex Sans KR","Noto Sans SC","Noto Sans Devanagari","Noto Sans Khmer","Noto Sans Thai","Noto Sans Myanmar","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-display:"Do Hyeon",var(--f-body);
+  --f-num:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --r:10px;
+}
+:root[data-lx]{--f-display:var(--f-body)}
+:root[data-lx] h2{font-weight:700;font-size:20px}
+:root[data-lx] .brand{font-family:"Do Hyeon","IBM Plex Sans KR",sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1412; --surface:#161F1C; --ink:#E6EDEA; --muted:#93A29C; --line:#28332F;
+  --accent:#4CC3A0; --accent-ink:#0B1411; --accent-soft:#1A2E27; --interest:#E38B60; --interest-soft:#33231C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1412; --surface:#161F1C; --ink:#E6EDEA; --muted:#93A29C; --line:#28332F;
+  --accent:#4CC3A0; --accent-ink:#0B1411; --accent-soft:#1A2E27; --interest:#E38B60; --interest-soft:#33231C; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+:root[lang="my"] body,:root[lang="km"] body,:root[lang="th"] body,:root[lang="ne"] body{line-height:1.8}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brandbox{display:flex;flex-direction:column;gap:6px;min-width:0}
+.brand{font-family:"Do Hyeon",var(--f-body);font-size:34px;line-height:1;letter-spacing:-.5px}
+.brand b{color:var(--accent);font-weight:400}
+a.brand{color:inherit;text-decoration:none}
+.tag{color:var(--muted);font-size:13px}
+.langsel{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:0 6px 0 12px}
+.langsel svg{flex:0 0 auto;color:var(--muted)}
+.langsel select{border:0;background:transparent;color:var(--ink);font:600 14px var(--f-body);padding:8px 4px;cursor:pointer;max-width:11em}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px}
+.tabs button{font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 6px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;min-width:0;overflow-wrap:anywhere}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.panel{display:flex;flex-direction:column;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:14px}
+h2{font-family:var(--f-display);font-weight:400;font-size:22px;margin:0;text-wrap:balance}
+.lede{margin:0;color:var(--muted);font-size:14px}
+
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.lbl{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row > *{min-width:0}
+.inbox{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:0 12px}
+.inbox:focus-within{border-color:var(--accent)}
+.inbox input,.inbox select{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:500 18px var(--f-num);padding:11px 0;outline:none;text-align:right}
+.inbox select{text-align:left;font:600 15px var(--f-body);cursor:pointer}
+.inbox span{color:var(--muted);font-size:14px;margin-left:6px;white-space:nowrap}
+.hint{font-size:12.5px;color:var(--muted);min-height:1em}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 11px;cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:6px}
+.seg button{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;padding:10px 6px;cursor:pointer;line-height:1.3}
+.seg button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+
+/* receipt */
+.receipt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;position:relative}
+.receipt::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:6px;
+  background:radial-gradient(circle at 6px 6px,var(--bg) 4px,transparent 4.5px) 0 0/12px 12px repeat-x}
+.rhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:12px;color:var(--muted);letter-spacing:.6px;text-transform:uppercase}
+.big{font:600 40px/1.1 var(--f-num);letter-spacing:-1px;font-variant-numeric:tabular-nums;color:var(--accent);overflow-wrap:anywhere}
+.big small{font:500 16px var(--f-body);color:var(--ink);margin-left:4px;letter-spacing:0}
+.dash{border:0;border-top:1px dashed var(--line);margin:2px 0}
+.lines{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.lines li{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.lines li span:first-child{color:var(--muted);min-width:0}
+.lines li span:last-child{font-family:var(--f-num);font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap}
+.lines li.strong span{color:var(--ink);font-weight:600}
+
+textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:13.5px/1.6 var(--f-body);padding:10px 12px;resize:vertical;min-height:110px}
+.btn{font:600 15px var(--f-body);border:0;border-radius:8px;padding:12px 14px;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.toast{font-size:13px;color:var(--accent);font-weight:600}
+
+/* itemized */
+.people{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.person{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--bg);padding:2px 4px 2px 10px}
+.person input{width:6em;border:0;background:transparent;color:var(--ink);font:500 14px var(--f-body);padding:5px 0;outline:none}
+.x{border:0;background:transparent;color:var(--muted);font-size:16px;line-height:1;width:26px;height:26px;border-radius:50%;cursor:pointer}
+.x:hover{background:var(--line);color:var(--ink)}
+.item{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.item-top{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center}
+.item-top > *{min-width:0}
+.item-top .inbox{background:var(--surface)}
+.item-top .name input{text-align:left;font:600 15px var(--f-body)}
+
+/* loan */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.stat .k{font-size:12.5px;color:var(--muted);font-weight:600}
+.stat .v{font:600 20px var(--f-num);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.stat .s{font-size:12px;color:var(--muted)}
+.stat.int .v{color:var(--interest)}
+.split{height:14px;border-radius:999px;overflow:hidden;display:flex;background:var(--line)}
+.split i{display:block;height:100%}
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px;background:var(--c)}
+.cmp{display:flex;flex-direction:column;gap:10px}
+.cmp-row{display:grid;grid-template-columns:7.5em 1fr;gap:10px;align-items:center;font-size:13.5px}
+.cmp-row .nm{min-width:0;line-height:1.3;overflow-wrap:anywhere}
+.cmp-row .bar{position:relative;height:28px;background:var(--bg);border-radius:6px;overflow:hidden}
+.cmp-row .bar i{position:absolute;inset:0 auto 0 0;background:var(--interest-soft);border-right:2px solid var(--interest)}
+.cmp-row .bar b{position:absolute;right:8px;top:50%;transform:translateY(-50%);font:500 13px var(--f-num);font-variant-numeric:tabular-nums}
+.cmp-row.on .bar i{background:var(--interest);opacity:.85}
+.cmp-row.on .nm{font-weight:700}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:13px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th{position:sticky;top:0;background:var(--surface);color:var(--muted);font-weight:600;font-size:12px}
+td{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+td:first-child,th:first-child{text-align:center}
+tbody tr:nth-child(12n) td{border-bottom-color:var(--muted)}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
+@media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
+@media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
+
+.wrap.wide{max-width:720px}
+.sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
+.sitenav a{color:var(--muted);text-decoration:none;padding:2px 0}
+.sitenav a:hover,.sitenav a[aria-current="page"]{color:var(--ink)}
+.sitenav a[aria-current="page"]{font-weight:700}
+footer .footlinks{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
+footer .footlinks a{color:var(--muted)}
+main.page{display:flex;flex-direction:column;gap:18px}
+.crumb{font-size:13px;color:var(--muted)}.crumb a{color:var(--muted)}
+.page h1{font:700 28px/1.3 var(--f-body);margin:0;text-wrap:balance;letter-spacing:-.3px}
+.byline{font-size:13px;color:var(--muted)}
+.prose{display:flex;flex-direction:column;gap:14px;font-size:16px;line-height:1.75}
+.prose > *{margin:0}
+.prose p,.prose ul{max-width:68ch}
+.prose ul{padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.prose h2{font:700 20px/1.4 var(--f-body);margin-top:14px;letter-spacing:-.2px}
+.prose h3{font:700 16.5px/1.4 var(--f-body);margin-top:4px}
+.prose .lede{font-size:17px}
+.prose a{color:var(--accent)}
+.prose a.btn{color:var(--accent-ink)}
+.prose table{min-width:0;font-size:14.5px}
+.prose th,.prose td{text-align:left;white-space:normal;font-family:var(--f-body);vertical-align:top}
+.prose td+td{font-variant-numeric:tabular-nums}
+.prose tr.strong td{font-weight:700;color:var(--ink)}
+.small{font-size:13px!important;color:var(--muted)}
+.cta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border:1px solid var(--accent);background:var(--accent-soft);border-radius:var(--r);padding:16px 18px;margin-top:8px}
+.cta b{display:block;font-size:16px}.cta span{color:var(--muted);font-size:14px}
+.cta .btn,.card .btn{text-decoration:none;display:inline-block}
+.callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
+.callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
+.card p{margin:0;color:var(--muted);font-size:14px;flex:1}
+.glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
+.glist a:last-child{border-bottom:0}
+.glist a:hover b{color:var(--accent)}
+.glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
+.sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap wide">
+  <header>
+    <div class="brandbox"><a class="brand" href="/en/">Easy<b>Calc</b></a><div class="tag">Everyday calculators · no install, no sign-up</div></div>
+    <label class="langsel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+      <select aria-label="Language / 언어" onchange="location.href=this.value"><option value="/" lang="ko">한국어</option><option value="/en/guide/korean-payslip/" lang="en" selected>English</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/zh/" lang="zh">简体中文</option><option value="/ne/" lang="ne">नेपाली</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/km/" lang="km">ខ្មែរ</option><option value="/uz/" lang="uz">Oʻzbekcha</option><option value="/th/" lang="th">ไทย</option><option value="/my/" lang="my">မြန်မာ</option></select>
+    </label>
+  </header>
+  <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/loan/">Loan</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/" aria-current="page">Guides</a><a href="/en/about/">About</a></nav>
+  <main class="page">
+<div class="crumb"><a href="/en/">Home</a> › <a href="/en/guide/">Guides</a></div>
+<article class="prose">
+<h1>How to Read a Korean Payslip: A Guide for Foreign Workers</h1>
+<div class="byline">EasyCalc editors · <time datetime="2026-10-18">2026-10-18</time></div>
+<p class="lede">If you work in Korea, your payslip (급여명세서, <i>geuphyeo myeongseseo</i>) is usually written only in Korean. This guide explains each line so you can check that your pay is correct, using a monthly salary of about ₩4.17 million as an example.</p>
+
+<h2>The two halves of a payslip</h2>
+<p>A Korean payslip has two parts. <b>지급 내역</b> (payments) lists everything your employer pays you. <b>공제 내역</b> (deductions) lists what is taken out before the money reaches your bank account. The amount you receive is <b>실수령액</b> (take-home pay), which is payments minus deductions.</p>
+
+<h2>Payments (지급 내역)</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Korean</th><th>English</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td>기본급</td><td>Base pay</td><td>Your fixed monthly salary.</td></tr>
+<tr><td>식대</td><td>Meal allowance</td><td>Up to ₩200,000 a month is tax-free and is not counted for social insurance.</td></tr>
+<tr><td>연장근로수당</td><td>Overtime pay</td><td>Pay for hours beyond the standard working hours.</td></tr>
+<tr><td>야간근로수당</td><td>Night work pay</td><td>Extra pay for work late at night.</td></tr>
+<tr><td>휴일근로수당</td><td>Holiday work pay</td><td>Extra pay for work on rest days or public holidays.</td></tr>
+<tr><td>상여금</td><td>Bonus</td><td>Bonus payments, if your contract includes them.</td></tr>
+</tbody></table></div>
+
+<h2>Deductions (공제 내역)</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Korean</th><th>English</th><th>Your share (2026)</th></tr></thead>
+<tbody>
+<tr><td>국민연금</td><td>National Pension</td><td>4.75% of pay (capped at ₩6,590,000 of monthly pay)</td></tr>
+<tr><td>건강보험</td><td>Health Insurance</td><td>3.595% of pay</td></tr>
+<tr><td>장기요양보험</td><td>Long-term Care Insurance</td><td>13.14% of your health insurance amount</td></tr>
+<tr><td>고용보험</td><td>Employment Insurance</td><td>0.9% of pay</td></tr>
+<tr><td>소득세</td><td>Income tax</td><td>Set by the National Tax Service withholding table</td></tr>
+<tr><td>지방소득세</td><td>Local income tax</td><td>10% of your income tax</td></tr>
+</tbody></table></div>
+<p>The first four are called <b>4대보험</b>, the "four major insurances". Your employer pays its own share of each on top of your salary. Industrial accident insurance (산재보험) is paid entirely by the employer and does not appear in your deductions.</p>
+
+<h2>Worked example</h2>
+<p>Annual salary ₩50,000,000, paid in 12 months, with a ₩200,000 tax-free meal allowance, single with no dependents:</p>
+<div class="tablewrap"><table>
+<tbody>
+<tr><td>Monthly gross pay</td><td>₩4,166,667</td></tr>
+<tr><td>National Pension</td><td>− ₩188,380</td></tr>
+<tr><td>Health Insurance</td><td>− ₩142,600</td></tr>
+<tr><td>Long-term Care Insurance</td><td>− ₩18,730</td></tr>
+<tr><td>Employment Insurance</td><td>− ₩35,690</td></tr>
+<tr><td>Income tax (estimate)</td><td>− ₩195,980</td></tr>
+<tr><td>Local income tax (estimate)</td><td>− ₩19,590</td></tr>
+<tr class="strong"><td>Take-home pay</td><td>about ₩3,565,697</td></tr>
+</tbody></table></div>
+<p>About 14% of gross pay is deducted. Your real payslip may differ slightly, mainly in the income tax lines, because employers use the official withholding table and settle the difference once a year.</p>
+
+<h2>Three things foreign workers often ask</h2>
+<h3>Why is my income tax different every year in February?</h3>
+<p>Each February, employers run the year-end tax settlement (연말정산). If too much tax was withheld during the year, you get money back. If too little was withheld, extra tax is taken from your pay. This is normal.</p>
+<h3>Can I get my National Pension back when I leave Korea?</h3>
+<p>It depends on your nationality and Korea's agreement with your country. Many foreign workers can claim a lump-sum refund (반환일시금) when they leave Korea for good. Check with the National Pension Service before you leave, because the rules differ by country.</p>
+<h3>Do the rates change?</h3>
+<p>Yes. National Pension rises by 0.5 percentage points (total) each year from 2026 until it reaches 13% in 2033, and the health insurance rates are set again each year. The pension cap changes every July.</p>
+
+<h2>Check your own payslip</h2>
+<p>Enter your annual salary, meal allowance and number of dependents in the calculator to see the expected deduction for each line. If a line on your payslip is very different, ask your employer's payroll staff which items are included.</p>
+<p class="small">This guide is general information, not tax or legal advice. Rules for some visa types and employer sizes can differ.</p>
+
+<div class="cta"><div><b>Korea Take-Home Pay Calculator 2026</b><span>Everyday calculators · no install, no sign-up</span></div><a class="btn" href="/en/salary/">Open calculator</a></div>
+
+<p class="small">This article is general information, not tax or legal advice.</p>
+</article>
+
+  </main>
+  <footer><nav class="footlinks"><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/privacy/">Privacy Policy</a></nav><div>easycalc.co.kr · Results are for reference only · Nothing you enter is stored or sent anywhere</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
+</div>
+</body>
+</html>

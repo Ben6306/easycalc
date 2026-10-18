@@ -9,8 +9,22 @@
 
 ## 지원 언어
 한국어(/) · English(/en/) · Tiếng Việt(/vi/) · 简体中文(/zh/) · नेपाली(/ne/) · Bahasa Indonesia(/id/) · ខ្មែរ(/km/) · Oʻzbekcha(/uz/) · ไทย(/th/) · မြန်မာ(/my/)
-- 번역 원문은 index.html 안의 `window.I18N`에 있음. 문구 수정 시 10개 언어 폴더의 index.html을 모두 다시 생성해야 함
+- 번역 원문은 `_src/calc.html` 안의 `window.I18N`에 있음
 - 원어민 검수 권장: 특히 km, my, ne, uz
+
+## 사이트 구조 (2026-10-18 개편)
+- `/` 언어별 홈 · `/salary/` `/loan/` `/dutch/` 계산기 · `/guide/` 가이드 · `/about/` `/contact/` `/privacy/`
+- 다른 언어는 앞에 `/en/`, `/vi/` 등이 붙음. 가이드·소개·문의·개인정보처리방침은 한국어·영어만 있음
+- 문의 이메일: easycalc.kr@gmail.com
+
+## 수정하는 방법
+1. 원본은 `_src/` 폴더에만 있음 (GitHub Pages에 공개되지 않음)
+   - 계산기·번역: `_src/calc.html`
+   - 가이드 글: `_src/guides/ko/*.html`, `_src/guides/en/*.html` (첫 줄 `<!--{...}-->`가 제목·설명)
+   - 소개·문의·개인정보: `_src/pages/`
+2. 수정 후 터미널에서 `cd ~/Documents/easycalc && python3 _src/build.py`
+3. 미리보기: `python3 -m http.server 8000` 실행 후 브라우저에서 http://localhost:8000
+4. GitHub Desktop으로 Commit → Push
 
 ## 파일 구성
 | 파일 | 역할 |
@@ -36,5 +50,6 @@
 - [ ] 가비아 DNS 설정
 - [ ] HTTPS 활성화
 - [ ] 구글 서치 콘솔 / 네이버 서치어드바이저 등록
-- [ ] 탭별 페이지 분리 (/dutch, /loan, /salary)
-- [ ] 광고 심사용 페이지 (가이드 글, 개인정보처리방침, 소개)
+- [x] 탭별 페이지 분리 (/dutch, /loan, /salary)
+- [x] 광고 심사용 페이지 (가이드 글 9편, 개인정보처리방침, 소개, 문의)
+- [ ] 애드센스 신청 (색인 확인 후)

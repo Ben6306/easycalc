@@ -1,7 +1,366 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://easycalc.co.kr/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/vi/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/vi/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/vi/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/zh/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/zh/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/zh/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/ne/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/ne/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/ne/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/id/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/id/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/id/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/km/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/km/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/km/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/uz/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/uz/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/uz/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/th/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/th/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/th/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/my/salary/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/salary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/salary/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/salary/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/salary/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/salary/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/salary/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/salary/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/my/loan/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/loan/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/loan/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/loan/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/loan/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/loan/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/loan/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/loan/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/loan/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/my/dutch/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/dutch/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/dutch/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -13,8 +372,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/en/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/en/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -26,8 +384,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/vi/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/vi/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -39,8 +396,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/zh/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/zh/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -52,8 +408,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/ne/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/ne/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -65,8 +420,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/id/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/id/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -78,8 +432,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/km/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/km/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -91,8 +444,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/uz/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/uz/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -104,8 +456,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/th/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/th/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -117,8 +468,7 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
   </url>
-  <url>
-    <loc>https://easycalc.co.kr/my/</loc><lastmod>2026-10-18</lastmod>
+  <url><loc>https://easycalc.co.kr/my/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/"/>
@@ -129,5 +479,55 @@
     <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/guide/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/insurance-rates-2026/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/salary-take-home/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/year-end-tax-settlement/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/meal-allowance-tax-free/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/equal-payment-vs-equal-principal/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/bullet-repayment/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/interest-rate-half-point/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/split-bill-fairly/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/guide/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/guide/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/guide/korean-payslip/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/about/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/about/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/about/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/about/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/contact/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/contact/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/contact/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/contact/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/privacy/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/privacy/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/privacy/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/privacy/"/>
   </url>
 </urlset>
