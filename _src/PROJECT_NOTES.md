@@ -1,7 +1,7 @@
 # EasyCalc 프로젝트 인계 노트
 
 새 채팅을 시작할 때 이 파일을 첨부하거나 내용을 붙여넣으면 바로 이어서 작업할 수 있습니다.
-마지막 업데이트: 2026-10-18 (예·적금 계산기 추가)
+마지막 업데이트: 2026-10-18 (계산 기준 박스, 공유 링크 # 전환, 자동 검산, 관련 가이드)
 
 ## 1. 한 줄 요약
 일반인과 한국에서 일하는 외국인 근로자를 위한 "저관여웹" 생활 계산기 사이트. 설치·가입 없이 바로 쓰는 것이 핵심. 목표는 검색 트래픽 + 광고(애드센스) 수익.
@@ -37,13 +37,30 @@
 
 ### 결과 공유 링크 (2026-10-18 추가)
 - 5개 계산기 결과 카드 아래 "결과 링크 공유" 버튼. 휴대폰(터치 기기)은 공유 시트, PC는 클립보드 복사(실패 시 링크 칸을 보여 줌)
-- 입력값을 주소 `?`뒤에 담는 방식(서버·DB 없음). 예: `/salary/?pay=72000000&free=100000&fam=3&kid=1&sev=1&wh=80`
+- 입력값을 주소 `#`뒤에 담는 방식(2026-10-18 `?`에서 변경. 브라우저는 `#`뒤를 서버로 보내지 않아 GitHub Pages 접속 기록에 안 남음). 예: `/salary/#pay=72000000&free=100000&fam=3&kid=1&sev=1&wh=80` (홈·로컬 미리보기는 `#salary&pay=…`)
+- 예전 `?` 링크도 그대로 열리고, 열면 주소창이 `#` 방식으로 바뀜(`utm_`은 `?`에 유지). 같은 페이지에서 다른 링크를 열면 `hashchange`로 다시 적용
 - 파라미터: salary(pay, free, fam, kid, sev, wh) / severance(start, end, pay, bonus, lpay) / leave(start, base, wage, unused) / loan(amt, rate, term, unit, m) / dutch(mode, r, acc, total, n 또는 p, i)
 - 더치페이: 받을 계좌는 사용자가 입력했을 때만 `acc`로 링크에 포함(받는 사람이 입금할 계좌가 필요하므로, 입력란 안내 문구에도 명시). 열 때 숫자·날짜는 범위·형식을 검사하고 이름은 `esc()`로 출력
-- 언어를 바꿔도 `location.search`를 유지. 서비스 워커는 `?` 없는 주소로만 저장
+- 언어를 바꿔도 `location.hash`를 유지. 서비스 워커는 `?` 없는 주소로만 저장
 - GA는 `page_location`을 `origin+pathname(+utm_*)`로 정리해 입력값이 구글로 가지 않게 함. 버튼 클릭은 GA `share` 이벤트(content_type=계산기 이름)
 - 개인정보처리방침(ko/en)에 "결과 공유 링크" 항목 추가. 새 문구 4개(shareLink, linkCopied, linkManual, shareNote)는 10개 언어, km·my·ne·uz는 원어민 검수 필요
 - `build.py`: 번역 추출 시 node에 코드를 표준입력으로 전달(리눅스에서 인자 길이 초과 오류 수정)
+
+### 계산 기준·출처 박스 (2026-10-18 추가)
+- 계산기 5종(더치페이 제외) 맨 아래 접이식 "계산 기준과 출처": 적용 기준 / 반영하지 않은 것 / 기준 확인일 / 공식 자료 링크
+- 문구 키: `basisH, basisRule, basisEx, basisChecked, basisSrc, bas_<tool>, ex_<tool>, src_<id>` (src_는 ko·en만, 나머지 언어는 영어 표시)
+- 링크·확인일은 calc.html의 `BASIS_DATE`, `SRC`, `BASIS` 상수. **요율·법령을 확인하면 `BASIS_DATE`를 그날로 바꾸기**
+- 법령 링크는 국가법령정보센터 `https://www.law.go.kr/법령/<법령명>` 형식
+
+### 관련 가이드·대출 민감도 (2026-10-18 추가)
+- 계산기 페이지 맨 아래 "관련 가이드" 최대 3편: build.py `relguides()`가 calc.html의 `<!--RELGUIDES:tool-->` 자리를 채움. 가이드 메타의 `tool`(또는 `tools` 목록)으로 연결. ko·en 외 언어는 영어 가이드로 연결(제목에 "(영어)" 표시), 해당 영어 가이드가 없으면 숨김
+- 대출 결과 카드: "금리가 0.5%p 오르면 총이자 +X, 내리면 −Y" (`loanSens`)
+
+### 자동 검산 (2026-10-18 추가)
+- `_src/test_calc.py`: calc.html 안의 실제 계산 함수를 node로 실행해 파이썬(Decimal) 공식과 원 단위 비교. 연봉·대출·예적금·퇴직금·연차 361건
+- `build.py`가 빌드 전에 자동 실행 → 실패하면 빌드 중단. node 없으면 건너뜀. 급할 때 `SKIP_TESTS=1 python3 _src/build.py`
+- 고정 검산값(`GOLDEN_SALARY`)과 요율 상수는 요율 바꿀 때 함께 고치기
+- 검산으로 찾은 버그 수정: 소수점 오차로 고용보험이 10원 적게 나오던 문제(예: 과세 급여 180만 원 → 16,190원, 정답 16,200원). 보험료를 정수 곱셈으로 계산하고, 과세 급여는 원 미만 버림으로 통일. 가이드 `salary-take-home`의 연봉 4천만·8천만 행 수정(공제 10원 차이)
 
 ### 방문 통계 (Google Analytics 4, 2026-10-18 추가)
 - 측정 ID `G-JQ5BBG87Z9` (build.py의 `GA_ID`), 계정 easycalc.kr@gmail.com
@@ -71,7 +88,8 @@
 easycalc/
 ├── _src/                 ← 원본 (GitHub Pages에 공개 안 됨)
 │   ├── calc.html         ← 계산기 + 번역(window.I18N) + 간이세액표(window.WH_TABLE)
-│   ├── build.py          ← 사이트 생성기 (python3, node 있으면 번역 자동 추출)
+│   ├── build.py          ← 사이트 생성기 (python3, node 있으면 번역 자동 추출 + 검산)
+│   ├── test_calc.py      ← 계산 공식 자동 검산 (build.py가 먼저 실행)
 │   ├── i18n-cache.json   ← node 없을 때 쓰는 번역 캐시
 │   ├── guides/ko|en/     ← 가이드 글 (첫 줄 <!--{json}--> 메타데이터)
 │   ├── pages/ko|en/      ← 소개·문의·개인정보
@@ -82,7 +100,7 @@ easycalc/
 ├── manifest.webmanifest, sw.js, icons/ ← PWA (build.py가 생성)
 └── README.md
 ```
-수정 순서: `_src` 수정 → `python3 _src/build.py` → (미리보기 `python3 -m http.server 8000`) → GitHub Desktop Commit → Push
+수정 순서: `_src` 수정 → `python3 _src/build.py` (검산 자동 실행) → (미리보기 `python3 -m http.server 8000`) → GitHub Desktop Commit → Push
 
 ## 5. 할 일
 - [x] `.DS_Store` 추적 해제 (이미 완료)
@@ -91,6 +109,10 @@ easycalc/
 - [ ] 원어민 번역 검수 (특히 km, my, ne, uz)
 - [ ] 실제 급여 명세서와 4대보험 원 단위 비교
 - [ ] 서치 콘솔에서 색인 확인 후 애드센스 신청 → 승인 시 ads.txt·광고 코드 추가
+
+- [ ] 원어민 검수: 계산 기준 박스·대출 민감도·공유 안내 새 문구 (km, my, ne, uz 우선)
+- [ ] (속도) 페이지 1개 압축 후 약 86KB 중 번역 49KB·간이세액표 15KB. 줄인다면 번역을 언어별 파일로 나누는 쪽이 효과 큼 (구조 변경이라 별도 결정)
+- [ ] 홈 화면 등 구조화 데이터 `WebApplication`·`BreadcrumbList` 추가 검토
 
 ## 5-1. 예·적금 이자 계산기 (2026-10-18)
 - 탭 `saving`(예금/적금, 단리/월복리, 세율 직접 입력 + 15.4%·0% 칩, 세후 결과, 2천만 원 종합과세 경고, 개월별 표, 공유 링크 `kind,amt,rate,term,unit,c,tax`)
@@ -111,6 +133,7 @@ easycalc/
 - 매년 7월: 국민연금 기준소득월액 상·하한
 - 간이세액표 개정 시: 홈택스 엑셀을 받아 `WH_TABLE`과 자녀 공제액 교체
 - 국민연금 요율은 2033년까지 매년 0.5%p(근로자 0.25%p) 인상 예정
+- 요율·세액표를 바꿀 때마다: calc.html `BASIS_DATE`, `bas_salary` 문구(10개 언어), `test_calc.py` 상수·고정값을 같이 갱신
 
 ## 8. 작업 원칙 (Claude와 진행할 때)
 - 답변은 한국어, 기술 용어는 영어 병기, 쉽게 설명

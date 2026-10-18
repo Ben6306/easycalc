@@ -168,6 +168,16 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 @media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
 @media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
 
+.basis summary{cursor:pointer;font:700 16px var(--f-body);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.basis summary::-webkit-details-marker{display:none}
+.basis summary::after{content:'+';font:400 22px/1 var(--f-body);color:var(--muted)}
+.basis[open] summary::after{content:'−'}
+.basis dl{margin:6px 0 0;font-size:14px;line-height:1.65}
+.basis dt{font-weight:700;color:var(--ink);margin-top:10px}
+.basis dd{margin:2px 0 0;color:var(--muted);overflow-wrap:anywhere}
+.basis a{color:var(--accent)}
+.relg{display:flex;flex-direction:column;gap:10px}
+
 .pwa{margin:0 0 10px}
 .pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
 .pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
@@ -237,7 +247,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <li><b>Browser storage (localStorage):</b> the site stores small preferences, such as the last calculator tab you opened, in your own browser only. This is never sent to us and you can delete it in your browser settings.</li>
 <li><b>Access logs:</b> the site is served by GitHub Pages. The hosting provider may process access information such as IP addresses for security and operation.</li>
 <li><b>Analytics (Google Analytics):</b> we use Google Analytics to understand how the site is used. Information such as the pages you visit, time of visit, device and browser type, approximate location (country or city level) and how you arrived is sent to Google through cookies and similar technology, and we look at it only as aggregate statistics. <b>The numbers and text you enter in the calculators are never sent.</b> You can opt out with the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out browser add-on</a> or by blocking cookies in your browser. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> for details.</li>
-<li><b>Result share links:</b> when you press “Share result link”, the values you entered are put into the address (URL) of a link. The link is created on your device only and the site does not store it. Anyone you send it to will see the same inputs and result, so send sensitive numbers such as salary, or a bank account you typed in, only to people you trust. Analytics receives a cleaned-up address, not the address containing your values.</li>
+<li><b>Result share links:</b> when you press “Share result link”, the values you entered are put after the <code>#</code> in the link’s address (URL). Browsers never send the part after <code>#</code> to the site’s server (GitHub Pages), so opening the link does not leave your values in server access logs. The link is created on your device only and the site does not store it. The messaging or email service you use and the person you send it to can still see the values, so send sensitive numbers such as salary, or a bank account you typed in, only to people you trust. Analytics receives only an address without your values. (Links made before October 18, 2026 carried the values after <code>?</code>, which could appear in server logs; when opened now they are switched to the <code>#</code> form automatically.)</li>
 <li><b>Fonts:</b> the site loads fonts from Google Fonts, so Google may receive technical information such as your IP address.</li>
 </ul>
 

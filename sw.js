@@ -3,7 +3,7 @@
  * - 아이콘·글꼴: 저장본 우선 (빠르게)
  * VERSION은 build.py가 빌드 날짜로 바꿔 넣습니다. 바뀌면 이전 저장본은 자동 삭제됩니다.
  */
-const VERSION = "2026-10-18-febaedee";
+const VERSION = "2026-10-18-68e607ee";
 const CACHE = 'easycalc-' + VERSION;
 const PRECACHE = ["/", "/salary/", "/severance/", "/leave/", "/loan/", "/saving/", "/dutch/", "/icons/icon-192.png", "/icons/favicon-32.png"];
 

@@ -51,6 +51,10 @@ PWA = {
  'th': ['เพิ่มไปยังหน้าจอโฮม', 'บน iPhone แตะปุ่มแชร์ แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” เพื่อใช้งานเหมือนแอป'],
  'my': ['ပင်မမျက်နှာပြင်သို့ ထည့်ရန်', 'iPhone တွင် Share ကိုနှိပ်ပြီး “Add to Home Screen” ကိုရွေးပါ။ အက်ပ်ကဲ့သို့ သုံးနိုင်ပါသည်။'],
 }
+# 계산기 결과 아래 "관련 가이드" 제목 (ko·en 외 언어는 영어 가이드로 연결)
+RELG = {'ko': '관련 가이드', 'en': 'Related guides', 'vi': 'Hướng dẫn liên quan (tiếng Anh)', 'zh': '相关指南（英文）',
+        'ne': 'सम्बन्धित गाइड (अंग्रेजी)', 'id': 'Panduan terkait (bahasa Inggris)', 'km': 'មគ្គុទ្ទេសក៍ពាក់ព័ន្ធ (ភាសាអង់គ្លេស)',
+        'uz': 'Tegishli qoʻllanmalar (ingliz tilida)', 'th': 'คู่มือที่เกี่ยวข้อง (ภาษาอังกฤษ)', 'my': 'ဆက်စပ်လမ်းညွှန် (အင်္ဂလိပ်ဘာသာ)'}
 THEME = '#0E6A55'
 GA_ID = 'G-JQ5BBG87Z9'  # 구글 애널리틱스 측정 ID (easycalc.co.kr에서만 작동)
 
@@ -74,6 +78,14 @@ def clang(l):
 def esc(s):
     return H.escape(s, quote=True)
 
+
+# ---------- 0. 계산 공식 자동 검산 / formula tests (실패하면 빌드 중단, 건너뛰기: SKIP_TESTS=1) ----------
+if not os.environ.get('SKIP_TESTS'):
+    r = subprocess.run([sys.executable, os.path.join(SRC, 'test_calc.py')])
+    if r.returncode == 1:
+        sys.exit('계산 검산 실패: 위 내용을 확인하세요. (빌드 중단)')
+    if r.returncode == 2:
+        print('node가 없어 계산 검산을 건너뜁니다.', file=sys.stderr)
 
 # ---------- 번역 읽기 / load translations ----------
 calc = open(os.path.join(SRC, 'calc.html'), encoding='utf-8').read()
@@ -310,6 +322,13 @@ def glist(l, guides):
         f'<a href="{base(l)}guide/{g["slug"]}/"><b>{esc(g["title"])}</b><span>{esc(g["desc"])}</span></a>' for g in guides) + '</div>'
 
 
+def relguides(l, tool):
+    """계산기 결과 아래 관련 가이드 (최대 3편)"""
+    c = clang(l)
+    gs = [g for g in GUIDE[c] if g.get('tool') == tool or tool in g.get('tools', [])][:3]
+    return f'<section class="relg"><h2 class="sec-h">{esc(RELG[l])}</h2>{glist(c, gs)}</section>' if gs else ''
+
+
 # ---------- 1. 계산기 페이지 / calculator pages ----------
 for l in LANGS:
     t = I18N[l]
@@ -319,6 +338,7 @@ for l in LANGS:
         body = calc_body.replace('<div class="brand">Easy<b>Calc</b></div>', f'<a class="brand" href="{base(l)}">Easy<b>Calc</b></a>')
         body = body.replace('</header>', '</header>\n  ' + nav(l, tools=False), 1)
         body = body.replace('<footer data-t="footer"></footer>', footer(l, True))
+        body = re.sub(r'\s*<!--RELGUIDES:(\w+)-->', lambda m: ('\n    ' + relguides(l, tool)) if m.group(1) == tool else '', body)
         title = t['titles'][tool]
         page = f'''<!doctype html>
 <html{html_attrs(l, tool)}>
