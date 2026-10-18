@@ -1,0 +1,89 @@
+{
+ "id": "/",
+ "name": "EasyCalc",
+ "short_name": "EasyCalc",
+ "description": "연봉 실수령액, 퇴직금, 연차, 대출이자, 더치페이를 설치·가입 없이 바로 계산하는 생활 계산기",
+ "lang": "ko",
+ "dir": "ltr",
+ "start_url": "/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#F2F5F3",
+ "theme_color": "#0E6A55",
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "연봉 실수령",
+   "url": "/salary/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "퇴직금",
+   "url": "/severance/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "연차",
+   "url": "/leave/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "대출이자",
+   "url": "/loan/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "더치페이",
+   "url": "/dutch/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ],
+ "categories": [
+  "finance",
+  "utilities"
+ ]
+}

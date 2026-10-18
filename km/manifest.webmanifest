@@ -1,0 +1,89 @@
+{
+ "id": "/km/",
+ "name": "EasyCalc",
+ "short_name": "EasyCalc",
+ "description": "គណនាប្រាក់ខែទទួលបានពិតនៅកូរ៉េ ការប្រាក់កម្ចី និងចែកវិក្កយបត្រដោយឥតគិតថ្លៃ។ មិនចាំបាច់ដំឡើង មិនចាំបាច់ចុះឈ្មោះ។",
+ "lang": "km",
+ "dir": "ltr",
+ "start_url": "/km/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#F2F5F3",
+ "theme_color": "#0E6A55",
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "ប្រាក់ខែទទួលបានពិត",
+   "url": "/km/salary/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ប្រាក់បំណាច់",
+   "url": "/km/severance/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ច្បាប់ប្រចាំឆ្នាំ",
+   "url": "/km/leave/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ការប្រាក់កម្ចី",
+   "url": "/km/loan/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ចែកវិក្កយបត្រ",
+   "url": "/km/dutch/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ],
+ "categories": [
+  "finance",
+  "utilities"
+ ]
+}

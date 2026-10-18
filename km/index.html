@@ -24,6 +24,13 @@
 <meta property="og:url" content="https://easycalc.co.kr/km/">
 <meta property="og:locale" content="km_KH">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="manifest" href="/km/manifest.webmanifest">
+<meta name="theme-color" content="#0E6A55">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EasyCalc">
 <link id="font-km" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,6 +168,10 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 @media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
 @media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
 
+.pwa{margin:0 0 10px}
+.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
 .sitenav a{color:var(--muted);text-decoration:none;padding:2px 0}
@@ -218,7 +229,19 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <div class="cards"><div class="card"><h3>ម៉ាស៊ីនគិតប្រាក់ខែទទួលបានពិតនៅកូរ៉េ 2026</h3><p>សម្រាប់អ្នកធ្វើការនៅកូរ៉េ៖ ប្រាក់ដែលចូលគណនីរៀងរាល់ខែ បន្ទាប់ពីកាត់ធានារ៉ាប់រងសង្គម និងពន្ធ។ អត្រាគិតត្រឹមខែកក្កដា ឆ្នាំ 2026។</p><div><a class="btn" href="/km/salary/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតប្រាក់បំណាច់ឈប់ពីការងារ (កូរ៉េ)</h3><p>បញ្ចូលថ្ងៃចូលធ្វើការ ថ្ងៃធ្វើការចុងក្រោយ និងប្រាក់ខែថ្មីៗ ដើម្បីគណនាប្រាក់បំណាច់តាមច្បាប់កូរ៉េ។</p><div><a class="btn" href="/km/severance/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតច្បាប់ឈប់សម្រាកប្រចាំឆ្នាំ (កូរ៉េ)</h3><p>បញ្ចូលថ្ងៃចូលធ្វើការ ដើម្បីមើលចំនួនថ្ងៃច្បាប់ប្រចាំឆ្នាំតាមអតីតភាពការងារ និងប៉ាន់ស្មានប្រាក់សម្រាប់ថ្ងៃច្បាប់មិនបានប្រើ។</p><div><a class="btn" href="/km/leave/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតការប្រាក់កម្ចី</h3><p>មើលថាប្រាក់បង់ប្រចាំខែ និងការប្រាក់សរុបប្រែប្រួលយ៉ាងណាតាមវិធីសងប្រាក់។</p><div><a class="btn" href="/km/loan/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតចែកវិក្កយបត្រ</h3><p>ចែកចំនួនសរុបស្មើៗគ្នា ឬចែកតាមមុខចំណាយ ដោយរាប់តែអ្នកដែលបានចូលរួមក្នុងមុខនោះប៉ុណ្ណោះ។</p><div><a class="btn" href="/km/dutch/">បើកម៉ាស៊ីនគិតលេខ</a></div></div></div>
 <h2 class="sec-h">មគ្គុទ្ទេសក៍</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a></div>
   </main>
-  <footer><nav class="footlinks"><a href="/en/about/">អំពីយើង</a><a href="/en/contact/">ទំនាក់ទំនង</a><a href="/en/privacy/">គោលការណ៍ឯកជនភាព</a></nav><div>easycalc.co.kr · លទ្ធផលសម្រាប់ជាឯកសារយោងតែប៉ុណ្ណោះ · ទិន្នន័យដែលអ្នកបញ្ចូលមិនត្រូវបានរក្សាទុក ឬផ្ញើទៅកន្លែងណាទេ</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
+  <footer><nav class="footlinks"><a href="/en/about/">អំពីយើង</a><a href="/en/contact/">ទំនាក់ទំនង</a><a href="/en/privacy/">គោលការណ៍ឯកជនភាព</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>បន្ថែមទៅអេក្រង់ដើម</button>
+<p id="pwa-ios" class="pwa-ios" hidden>នៅលើ iPhone ចុច Share រួចជ្រើស “Add to Home Screen” ដើម្បីប្រើដូចកម្មវិធី។</p></div>
+<script>(function(){
+var ok=/(^|\.)easycalc\.co\.kr$|^localhost$|^127\./.test(location.hostname);
+if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/km/", "/km/salary/", "/km/severance/", "/km/leave/", "/km/loan/", "/km/dutch/"]})}).catch(function(){})})}
+if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
+var b=document.getElementById('pwa-install'),ev=null;
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;b.hidden=false});
+b.onclick=function(){if(!ev)return;ev.prompt();ev.userChoice.then(function(){ev=null;b.hidden=true})};
+addEventListener('appinstalled',function(){b.hidden=true});
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))document.getElementById('pwa-ios').hidden=false;
+})()</script><div>easycalc.co.kr · លទ្ធផលសម្រាប់ជាឯកសារយោងតែប៉ុណ្ណោះ · ទិន្នន័យដែលអ្នកបញ្ចូលមិនត្រូវបានរក្សាទុក ឬផ្ញើទៅកន្លែងណាទេ</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
 </div>
 </body>
 </html>

@@ -1,0 +1,89 @@
+{
+ "id": "/uz/",
+ "name": "EasyCalc",
+ "short_name": "EasyCalc",
+ "description": "Koreyada qoʻlga tegadigan maosh, kredit foizi va hisobni boʻlishni bepul hisoblang. Oʻrnatish va roʻyxatdan oʻtish shart emas.",
+ "lang": "uz",
+ "dir": "ltr",
+ "start_url": "/uz/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#F2F5F3",
+ "theme_color": "#0E6A55",
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Qoʻlga tegadigan maosh",
+   "url": "/uz/salary/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Nafaqa",
+   "url": "/uz/severance/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Yillik taʼtil",
+   "url": "/uz/leave/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Kredit foizi",
+   "url": "/uz/loan/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Hisobni boʻlish",
+   "url": "/uz/dutch/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ],
+ "categories": [
+  "finance",
+  "utilities"
+ ]
+}

@@ -24,6 +24,13 @@
 <meta property="og:url" content="https://easycalc.co.kr/vi/">
 <meta property="og:locale" content="vi_VN">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="manifest" href="/vi/manifest.webmanifest">
+<meta name="theme-color" content="#0E6A55">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EasyCalc">
 <link id="font-vi" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,6 +168,10 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 @media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
 @media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
 
+.pwa{margin:0 0 10px}
+.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
 .sitenav a{color:var(--muted);text-decoration:none;padding:2px 0}
@@ -218,7 +229,19 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <div class="cards"><div class="card"><h3>Tính lương thực nhận tại Hàn Quốc 2026</h3><p>Dành cho người lao động tại Hàn Quốc: số tiền thực nhận vào tài khoản mỗi tháng sau khi trừ bảo hiểm xã hội và thuế. Áp dụng mức đóng từ tháng 7/2026.</p><div><a class="btn" href="/vi/salary/">Mở máy tính</a></div></div><div class="card"><h3>Tính trợ cấp thôi việc (Hàn Quốc)</h3><p>Nhập ngày vào làm, ngày làm việc cuối cùng và lương gần đây để tính trợ cấp thôi việc theo luật Hàn Quốc.</p><div><a class="btn" href="/vi/severance/">Mở máy tính</a></div></div><div class="card"><h3>Tính ngày nghỉ phép năm (Hàn Quốc)</h3><p>Nhập ngày vào làm để xem số ngày phép năm theo thâm niên và ước tính tiền phép chưa dùng.</p><div><a class="btn" href="/vi/leave/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính lãi vay</h3><p>Xem số tiền trả hằng tháng và tổng tiền lãi thay đổi thế nào theo phương thức trả nợ.</p><div><a class="btn" href="/vi/loan/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính chia tiền</h3><p>Chia đều tổng số tiền, hoặc chia theo từng khoản chỉ cho những người đã tham gia khoản đó.</p><div><a class="btn" href="/vi/dutch/">Mở máy tính</a></div></div></div>
 <h2 class="sec-h">Hướng dẫn</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a></div>
   </main>
-  <footer><nav class="footlinks"><a href="/en/about/">Giới thiệu</a><a href="/en/contact/">Liên hệ</a><a href="/en/privacy/">Chính sách quyền riêng tư</a></nav><div>easycalc.co.kr · Kết quả chỉ mang tính tham khảo · Dữ liệu bạn nhập không được lưu hay gửi đi đâu cả</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
+  <footer><nav class="footlinks"><a href="/en/about/">Giới thiệu</a><a href="/en/contact/">Liên hệ</a><a href="/en/privacy/">Chính sách quyền riêng tư</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Thêm vào màn hình chính</button>
+<p id="pwa-ios" class="pwa-ios" hidden>Trên iPhone, chạm Chia sẻ rồi chọn “Thêm vào MH chính” để dùng như ứng dụng.</p></div>
+<script>(function(){
+var ok=/(^|\.)easycalc\.co\.kr$|^localhost$|^127\./.test(location.hostname);
+if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/vi/", "/vi/salary/", "/vi/severance/", "/vi/leave/", "/vi/loan/", "/vi/dutch/"]})}).catch(function(){})})}
+if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
+var b=document.getElementById('pwa-install'),ev=null;
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;b.hidden=false});
+b.onclick=function(){if(!ev)return;ev.prompt();ev.userChoice.then(function(){ev=null;b.hidden=true})};
+addEventListener('appinstalled',function(){b.hidden=true});
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))document.getElementById('pwa-ios').hidden=false;
+})()</script><div>easycalc.co.kr · Kết quả chỉ mang tính tham khảo · Dữ liệu bạn nhập không được lưu hay gửi đi đâu cả</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
 </div>
 </body>
 </html>

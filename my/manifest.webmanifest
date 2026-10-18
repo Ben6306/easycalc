@@ -1,0 +1,89 @@
+{
+ "id": "/my/",
+ "name": "EasyCalc",
+ "short_name": "EasyCalc",
+ "description": "ကိုရီးယားတွင် လက်ခံရလစာ၊ ချေးငွေအတိုးနှင့် ငွေခွဲပေးခြင်းကို အခမဲ့ တွက်ပါ။ ထည့်သွင်းရန် မလို၊ အကောင့်ဖွင့်ရန် မလို။",
+ "lang": "my",
+ "dir": "ltr",
+ "start_url": "/my/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#F2F5F3",
+ "theme_color": "#0E6A55",
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "လက်ခံရလစာ",
+   "url": "/my/salary/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "အလုပ်ထွက်ထောက်ပံ့ငွေ",
+   "url": "/my/severance/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "နှစ်စဉ်ခွင့်",
+   "url": "/my/leave/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ချေးငွေအတိုး",
+   "url": "/my/loan/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ငွေခွဲပေးရန်",
+   "url": "/my/dutch/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ],
+ "categories": [
+  "finance",
+  "utilities"
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "id": "/ne/",
+ "name": "EasyCalc",
+ "short_name": "EasyCalc",
+ "description": "कोरियामा हातमा आउने तलब, ऋणको ब्याज र बिल बाँडफाँड निःशुल्क हिसाब गर्नुहोस्। इन्स्टल वा साइन-अप आवश्यक छैन।",
+ "lang": "ne",
+ "dir": "ltr",
+ "start_url": "/ne/",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#F2F5F3",
+ "theme_color": "#0E6A55",
+ "icons": [
+  {
+   "src": "/icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "हातमा आउने तलब",
+   "url": "/ne/salary/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "सेवा समाप्ति भत्ता",
+   "url": "/ne/severance/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "वार्षिक बिदा",
+   "url": "/ne/leave/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ऋणको ब्याज",
+   "url": "/ne/loan/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "बिल बाँडफाँड",
+   "url": "/ne/dutch/",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ],
+ "categories": [
+  "finance",
+  "utilities"
+ ]
+}

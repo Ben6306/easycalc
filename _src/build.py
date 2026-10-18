@@ -38,6 +38,21 @@ CH = {
  'my': ['လမ်းညွှန်', 'ကျွန်ုပ်တို့အကြောင်း', 'ဆက်သွယ်ရန်', 'ကိုယ်ရေးအချက်အလက်မူဝါဒ', 'တွက်စက်ဖွင့်ရန်', 'လမ်းညွှန်အားလုံး', '', '', '', 'ပင်မစာမျက်နှာ'],
 }
 GUIDES, ABOUT, CONTACT, PRIVACY, OPEN, ALLG, BYLINE, DISCLAIM, RELATED, HOME = range(10)
+# 홈 화면 추가(PWA) 문구: [버튼, 아이폰 안내]
+PWA = {
+ 'ko': ['홈 화면에 앱 추가', '아이폰: 공유 버튼 → ‘홈 화면에 추가’를 누르면 앱처럼 쓸 수 있어요.'],
+ 'en': ['Add to home screen', 'On iPhone, tap Share, then “Add to Home Screen” to use it like an app.'],
+ 'vi': ['Thêm vào màn hình chính', 'Trên iPhone, chạm Chia sẻ rồi chọn “Thêm vào MH chính” để dùng như ứng dụng.'],
+ 'zh': ['添加到主屏幕', '在 iPhone 上，点按“分享”，再选择“添加到主屏幕”，即可像应用一样使用。'],
+ 'ne': ['होम स्क्रिनमा थप्नुहोस्', 'iPhone मा Share थिच्नुहोस्, अनि “Add to Home Screen” छान्नुहोस्। यो एप जस्तै चल्छ।'],
+ 'id': ['Tambahkan ke layar utama', 'Di iPhone, ketuk Bagikan lalu pilih “Tambah ke Layar Utama” agar bisa dipakai seperti aplikasi.'],
+ 'km': ['បន្ថែមទៅអេក្រង់ដើម', 'នៅលើ iPhone ចុច Share រួចជ្រើស “Add to Home Screen” ដើម្បីប្រើដូចកម្មវិធី។'],
+ 'uz': ['Bosh ekranga qoʻshish', 'iPhone’da Share tugmasini bosing, soʻng “Add to Home Screen”ni tanlang — ilova kabi ishlaydi.'],
+ 'th': ['เพิ่มไปยังหน้าจอโฮม', 'บน iPhone แตะปุ่มแชร์ แล้วเลือก “เพิ่มไปยังหน้าจอโฮม” เพื่อใช้งานเหมือนแอป'],
+ 'my': ['ပင်မမျက်နှာပြင်သို့ ထည့်ရန်', 'iPhone တွင် Share ကိုနှိပ်ပြီး “Add to Home Screen” ကိုရွေးပါ။ အက်ပ်ကဲ့သို့ သုံးနိုင်ပါသည်။'],
+}
+THEME = '#0E6A55'
+
 CONTENT_LANGS = ['ko', 'en']  # 가이드·소개 등이 있는 언어
 
 
@@ -80,6 +95,10 @@ head_links = re.sub(r'<meta name="(description|claude:viewport-fit-sides)"[^>]*>
 calc_body = calc[calc.index('</style>') + len('</style>'):].lstrip()
 
 EXTRA_CSS = r"""
+.pwa{margin:0 0 10px}
+.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
 .sitenav a{color:var(--muted);text-decoration:none;padding:2px 0}
@@ -157,6 +176,13 @@ def head(l, title, desc, path, alts, extra=''):
 <meta property="og:url" content="{SITE}{path}">
 <meta property="og:locale" content="{OGLOC[l]}">
 <style>:root{{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
+<link rel="manifest" href="{base(l)}manifest.webmanifest">
+<meta name="theme-color" content="{THEME}">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EasyCalc">
 {fl}{head_links}{extra}'''
 
 
@@ -175,7 +201,25 @@ def footer(l, with_data_t=False):
     c = clang(l)
     links = f'<nav class="footlinks"><a href="{base(c)}about/">{esc(ch(l, ABOUT))}</a><a href="{base(c)}contact/">{esc(ch(l, CONTACT))}</a><a href="{base(c)}privacy/">{esc(ch(l, PRIVACY))}</a></nav>'
     txt = f'<div data-t="footer"></div>' if with_data_t else f'<div>{esc(I18N[l]["footer"])}</div>'
-    return f'<footer>{links}{txt}<div style="margin-top:4px">© 2026 EasyCalc</div></footer>'
+    return f'<footer>{links}{pwa_ui(l)}{txt}<div style="margin-top:4px">© 2026 EasyCalc</div></footer>'
+
+
+def pwa_ui(l):
+    btn, ios = PWA[l]
+    pre = json.dumps([base(l)] + [base(l) + t + '/' for t in TOOLS])
+    return f'''<div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>{esc(btn)}</button>
+<p id="pwa-ios" class="pwa-ios" hidden>{esc(ios)}</p></div>
+<script>(function(){{
+var ok=/(^|\\.)easycalc\\.co\\.kr$|^localhost$|^127\\./.test(location.hostname);
+if(ok&&'serviceWorker' in navigator){{addEventListener('load',function(){{navigator.serviceWorker.register('/sw.js').then(function(){{return navigator.serviceWorker.ready}}).then(function(r){{r.active&&r.active.postMessage({{precache:{pre}}})}}).catch(function(){{}})}})}}
+if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
+var b=document.getElementById('pwa-install'),ev=null;
+addEventListener('beforeinstallprompt',function(e){{e.preventDefault();ev=e;b.hidden=false}});
+b.onclick=function(){{if(!ev)return;ev.prompt();ev.userChoice.then(function(){{ev=null;b.hidden=true}})}};
+addEventListener('appinstalled',function(){{b.hidden=true}});
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))document.getElementById('pwa-ios').hidden=false;
+}})()</script>'''
 
 
 def lang_select(l, targets):
@@ -339,4 +383,31 @@ for path, alts in SITEMAP:
     x.append('  </url>')
 x.append('</urlset>')
 open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(x) + '\n')
+# ---------- 6. 홈 화면 앱(PWA) / manifest, service worker, icons ----------
+import shutil
+ST = os.path.join(SRC, 'static')
+os.makedirs(os.path.join(OUT, 'icons'), exist_ok=True)
+for fn in os.listdir(os.path.join(ST, 'icons')):
+    shutil.copyfile(os.path.join(ST, 'icons', fn), os.path.join(OUT, 'icons', fn))
+for l in LANGS:
+    t = I18N[l]
+    m = {
+        'id': base(l), 'name': 'EasyCalc', 'short_name': 'EasyCalc', 'description': t['metaDesc'],
+        'lang': HREFLANG.get(l, l), 'dir': 'ltr', 'start_url': base(l), 'scope': '/',
+        'display': 'standalone', 'background_color': '#F2F5F3', 'theme_color': THEME,
+        'icons': [
+            {'src': '/icons/icon-192.png', 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any'},
+            {'src': '/icons/icon-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'any'},
+            {'src': '/icons/maskable-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'maskable'},
+        ],
+        'shortcuts': [{'name': t[TOOL_TAB[x]], 'url': base(l) + x + '/',
+                       'icons': [{'src': '/icons/icon-192.png', 'sizes': '192x192'}]} for x in TOOLS],
+        'categories': ['finance', 'utilities'],
+    }
+    write(base(l) + 'manifest.webmanifest', json.dumps(m, ensure_ascii=False, indent=1))
+pre = ['/'] + ['/' + x + '/' for x in TOOLS] + ['/icons/icon-192.png', '/icons/favicon-32.png']
+sw = open(os.path.join(ST, 'sw.js'), encoding='utf-8').read()
+sw = sw.replace("'__VERSION__'", json.dumps(TODAY + '-' + __import__('hashlib').md5(open(os.path.join(SRC, 'calc.html'), 'rb').read()).hexdigest()[:8])).replace('__PRECACHE__', json.dumps(pre))
+open(os.path.join(OUT, 'sw.js'), 'w', encoding='utf-8').write(sw)
+
 print(f'{len(SITEMAP)} pages built into {OUT}')

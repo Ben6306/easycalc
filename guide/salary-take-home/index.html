@@ -15,6 +15,13 @@
 <meta property="og:url" content="https://easycalc.co.kr/guide/salary-take-home/">
 <meta property="og:locale" content="ko_KR">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0E6A55">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EasyCalc">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -152,6 +159,10 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 @media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
 @media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
 
+.pwa{margin:0 0 10px}
+.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
 .sitenav a{color:var(--muted);text-decoration:none;padding:2px 0}
@@ -271,7 +282,19 @@ main.page{display:flex;flex-direction:column;gap:18px}
 </article>
 <h2 class="sec-h">함께 읽기</h2><div class="glist"><a href="/guide/insurance-rates-2026/"><b>2026년 4대보험 요율 총정리: 내 월급에서 얼마나 빠질까</b><span>2026년 국민연금·건강보험·장기요양보험·고용보험 근로자 부담 요율과 월급별 공제액을 예시로 정리했습니다.</span></a><a href="/guide/year-end-tax-settlement/"><b>연말정산에서 돈을 돌려받거나 더 내는 이유</b><span>매달 떼는 소득세와 실제 1년 세금이 왜 다른지, 연말정산에서 환급과 추가 납부가 갈리는 원리를 정리했습니다.</span></a><a href="/guide/meal-allowance-tax-free/"><b>비과세 식대 월 20만 원, 실수령액이 얼마나 달라질까</b><span>식대 비과세가 무엇인지, 연봉 5천만 원 기준으로 비과세 식대가 있을 때와 없을 때 실수령액 차이를 계산했습니다.</span></a></div>
   </main>
-  <footer><nav class="footlinks"><a href="/about/">소개</a><a href="/contact/">문의</a><a href="/privacy/">개인정보처리방침</a></nav><div>easycalc.co.kr · 계산 결과는 참고용입니다 · 입력한 내용은 어디에도 저장되거나 전송되지 않습니다</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
+  <footer><nav class="footlinks"><a href="/about/">소개</a><a href="/contact/">문의</a><a href="/privacy/">개인정보처리방침</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>홈 화면에 앱 추가</button>
+<p id="pwa-ios" class="pwa-ios" hidden>아이폰: 공유 버튼 → ‘홈 화면에 추가’를 누르면 앱처럼 쓸 수 있어요.</p></div>
+<script>(function(){
+var ok=/(^|\.)easycalc\.co\.kr$|^localhost$|^127\./.test(location.hostname);
+if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/", "/salary/", "/severance/", "/leave/", "/loan/", "/dutch/"]})}).catch(function(){})})}
+if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
+var b=document.getElementById('pwa-install'),ev=null;
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;b.hidden=false});
+b.onclick=function(){if(!ev)return;ev.prompt();ev.userChoice.then(function(){ev=null;b.hidden=true})};
+addEventListener('appinstalled',function(){b.hidden=true});
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1))document.getElementById('pwa-ios').hidden=false;
+})()</script><div>easycalc.co.kr · 계산 결과는 참고용입니다 · 입력한 내용은 어디에도 저장되거나 전송되지 않습니다</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
 </div>
 </body>
 </html>
