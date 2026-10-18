@@ -19,10 +19,10 @@ LANGS = ['ko', 'en', 'vi', 'zh', 'ne', 'id', 'km', 'uz', 'th', 'my']
 HREFLANG = {'zh': 'zh-Hans'}
 OGLOC = {'ko': 'ko_KR', 'en': 'en_US', 'vi': 'vi_VN', 'zh': 'zh_CN', 'ne': 'ne_NP', 'id': 'id_ID',
          'km': 'km_KH', 'uz': 'uz_UZ', 'th': 'th_TH', 'my': 'my_MM'}
-TOOLS = ['salary', 'loan', 'dutch']
-TOOL_H = {'salary': 'salH', 'loan': 'loanH', 'dutch': 'dutchH'}
-TOOL_LEDE = {'salary': 'salLede', 'loan': 'loanLede', 'dutch': 'dutchLede'}
-TOOL_TAB = {'salary': 'tabSalary', 'loan': 'tabLoan', 'dutch': 'tabDutch'}
+TOOLS = ['salary', 'severance', 'leave', 'loan', 'dutch']
+TOOL_H = {'salary': 'salH', 'severance': 'svH', 'leave': 'lvH', 'loan': 'loanH', 'dutch': 'dutchH'}
+TOOL_LEDE = {'salary': 'salLede', 'severance': 'svLede', 'leave': 'lvLede', 'loan': 'loanLede', 'dutch': 'dutchLede'}
+TOOL_TAB = {'salary': 'tabSalary', 'severance': 'tabSev', 'leave': 'tabLeave', 'loan': 'tabLoan', 'dutch': 'tabDutch'}
 
 # 사이트 공통 메뉴 문구 / chrome strings
 CH = {

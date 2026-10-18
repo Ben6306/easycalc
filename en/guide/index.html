@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>All guides | EasyCalc</title>
-<meta name="description" content="Free everyday calculators: split a bill, compare loan repayment methods, and estimate take-home pay in Korea. No install, no sign-up.">
+<meta name="description" content="Free calculators for take-home pay, severance pay and annual leave in Korea, plus loan interest and bill splitting. No install, no sign-up.">
 <link rel="canonical" href="https://easycalc.co.kr/en/guide/">
 <link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/guide/">
 <link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/guide/">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EasyCalc">
 <meta property="og:title" content="All guides | EasyCalc">
-<meta property="og:description" content="Free everyday calculators: split a bill, compare loan repayment methods, and estimate take-home pay in Korea. No install, no sign-up.">
+<meta property="og:description" content="Free calculators for take-home pay, severance pay and annual leave in Korea, plus loan interest and bill splitting. No install, no sign-up.">
 <meta property="og:url" content="https://easycalc.co.kr/en/guide/">
 <meta property="og:locale" content="en_US">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -56,8 +56,13 @@ a.brand{color:inherit;text-decoration:none}
 .langsel select{border:0;background:transparent;color:var(--ink);font:600 14px var(--f-body);padding:8px 4px;cursor:pointer;max-width:11em}
 .num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
 
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px}
-.tabs button{font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 6px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;min-width:0;overflow-wrap:anywhere}
+.tabs{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:1 0 auto;font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 14px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;white-space:nowrap}
+.inbox input[type="date"]{text-align:left;font:500 16px var(--f-num);min-height:2.6em}
+tr.on td{background:var(--accent-soft);font-weight:600}
+#lv-body td:first-child{white-space:normal;min-width:7em}
+.warn{border:1px solid var(--interest);background:var(--interest-soft);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:14px}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -198,9 +203,9 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <select aria-label="Language / 언어" onchange="location.href=this.value"><option value="/guide/" lang="ko">한국어</option><option value="/en/guide/" lang="en" selected>English</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/zh/" lang="zh">简体中文</option><option value="/ne/" lang="ne">नेपाली</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/km/" lang="km">ខ្មែរ</option><option value="/uz/" lang="uz">Oʻzbekcha</option><option value="/th/" lang="th">ไทย</option><option value="/my/" lang="my">မြန်မာ</option></select>
     </label>
   </header>
-  <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/loan/">Loan</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/" aria-current="page">Guides</a><a href="/en/about/">About</a></nav>
+  <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/severance/">Severance</a><a href="/en/leave/">Annual leave</a><a href="/en/loan/">Loan</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/" aria-current="page">Guides</a><a href="/en/about/">About</a></nav>
   <main class="page">
-<div class="crumb"><a href="/en/">Home</a> › Guides</div><h1>All guides</h1><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a></div>
+<div class="crumb"><a href="/en/">Home</a> › Guides</div><h1>All guides</h1><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a></div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/privacy/">Privacy Policy</a></nav><div>easycalc.co.kr · Results are for reference only · Nothing you enter is stored or sent anywhere</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
 </div>

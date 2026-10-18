@@ -65,8 +65,13 @@ a.brand{color:inherit;text-decoration:none}
 .langsel select{border:0;background:transparent;color:var(--ink);font:600 14px var(--f-body);padding:8px 4px;cursor:pointer;max-width:11em}
 .num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
 
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px}
-.tabs button{font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 6px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;min-width:0;overflow-wrap:anywhere}
+.tabs{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:1 0 auto;font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 14px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;white-space:nowrap}
+.inbox input[type="date"]{text-align:left;font:500 16px var(--f-num);min-height:2.6em}
+tr.on td{background:var(--accent-soft);font-weight:600}
+#lv-body td:first-child{white-space:normal;min-width:7em}
+.warn{border:1px solid var(--interest);background:var(--interest-soft);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:14px}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -207,11 +212,11 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <select aria-label="Language / 언어" onchange="location.href=this.value"><option value="/" lang="ko">한국어</option><option value="/en/" lang="en">English</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/zh/" lang="zh">简体中文</option><option value="/ne/" lang="ne" selected>नेपाली</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/km/" lang="km">ខ្មែរ</option><option value="/uz/" lang="uz">Oʻzbekcha</option><option value="/th/" lang="th">ไทย</option><option value="/my/" lang="my">မြန်မာ</option></select>
     </label>
   </header>
-  <nav class="sitenav"><a href="/ne/salary/">हातमा आउने तलब</a><a href="/ne/loan/">ऋणको ब्याज</a><a href="/ne/dutch/">बिल बाँडफाँड</a><a href="/en/guide/">गाइड</a><a href="/en/about/">हाम्रोबारे</a></nav>
+  <nav class="sitenav"><a href="/ne/salary/">हातमा आउने तलब</a><a href="/ne/severance/">सेवा समाप्ति भत्ता</a><a href="/ne/leave/">वार्षिक बिदा</a><a href="/ne/loan/">ऋणको ब्याज</a><a href="/ne/dutch/">बिल बाँडफाँड</a><a href="/en/guide/">गाइड</a><a href="/en/about/">हाम्रोबारे</a></nav>
   <main class="page">
 <h1>कोरियामा तलब, ऋण ब्याज र बिल बाँडफाँड क्याल्कुलेटर</h1>
-<div class="cards"><div class="card"><h3>कोरियामा हातमा आउने तलब क्याल्कुलेटर 2026</h3><p>कोरियामा काम गर्नेहरूका लागि: सामाजिक बीमा र कर कटाएपछि हरेक महिना बैंक खातामा आउने रकम। जुलाई 2026 को दर अनुसार।</p><div><a class="btn" href="/ne/salary/">क्याल्कुलेटर खोल्नुहोस्</a></div></div><div class="card"><h3>ऋण ब्याज क्याल्कुलेटर</h3><p>तिर्ने तरिका अनुसार मासिक किस्ता र कुल ब्याज कसरी फरक पर्छ हेर्नुहोस्।</p><div><a class="btn" href="/ne/loan/">क्याल्कुलेटर खोल्नुहोस्</a></div></div><div class="card"><h3>बिल बाँडफाँड क्याल्कुलेटर</h3><p>कुल रकम बराबर बाँड्नुहोस्, वा हरेक खर्च त्यसमा सहभागी भएकाहरूबीच मात्र बाँड्नुहोस्।</p><div><a class="btn" href="/ne/dutch/">क्याल्कुलेटर खोल्नुहोस्</a></div></div></div>
-<h2 class="sec-h">गाइड</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a></div>
+<div class="cards"><div class="card"><h3>कोरियामा हातमा आउने तलब क्याल्कुलेटर 2026</h3><p>कोरियामा काम गर्नेहरूका लागि: सामाजिक बीमा र कर कटाएपछि हरेक महिना बैंक खातामा आउने रकम। जुलाई 2026 को दर अनुसार।</p><div><a class="btn" href="/ne/salary/">क्याल्कुलेटर खोल्नुहोस्</a></div></div><div class="card"><h3>सेवा समाप्ति भत्ता क्याल्कुलेटर (कोरिया)</h3><p>काम सुरु गरेको मिति, अन्तिम कार्य दिन र हालको तलब राखेर कोरियाको कानुनी सेवा समाप्ति भत्ता (퇴직금) हिसाब गर्नुहोस्।</p><div><a class="btn" href="/ne/severance/">क्याल्कुलेटर खोल्नुहोस्</a></div></div><div class="card"><h3>वार्षिक बिदा क्याल्कुलेटर (कोरिया)</h3><p>काम सुरु मिति राखेर सेवा वर्ष अनुसार सशुल्क वार्षिक बिदाका दिन र प्रयोग नगरेको बिदाको भत्ता अनुमान गर्नुहोस्।</p><div><a class="btn" href="/ne/leave/">क्याल्कुलेटर खोल्नुहोस्</a></div></div><div class="card"><h3>ऋण ब्याज क्याल्कुलेटर</h3><p>तिर्ने तरिका अनुसार मासिक किस्ता र कुल ब्याज कसरी फरक पर्छ हेर्नुहोस्।</p><div><a class="btn" href="/ne/loan/">क्याल्कुलेटर खोल्नुहोस्</a></div></div><div class="card"><h3>बिल बाँडफाँड क्याल्कुलेटर</h3><p>कुल रकम बराबर बाँड्नुहोस्, वा हरेक खर्च त्यसमा सहभागी भएकाहरूबीच मात्र बाँड्नुहोस्।</p><div><a class="btn" href="/ne/dutch/">क्याल्कुलेटर खोल्नुहोस्</a></div></div></div>
+<h2 class="sec-h">गाइड</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a></div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">हाम्रोबारे</a><a href="/en/contact/">सम्पर्क</a><a href="/en/privacy/">गोपनीयता नीति</a></nav><div>easycalc.co.kr · नतिजा सन्दर्भका लागि मात्र हो · तपाईंले लेखेको कुरा कतै पनि सुरक्षित गरिँदैन वा पठाइँदैन</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
 </div>

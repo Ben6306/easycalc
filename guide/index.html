@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>전체 가이드 | EasyCalc</title>
-<meta name="description" content="더치페이, 대출이자, 연봉 실수령액을 설치·가입 없이 바로 계산하는 생활 계산기">
+<meta name="description" content="연봉 실수령액, 퇴직금, 연차, 대출이자, 더치페이를 설치·가입 없이 바로 계산하는 생활 계산기">
 <link rel="canonical" href="https://easycalc.co.kr/guide/">
 <link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/guide/">
 <link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/guide/">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EasyCalc">
 <meta property="og:title" content="전체 가이드 | EasyCalc">
-<meta property="og:description" content="더치페이, 대출이자, 연봉 실수령액을 설치·가입 없이 바로 계산하는 생활 계산기">
+<meta property="og:description" content="연봉 실수령액, 퇴직금, 연차, 대출이자, 더치페이를 설치·가입 없이 바로 계산하는 생활 계산기">
 <meta property="og:url" content="https://easycalc.co.kr/guide/">
 <meta property="og:locale" content="ko_KR">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -56,8 +56,13 @@ a.brand{color:inherit;text-decoration:none}
 .langsel select{border:0;background:transparent;color:var(--ink);font:600 14px var(--f-body);padding:8px 4px;cursor:pointer;max-width:11em}
 .num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
 
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px}
-.tabs button{font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 6px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;min-width:0;overflow-wrap:anywhere}
+.tabs{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:1 0 auto;font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 14px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;white-space:nowrap}
+.inbox input[type="date"]{text-align:left;font:500 16px var(--f-num);min-height:2.6em}
+tr.on td{background:var(--accent-soft);font-weight:600}
+#lv-body td:first-child{white-space:normal;min-width:7em}
+.warn{border:1px solid var(--interest);background:var(--interest-soft);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:14px}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -198,9 +203,9 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <select aria-label="Language / 언어" onchange="location.href=this.value"><option value="/guide/" lang="ko" selected>한국어</option><option value="/en/guide/" lang="en">English</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/zh/" lang="zh">简体中文</option><option value="/ne/" lang="ne">नेपाली</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/km/" lang="km">ខ្មែរ</option><option value="/uz/" lang="uz">Oʻzbekcha</option><option value="/th/" lang="th">ไทย</option><option value="/my/" lang="my">မြန်မာ</option></select>
     </label>
   </header>
-  <nav class="sitenav"><a href="/salary/">연봉 실수령</a><a href="/loan/">대출이자</a><a href="/dutch/">더치페이</a><a href="/guide/" aria-current="page">가이드</a><a href="/about/">소개</a></nav>
+  <nav class="sitenav"><a href="/salary/">연봉 실수령</a><a href="/severance/">퇴직금</a><a href="/leave/">연차</a><a href="/loan/">대출이자</a><a href="/dutch/">더치페이</a><a href="/guide/" aria-current="page">가이드</a><a href="/about/">소개</a></nav>
   <main class="page">
-<div class="crumb"><a href="/">홈</a> › 가이드</div><h1>전체 가이드</h1><div class="glist"><a href="/guide/insurance-rates-2026/"><b>2026년 4대보험 요율 총정리: 내 월급에서 얼마나 빠질까</b><span>2026년 국민연금·건강보험·장기요양보험·고용보험 근로자 부담 요율과 월급별 공제액을 예시로 정리했습니다.</span></a><a href="/guide/salary-take-home/"><b>연봉 실수령액 계산하는 법: 연봉 5천만 원 예시로 한 줄씩</b><span>세전 연봉에서 4대보험과 소득세를 빼 월 실수령액이 나오는 과정을 연봉 5천만 원 예시로 단계별로 설명합니다.</span></a><a href="/guide/year-end-tax-settlement/"><b>연말정산에서 돈을 돌려받거나 더 내는 이유</b><span>매달 떼는 소득세와 실제 1년 세금이 왜 다른지, 연말정산에서 환급과 추가 납부가 갈리는 원리를 정리했습니다.</span></a><a href="/guide/meal-allowance-tax-free/"><b>비과세 식대 월 20만 원, 실수령액이 얼마나 달라질까</b><span>식대 비과세가 무엇인지, 연봉 5천만 원 기준으로 비과세 식대가 있을 때와 없을 때 실수령액 차이를 계산했습니다.</span></a><a href="/guide/equal-payment-vs-equal-principal/"><b>원리금균등 vs 원금균등: 3억 원 30년 대출로 비교해 보니</b><span>주택담보대출에서 많이 고르는 원리금균등과 원금균등 상환 방식을 3억 원, 연 4.2%, 30년 조건으로 비교했습니다.</span></a><a href="/guide/bullet-repayment/"><b>만기일시상환은 언제 쓰나: 월 부담과 총 이자의 맞교환</b><span>매달 이자만 내고 만기에 원금을 갚는 만기일시상환의 장단점을 5천만 원, 연 5.5%, 2년 대출 예시로 비교했습니다.</span></a><a href="/guide/interest-rate-half-point/"><b>금리 0.5%p 차이가 30년 동안 만드는 돈</b><span>대출 금리 0.5%p가 월 납입금과 총 이자를 얼마나 바꾸는지 3억 원, 2억 원 30년 대출로 계산했습니다.</span></a><a href="/guide/split-bill-fairly/"><b>회식비 공정하게 나누는 법: 1차·2차, 늦게 온 사람, 끝자리</b><span>1차만 참석한 사람, 2차에서 합류한 사람이 있을 때 더치페이를 공정하게 나누는 방법과 끝자리 처리 요령을 예시로 정리했습니다.</span></a></div>
+<div class="crumb"><a href="/">홈</a> › 가이드</div><h1>전체 가이드</h1><div class="glist"><a href="/guide/insurance-rates-2026/"><b>2026년 4대보험 요율 총정리: 내 월급에서 얼마나 빠질까</b><span>2026년 국민연금·건강보험·장기요양보험·고용보험 근로자 부담 요율과 월급별 공제액을 예시로 정리했습니다.</span></a><a href="/guide/salary-take-home/"><b>연봉 실수령액 계산하는 법: 연봉 5천만 원 예시로 한 줄씩</b><span>세전 연봉에서 4대보험과 소득세를 빼 월 실수령액이 나오는 과정을 연봉 5천만 원 예시로 단계별로 설명합니다.</span></a><a href="/guide/year-end-tax-settlement/"><b>연말정산에서 돈을 돌려받거나 더 내는 이유</b><span>매달 떼는 소득세와 실제 1년 세금이 왜 다른지, 연말정산에서 환급과 추가 납부가 갈리는 원리를 정리했습니다.</span></a><a href="/guide/meal-allowance-tax-free/"><b>비과세 식대 월 20만 원, 실수령액이 얼마나 달라질까</b><span>식대 비과세가 무엇인지, 연봉 5천만 원 기준으로 비과세 식대가 있을 때와 없을 때 실수령액 차이를 계산했습니다.</span></a><a href="/guide/equal-payment-vs-equal-principal/"><b>원리금균등 vs 원금균등: 3억 원 30년 대출로 비교해 보니</b><span>주택담보대출에서 많이 고르는 원리금균등과 원금균등 상환 방식을 3억 원, 연 4.2%, 30년 조건으로 비교했습니다.</span></a><a href="/guide/bullet-repayment/"><b>만기일시상환은 언제 쓰나: 월 부담과 총 이자의 맞교환</b><span>매달 이자만 내고 만기에 원금을 갚는 만기일시상환의 장단점을 5천만 원, 연 5.5%, 2년 대출 예시로 비교했습니다.</span></a><a href="/guide/interest-rate-half-point/"><b>금리 0.5%p 차이가 30년 동안 만드는 돈</b><span>대출 금리 0.5%p가 월 납입금과 총 이자를 얼마나 바꾸는지 3억 원, 2억 원 30년 대출로 계산했습니다.</span></a><a href="/guide/split-bill-fairly/"><b>회식비 공정하게 나누는 법: 1차·2차, 늦게 온 사람, 끝자리</b><span>1차만 참석한 사람, 2차에서 합류한 사람이 있을 때 더치페이를 공정하게 나누는 방법과 끝자리 처리 요령을 예시로 정리했습니다.</span></a><a href="/guide/severance-pay/"><b>퇴직금 계산하는 법: 평균임금부터 지급 기한까지</b><span>퇴직금이 1일 평균임금 × 30일 × 재직일수 ÷ 365로 계산되는 원리와 상여금 반영 방법, 지급 기한을 예시로 정리했습니다.</span></a><a href="/guide/annual-leave/"><b>연차 계산법: 1년 미만 11일부터 최대 25일까지</b><span>근로기준법에 따른 연차 휴가 일수를 근속 연수별로 정리하고, 미사용 연차수당 계산 방법을 예시로 설명합니다.</span></a></div>
   </main>
   <footer><nav class="footlinks"><a href="/about/">소개</a><a href="/contact/">문의</a><a href="/privacy/">개인정보처리방침</a></nav><div>easycalc.co.kr · 계산 결과는 참고용입니다 · 입력한 내용은 어디에도 저장되거나 전송되지 않습니다</div><div style="margin-top:4px">© 2026 EasyCalc</div></footer>
 </div>

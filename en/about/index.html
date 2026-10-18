@@ -56,8 +56,13 @@ a.brand{color:inherit;text-decoration:none}
 .langsel select{border:0;background:transparent;color:var(--ink);font:600 14px var(--f-body);padding:8px 4px;cursor:pointer;max-width:11em}
 .num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
 
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px}
-.tabs button{font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 6px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;min-width:0;overflow-wrap:anywhere}
+.tabs{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:4px;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:1 0 auto;font:600 15px var(--f-body);border:0;border-radius:7px;padding:11px 14px;background:transparent;color:var(--muted);cursor:pointer;line-height:1.25;white-space:nowrap}
+.inbox input[type="date"]{text-align:left;font:500 16px var(--f-num);min-height:2.6em}
+tr.on td{background:var(--accent-soft);font-weight:600}
+#lv-body td:first-child{white-space:normal;min-width:7em}
+.warn{border:1px solid var(--interest);background:var(--interest-soft);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:14px}
 .tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -198,7 +203,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <select aria-label="Language / 언어" onchange="location.href=this.value"><option value="/about/" lang="ko">한국어</option><option value="/en/about/" lang="en" selected>English</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/zh/" lang="zh">简体中文</option><option value="/ne/" lang="ne">नेपाली</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/km/" lang="km">ខ្មែរ</option><option value="/uz/" lang="uz">Oʻzbekcha</option><option value="/th/" lang="th">ไทย</option><option value="/my/" lang="my">မြန်မာ</option></select>
     </label>
   </header>
-  <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/loan/">Loan</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/">Guides</a><a href="/en/about/" aria-current="page">About</a></nav>
+  <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/severance/">Severance</a><a href="/en/leave/">Annual leave</a><a href="/en/loan/">Loan</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/">Guides</a><a href="/en/about/" aria-current="page">About</a></nav>
   <main class="page">
 <article class="prose"><h1>About EasyCalc</h1>
 <p class="lede">EasyCalc is a set of everyday calculators that work right in your browser, with no install and no sign-up.</p>
@@ -206,6 +211,8 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <h2>What you can do</h2>
 <ul>
 <li><a href="/en/salary/">Korea take-home pay calculator</a>: monthly net pay after social insurance and tax</li>
+<li><a href="/en/severance/">Severance pay calculator</a>: legal severance pay from your dates and recent pay</li>
+<li><a href="/en/leave/">Annual leave calculator</a>: paid leave days by year of service and unused leave pay</li>
 <li><a href="/en/loan/">Loan interest calculator</a>: monthly payment and total interest for three repayment methods</li>
 <li><a href="/en/dutch/">Bill split calculator</a>: split evenly or item by item, with a message ready for your group chat</li>
 </ul>

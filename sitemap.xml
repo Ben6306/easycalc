@@ -12,6 +12,30 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
   </url>
+  <url><loc>https://easycalc.co.kr/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
+  </url>
   <url><loc>https://easycalc.co.kr/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
@@ -47,6 +71,30 @@
     <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
   </url>
   <url><loc>https://easycalc.co.kr/en/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
@@ -84,6 +132,30 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
   </url>
+  <url><loc>https://easycalc.co.kr/vi/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/vi/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
+  </url>
   <url><loc>https://easycalc.co.kr/vi/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
@@ -119,6 +191,30 @@
     <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/zh/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/zh/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
   </url>
   <url><loc>https://easycalc.co.kr/zh/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
@@ -156,6 +252,30 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
   </url>
+  <url><loc>https://easycalc.co.kr/ne/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/ne/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
+  </url>
   <url><loc>https://easycalc.co.kr/ne/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
@@ -191,6 +311,30 @@
     <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/id/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/id/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
   </url>
   <url><loc>https://easycalc.co.kr/id/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
@@ -228,6 +372,30 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
   </url>
+  <url><loc>https://easycalc.co.kr/km/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/km/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
+  </url>
   <url><loc>https://easycalc.co.kr/km/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
@@ -263,6 +431,30 @@
     <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/uz/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/uz/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
   </url>
   <url><loc>https://easycalc.co.kr/uz/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
@@ -300,6 +492,30 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
   </url>
+  <url><loc>https://easycalc.co.kr/th/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/th/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
+  </url>
   <url><loc>https://easycalc.co.kr/th/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/loan/"/>
@@ -335,6 +551,30 @@
     <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/salary/"/>
     <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/salary/"/>
     <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/salary/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/my/severance/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/severance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/severance/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/severance/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/severance/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/severance/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/severance/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/severance/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/severance/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/severance/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/severance/"/>
+  </url>
+  <url><loc>https://easycalc.co.kr/my/leave/</loc><lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/leave/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/leave/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://easycalc.co.kr/vi/leave/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://easycalc.co.kr/zh/leave/"/>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://easycalc.co.kr/ne/leave/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://easycalc.co.kr/id/leave/"/>
+    <xhtml:link rel="alternate" hreflang="km" href="https://easycalc.co.kr/km/leave/"/>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://easycalc.co.kr/uz/leave/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://easycalc.co.kr/th/leave/"/>
+    <xhtml:link rel="alternate" hreflang="my" href="https://easycalc.co.kr/my/leave/"/>
   </url>
   <url><loc>https://easycalc.co.kr/my/loan/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/loan/"/>
@@ -500,11 +740,17 @@
   </url>
   <url><loc>https://easycalc.co.kr/guide/split-bill-fairly/</loc><lastmod>2026-10-18</lastmod>
   </url>
+  <url><loc>https://easycalc.co.kr/guide/severance-pay/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/guide/annual-leave/</loc><lastmod>2026-10-18</lastmod>
+  </url>
   <url><loc>https://easycalc.co.kr/en/guide/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/guide/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://easycalc.co.kr/en/guide/"/>
   </url>
   <url><loc>https://easycalc.co.kr/en/guide/korean-payslip/</loc><lastmod>2026-10-18</lastmod>
+  </url>
+  <url><loc>https://easycalc.co.kr/en/guide/severance-and-leave/</loc><lastmod>2026-10-18</lastmod>
   </url>
   <url><loc>https://easycalc.co.kr/about/</loc><lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://easycalc.co.kr/about/"/>
