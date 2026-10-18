@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "Tabungan",
+   "url": "/id/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "Bagi tagihan",
    "url": "/id/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

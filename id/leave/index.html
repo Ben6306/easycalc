@@ -241,6 +241,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
     <button role="tab" id="tab-severance" aria-controls="severance" aria-selected="false" data-t="tabSev"></button>
     <button role="tab" id="tab-leave" aria-controls="leave" aria-selected="false" data-t="tabLeave"></button>
     <button role="tab" id="tab-loan" aria-controls="loan" aria-selected="false" data-t="tabLoan"></button>
+    <button role="tab" id="tab-saving" aria-controls="saving" aria-selected="false" data-t="tabSave"></button>
     <button role="tab" id="tab-dutch" aria-controls="dutch" aria-selected="true" data-t="tabDutch"></button>
   </div>
 
@@ -347,6 +348,67 @@ main.page{display:flex;flex-direction:column;gap:18px}
         <thead><tr><th data-t="thNo"></th><th data-t="thPay"></th><th data-t="thPrin"></th><th data-t="thInt"></th><th data-t="thBal"></th></tr></thead>
         <tbody id="l-body"></tbody></table></div>
       <p class="note" data-t="schedNote"></p>
+    </div>
+  </section>
+
+  <!-- ===== 예·적금 / Deposit & savings ===== -->
+  <section class="panel" id="saving" role="tabpanel" aria-labelledby="tab-saving" hidden>
+    <div class="card">
+      <div><h2 data-t="savH"></h2><p class="lede" data-t="savLede"></p></div>
+      <div class="field"><span class="lbl" data-t="savKind"></span>
+        <div class="seg" id="savKindSeg">
+          <button data-k="deposit" aria-pressed="true" data-t="savDeposit"></button>
+          <button data-k="saving" aria-pressed="false" data-t="savSaving"></button>
+        </div></div>
+      <div class="field"><label for="g-amt" id="g-amt-l"></label>
+        <div class="inbox"><input id="g-amt" inputmode="numeric" value="10,000,000"><span data-t="cur"></span></div>
+        <div class="hint" id="g-amt-kr"></div>
+        <div class="chips" id="savChips">
+          <button class="chip" data-gadd="1000000" data-t="add1m"></button>
+          <button class="chip" data-gadd="5000000" data-t="add5m"></button>
+          <button class="chip" data-gadd="10000000" data-t="add10m"></button>
+          <button class="chip" data-gadd="0" data-t="clear"></button>
+        </div></div>
+      <div class="row">
+        <div class="field"><label for="g-rate" data-t="savRate"></label>
+          <div class="inbox"><input id="g-rate" inputmode="decimal" value="3.5"><span>%</span></div></div>
+        <div class="field"><label for="g-term" data-t="savTerm"></label>
+          <div class="inbox"><input id="g-term" inputmode="numeric" value="1">
+            <select id="g-unit" data-ta="termUnit" style="flex:0 0 auto;margin-left:6px"><option value="y" data-t="years"></option><option value="m" data-t="months"></option></select></div></div>
+      </div>
+      <div class="field"><span class="lbl" data-t="savMethod"></span>
+        <div class="seg" id="savCompSeg">
+          <button data-c="simple" aria-pressed="true" data-t="savSimple"></button>
+          <button data-c="compound" aria-pressed="false" data-t="savCompound"></button>
+        </div>
+        <div class="hint" id="g-c-desc"></div></div>
+      <div class="field"><label for="g-tax" data-t="savTax"></label>
+        <div class="inbox"><input id="g-tax" inputmode="decimal" value="15.4"><span>%</span></div>
+        <div class="chips" id="savTaxChips">
+          <button class="chip" data-tax="15.4" data-t="savTaxGen"></button>
+          <button class="chip" data-tax="0" data-t="savTaxFree"></button>
+        </div>
+        <div class="hint" data-t="savTaxHint"></div></div>
+    </div>
+
+    <div class="receipt" aria-live="polite">
+      <div class="rhead"><span data-t="tabSave"></span><span id="g-tag"></span></div>
+      <div><div class="lbl" data-t="savResult"></div><div class="big" id="g-big">0</div><div class="hint" id="g-big-s"></div></div>
+      <div class="warn" id="g-warn" hidden></div>
+      <hr class="dash">
+      <ul class="lines" id="g-lines"></ul>
+      <div class="split" aria-hidden="true"><i id="g-split-n" style="background:var(--accent)"></i><i id="g-split-t" style="background:var(--interest)"></i></div>
+      <div class="legend"><span style="--c:var(--accent)" id="g-lg-n"></span><span style="--c:var(--interest)" id="g-lg-t"></span></div>
+      <p class="note" id="g-half" hidden></p>
+      <div class="sharebox" data-share="saving"><div class="btnrow"><button type="button" class="btn ghost shareBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span data-t="shareLink"></span></button><span class="toast" role="status"></span></div><input class="sharelink" readonly hidden aria-label="URL"><p class="note" data-t="shareNote"></p></div>
+    </div>
+
+    <div class="card">
+      <div class="btnrow" style="justify-content:space-between"><h2 data-t="savTblH"></h2><button class="btn ghost" id="g-all"></button></div>
+      <div class="tablewrap"><table>
+        <thead><tr><th data-t="savThM"></th><th data-t="savThP"></th><th data-t="savThG"></th><th data-t="savThN"></th></tr></thead>
+        <tbody id="g-body"></tbody></table></div>
+      <p class="note" data-t="savNote"></p>
     </div>
   </section>
 
@@ -493,7 +555,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <p id="pwa-ios" class="pwa-ios" hidden>Di iPhone, ketuk Bagikan lalu pilih “Tambah ke Layar Utama” agar bisa dipakai seperti aplikasi.</p></div>
 <script>(function(){
 var ok=/(^|\.)easycalc\.co\.kr$|^localhost$|^127\./.test(location.hostname);
-if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/id/", "/id/salary/", "/id/severance/", "/id/leave/", "/id/loan/", "/id/dutch/"]})}).catch(function(){})})}
+if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/id/", "/id/salary/", "/id/severance/", "/id/leave/", "/id/loan/", "/id/saving/", "/id/dutch/"]})}).catch(function(){})})}
 if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
 var b=document.getElementById('pwa-install'),ev=null;
 addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;b.hidden=false});
@@ -1020,6 +1082,19 @@ my:{tabSev:'အလုပ်ထွက်ထောက်ပံ့ငွေ',svH:'�
  th:{shareLink:'แชร์ลิงก์ผลลัพธ์',linkCopied:'คัดลอกลิงก์แล้ว',linkManual:'กดลิงก์ด้านล่างค้างไว้เพื่อคัดลอก',shareNote:'ลิงก์มีค่าที่คุณกรอกอยู่ ผู้ที่เปิดจะเห็นผลลัพธ์เดียวกัน'},
  my:{shareLink:'ရလဒ်လင့်ခ်ကို မျှဝေရန်',linkCopied:'လင့်ခ်ကို ကူးယူပြီးပါပြီ',linkManual:'ကူးယူရန် အောက်ပါလင့်ခ်ကို ဖိထားပါ',shareNote:'လင့်ခ်တွင် သင်ထည့်ထားသော တန်ဖိုးများ ပါဝင်သည်။ ဖွင့်သူသည် ရလဒ်တူကို မြင်ရမည်။'}
 };for(const l in S)Object.assign(window.I18N[l],S[l])})();
+/* 예·적금 계산기 문구 / deposit & savings strings */
+(function(){const S={
+ ko:{tabSave:'예·적금',savH:'예·적금 이자 계산기',savLede:'예금이나 적금에 가입하면 세금을 떼고 실제로 얼마를 받는지 계산해 보세요. 단리·복리와 세율을 바꿔 가며 비교할 수 있어요.',savKind:'상품 종류',savDeposit:'예금 (목돈 한 번에)',savSaving:'적금 (매달 납입)',savAmtD:'예치 금액',savAmtS:'월 납입액',savRate:'연 이자율 (세전)',savTerm:'가입 기간',savMethod:'이자 계산 방식',savSimple:'단리',savCompound:'월복리',savSimpleDesc:'원금에만 이자가 붙어요. 일반적인 정기예금·정기적금에 많이 쓰이는 방식이에요.',savCompDesc:'매달 생긴 이자를 원금에 더해 다음 달 이자를 계산해요. 이자에도 이자가 붙어서 기간이 길수록 차이가 커져요.',savTax:'이자소득세율',savTaxGen:'일반과세 15.4%',savTaxFree:'비과세 0%',savTaxHint:'일반 이자에는 소득세 14% + 지방소득세 1.4%가 붙어요. 저율과세·비과세 상품은 세율을 직접 입력하세요.',savResult:'만기 수령액 (세후, 추정)',savPrinD:'예치 원금',savPrinS:'총 납입 원금',savPeriod:'가입 기간',savMonthsV:'{0}개월',savGross:'세전 이자',savTaxLine:'이자소득세 ({0}%)',savNetInt:'세후 이자',savYield:'원금 대비 세후 수익률',savLgN:'세후 이자 {0}%',savLgT:'세금 {0}%',savHalf:'적금은 매달 나눠 넣어서 돈이 맡겨진 기간이 평균 절반 정도예요. 연 {0}%여도 납입한 원금 대비 세전 수익률은 약 {1}%입니다.',savWarn:'이 이자만으로 2천만 원을 넘어요. 한 해에 받는 이자·배당 합계가 2천만 원을 넘으면 종합과세 대상이 될 수 있으니 세무서나 세무사에게 확인하세요.',savTblH:'개월 수별 이자 (그 기간만큼 유지했을 때)',savThM:'개월',savThP:'누적 원금',savThG:'세전 이자',savThN:'세후 이자',savNote:'적금은 매달 첫날 납입하고 이자는 원 미만을 버리는 방식으로 계산한 추정치예요. 우대금리, 중도해지, 은행별 계산 차이로 실제 금액은 조금 다를 수 있어요. 세율은 상품마다 다르니 가입 전에 은행에서 확인하세요.',enterSav:'금액과 기간을 입력하세요',titles:{saving:'예·적금 이자 계산기 · 세후 이자 단리 복리 비교 | EasyCalc'}},
+ en:{tabSave:'Savings',savH:'Deposit & Savings Interest Calculator',savLede:'See how much you actually receive after tax on a lump-sum deposit or a monthly savings plan. Compare simple vs compound interest and different tax rates.',savKind:'Product type',savDeposit:'Deposit (lump sum)',savSaving:'Savings (monthly)',savAmtD:'Deposit amount',savAmtS:'Monthly payment',savRate:'Annual interest rate (before tax)',savTerm:'Term',savMethod:'Interest method',savSimple:'Simple',savCompound:'Monthly compound',savSimpleDesc:'Interest is paid only on the original amount. Common for standard fixed deposits and installment savings.',savCompDesc:'Each month’s interest is added to the balance, so interest earns interest. The longer the term, the bigger the gap.',savTax:'Interest tax rate',savTaxGen:'Standard 15.4%',savTaxFree:'Tax-free 0%',savTaxHint:'Standard interest tax is 14% income tax + 1.4% local tax. For reduced-rate or tax-free products, type the rate yourself.',savResult:'Amount at maturity (after tax, est.)',savPrinD:'Deposit',savPrinS:'Total paid in',savPeriod:'Term',savMonthsV:'{0} months',savGross:'Interest before tax',savTaxLine:'Interest tax ({0}%)',savNetInt:'Interest after tax',savYield:'After-tax return on principal',savLgN:'After-tax interest {0}%',savLgT:'Tax {0}%',savHalf:'With monthly savings, your money is held for about half the term on average. At {0}% per year, the pre-tax return on what you paid in is about {1}%.',savWarn:'This interest alone is over ₩20 million. If your total interest and dividends in a year exceed ₩20 million, you may be taxed on a comprehensive basis. Check with the tax office or a tax accountant.',savTblH:'Interest by number of months held',savThM:'Months',savThP:'Principal',savThG:'Interest (pre-tax)',savThN:'After tax',savNote:'Estimates assume each monthly payment is made at the start of the month and interest is rounded down to the won. Bonus rates, early withdrawal and bank-specific methods can change the actual amount. Tax rates vary by product, so confirm with your bank before opening one.',enterSav:'Enter an amount and term',titles:{saving:'Deposit & Savings Interest Calculator · After-Tax, Simple vs Compound | EasyCalc'}},
+ vi:{tabSave:'Tiền gửi',savH:'Máy tính lãi tiền gửi và tiết kiệm',savLede:'Xem bạn thực nhận bao nhiêu sau thuế khi gửi một lần hoặc gửi góp hằng tháng. So sánh lãi đơn, lãi kép và các mức thuế.',savKind:'Loại sản phẩm',savDeposit:'Tiền gửi (một lần)',savSaving:'Tiết kiệm (hằng tháng)',savAmtD:'Số tiền gửi',savAmtS:'Số tiền gửi mỗi tháng',savRate:'Lãi suất năm (trước thuế)',savTerm:'Kỳ hạn',savMethod:'Cách tính lãi',savSimple:'Lãi đơn',savCompound:'Lãi kép hằng tháng',savSimpleDesc:'Lãi chỉ tính trên số tiền gốc ban đầu. Thường dùng cho tiền gửi có kỳ hạn và tiết kiệm góp thông thường.',savCompDesc:'Lãi mỗi tháng được cộng vào gốc nên lãi sinh thêm lãi. Kỳ hạn càng dài, chênh lệch càng lớn.',savTax:'Thuế suất thuế lãi',savTaxGen:'Thông thường 15,4%',savTaxFree:'Miễn thuế 0%',savTaxHint:'Thuế lãi thông thường là thuế thu nhập 14% + thuế địa phương 1,4%. Với sản phẩm thuế thấp hoặc miễn thuế, hãy tự nhập thuế suất.',savResult:'Số tiền nhận khi đáo hạn (sau thuế, ước tính)',savPrinD:'Tiền gốc gửi',savPrinS:'Tổng tiền gốc đã gửi',savPeriod:'Kỳ hạn',savMonthsV:'{0} tháng',savGross:'Lãi trước thuế',savTaxLine:'Thuế lãi ({0}%)',savNetInt:'Lãi sau thuế',savYield:'Lợi suất sau thuế trên tiền gốc',savLgN:'Lãi sau thuế {0}%',savLgT:'Thuế {0}%',savHalf:'Với tiết kiệm góp hằng tháng, tiền của bạn được gửi trung bình chỉ khoảng một nửa kỳ hạn. Dù lãi suất {0}%/năm, lợi suất trước thuế trên số tiền đã gửi chỉ khoảng {1}%.',savWarn:'Riêng khoản lãi này đã vượt 20 triệu won. Nếu tổng lãi và cổ tức nhận trong một năm vượt 20 triệu won, bạn có thể bị đánh thuế tổng hợp. Hãy hỏi cơ quan thuế hoặc kế toán thuế.',savTblH:'Lãi theo số tháng gửi',savThM:'Tháng',savThP:'Tiền gốc',savThG:'Lãi trước thuế',savThN:'Sau thuế',savNote:'Số liệu ước tính, giả định mỗi lần gửi góp vào đầu tháng và lãi được làm tròn xuống đến đơn vị won. Lãi suất ưu đãi, rút trước hạn và cách tính riêng của từng ngân hàng có thể làm số tiền thực tế khác đi. Thuế suất tùy sản phẩm, hãy hỏi ngân hàng trước khi mở.',enterSav:'Nhập số tiền và kỳ hạn',titles:{saving:'Máy tính lãi tiền gửi và tiết kiệm · Sau thuế | EasyCalc'}},
+ zh:{tabSave:'存款',savH:'存款与储蓄利息计算器',savLede:'计算整存整取或按月存入扣税后实际能拿到多少钱，可对比单利、复利和不同税率。',savKind:'产品类型',savDeposit:'存款（一次性存入）',savSaving:'储蓄（每月存入）',savAmtD:'存入金额',savAmtS:'每月存入金额',savRate:'年利率（税前）',savTerm:'存期',savMethod:'计息方式',savSimple:'单利',savCompound:'按月复利',savSimpleDesc:'只对本金计息。普通定期存款和定期储蓄常用这种方式。',savCompDesc:'每月利息并入本金再计息，利息也会生息。存期越长，差距越大。',savTax:'利息税率',savTaxGen:'一般课税 15.4%',savTaxFree:'免税 0%',savTaxHint:'一般利息税为所得税14%加地方所得税1.4%。低税率或免税产品请自行输入税率。',savResult:'到期金额（税后，估算）',savPrinD:'存入本金',savPrinS:'累计存入本金',savPeriod:'存期',savMonthsV:'{0}个月',savGross:'税前利息',savTaxLine:'利息税（{0}%）',savNetInt:'税后利息',savYield:'税后本金收益率',savLgN:'税后利息 {0}%',savLgT:'税 {0}%',savHalf:'按月存入的储蓄，资金平均只存了约一半的时间。即使年利率为{0}%，相对于已存入本金的税前收益率也只有约{1}%。',savWarn:'仅这笔利息就超过2000万韩元。如果一年内取得的利息和股息合计超过2000万韩元，可能需要合并课税，请向税务署或税务师咨询。',savTblH:'按持有月数的利息',savThM:'月',savThP:'本金',savThG:'税前利息',savThN:'税后',savNote:'估算值假设每月月初存入，利息舍去不足1韩元的部分。优惠利率、提前支取和各银行的计算方式可能使实际金额略有不同。税率因产品而异，开户前请向银行确认。',enterSav:'请输入金额和存期',titles:{saving:'存款与储蓄利息计算器 · 税后单利复利对比 | EasyCalc'}},
+ ne:{tabSave:'बचत',savH:'मुद्दती र बचत ब्याज क्याल्कुलेटर',savLede:'एकमुष्ट मुद्दती वा मासिक बचतमा कर कटेपछि वास्तवमा कति पाइन्छ हेर्नुहोस्। साधारण र चक्रवृद्धि ब्याज तथा करको दर तुलना गर्नुहोस्।',savKind:'उत्पादनको प्रकार',savDeposit:'मुद्दती (एकैपटक)',savSaving:'बचत (मासिक)',savAmtD:'जम्मा गर्ने रकम',savAmtS:'मासिक जम्मा रकम',savRate:'वार्षिक ब्याजदर (कर अघि)',savTerm:'अवधि',savMethod:'ब्याज गणना विधि',savSimple:'साधारण',savCompound:'मासिक चक्रवृद्धि',savSimpleDesc:'ब्याज सुरुको रकममा मात्र लाग्छ। सामान्य मुद्दती र किस्ता बचतमा धेरै प्रयोग हुन्छ।',savCompDesc:'हरेक महिनाको ब्याज जम्मा रकममा थपिन्छ, त्यसैले ब्याजमा पनि ब्याज लाग्छ। अवधि जति लामो, फरक त्यति ठूलो।',savTax:'ब्याज करको दर',savTaxGen:'सामान्य 15.4%',savTaxFree:'करमुक्त 0%',savTaxHint:'सामान्य ब्याज कर आयकर 14% + स्थानीय आयकर 1.4% हो। कम कर वा करमुक्त उत्पादनका लागि दर आफैँ लेख्नुहोस्।',savResult:'म्यादमा पाइने रकम (कर पछि, अनुमान)',savPrinD:'जम्मा गरेको मूलधन',savPrinS:'कुल जम्मा गरेको मूलधन',savPeriod:'अवधि',savMonthsV:'{0} महिना',savGross:'कर अघिको ब्याज',savTaxLine:'ब्याज कर ({0}%)',savNetInt:'कर पछिको ब्याज',savYield:'मूलधनमा कर पछिको प्रतिफल',savLgN:'कर पछिको ब्याज {0}%',savLgT:'कर {0}%',savHalf:'मासिक बचतमा तपाईंको पैसा औसतमा अवधिको आधा समय मात्र जम्मा हुन्छ। वार्षिक {0}% भए पनि जम्मा गरेको रकममा कर अघिको प्रतिफल लगभग {1}% मात्र हुन्छ।',savWarn:'यही ब्याजले मात्र 2 करोड वन नाघ्यो। एक वर्षमा पाएको ब्याज र लाभांश जोडेर 2 करोड वन नाघे संयुक्त करको दायरामा पर्न सक्छ। कर कार्यालय वा कर लेखापालसँग सोध्नुहोस्।',savTblH:'राखेको महिनाअनुसारको ब्याज',savThM:'महिना',savThP:'मूलधन',savThG:'कर अघिको ब्याज',savThN:'कर पछि',savNote:'यो अनुमान हो: हरेक किस्ता महिनाको सुरुमा जम्मा गरिन्छ र ब्याज एक वनभन्दा कम भाग छाडेर गणना गरिन्छ भन्ने मानिएको छ। विशेष ब्याजदर, म्याद अगावै निकाल्ने र बैंकको आफ्नै गणनाले वास्तविक रकम अलि फरक पर्न सक्छ। करको दर उत्पादनअनुसार फरक हुन्छ, खाता खोल्नु अघि बैंकमा सोध्नुहोस्।',enterSav:'रकम र अवधि लेख्नुहोस्',titles:{saving:'मुद्दती र बचत ब्याज क्याल्कुलेटर · कर पछि | EasyCalc'}},
+ id:{tabSave:'Tabungan',savH:'Kalkulator Bunga Deposito & Tabungan',savLede:'Hitung berapa yang benar-benar Anda terima setelah pajak dari deposito sekaligus atau tabungan bulanan. Bandingkan bunga tunggal vs majemuk dan tarif pajak.',savKind:'Jenis produk',savDeposit:'Deposito (sekaligus)',savSaving:'Tabungan (bulanan)',savAmtD:'Jumlah deposito',savAmtS:'Setoran bulanan',savRate:'Suku bunga tahunan (sebelum pajak)',savTerm:'Jangka waktu',savMethod:'Cara hitung bunga',savSimple:'Bunga tunggal',savCompound:'Majemuk bulanan',savSimpleDesc:'Bunga hanya dihitung dari pokok awal. Umum untuk deposito berjangka dan tabungan berjangka biasa.',savCompDesc:'Bunga tiap bulan ditambahkan ke saldo sehingga bunga ikut berbunga. Makin lama jangka waktunya, makin besar selisihnya.',savTax:'Tarif pajak bunga',savTaxGen:'Umum 15,4%',savTaxFree:'Bebas pajak 0%',savTaxHint:'Pajak bunga umum adalah pajak penghasilan 14% + pajak daerah 1,4%. Untuk produk berpajak rendah atau bebas pajak, isi sendiri tarifnya.',savResult:'Jumlah saat jatuh tempo (setelah pajak, perkiraan)',savPrinD:'Pokok deposito',savPrinS:'Total pokok yang disetor',savPeriod:'Jangka waktu',savMonthsV:'{0} bulan',savGross:'Bunga sebelum pajak',savTaxLine:'Pajak bunga ({0}%)',savNetInt:'Bunga setelah pajak',savYield:'Imbal hasil setelah pajak atas pokok',savLgN:'Bunga setelah pajak {0}%',savLgT:'Pajak {0}%',savHalf:'Pada tabungan bulanan, uang Anda rata-rata hanya tersimpan sekitar separuh jangka waktu. Meski bunganya {0}% per tahun, imbal hasil sebelum pajak atas total setoran hanya sekitar {1}%.',savWarn:'Bunga ini saja sudah melebihi 20 juta won. Jika total bunga dan dividen dalam setahun melebihi 20 juta won, Anda bisa dikenai pajak gabungan. Tanyakan ke kantor pajak atau konsultan pajak.',savTblH:'Bunga menurut jumlah bulan',savThM:'Bulan',savThP:'Pokok',savThG:'Bunga sebelum pajak',savThN:'Setelah pajak',savNote:'Perkiraan ini mengasumsikan setoran dilakukan di awal bulan dan bunga dibulatkan ke bawah ke won. Bunga bonus, penarikan lebih awal, dan cara hitung tiap bank dapat membuat jumlah sebenarnya sedikit berbeda. Tarif pajak berbeda tiap produk, jadi pastikan ke bank sebelum membuka.',enterSav:'Masukkan jumlah dan jangka waktu',titles:{saving:'Kalkulator Bunga Deposito & Tabungan · Setelah Pajak | EasyCalc'}},
+ km:{tabSave:'ប្រាក់សន្សំ',savH:'ម៉ាស៊ីនគិតការប្រាក់ប្រាក់បញ្ញើ និងប្រាក់សន្សំ',savLede:'មើលថាតើអ្នកទទួលបានប្រាក់ប៉ុន្មានពិតប្រាកដក្រោយកាត់ពន្ធ ពីប្រាក់បញ្ញើមួយដង ឬប្រាក់សន្សំប្រចាំខែ។ ប្រៀបធៀបការប្រាក់សាមញ្ញ ការប្រាក់ដក់ និងអត្រាពន្ធ។',savKind:'ប្រភេទផលិតផល',savDeposit:'ប្រាក់បញ្ញើ (ម្តងគត់)',savSaving:'ប្រាក់សន្សំ (ប្រចាំខែ)',savAmtD:'ចំនួនប្រាក់បញ្ញើ',savAmtS:'ចំនួនបង់ប្រចាំខែ',savRate:'អត្រាការប្រាក់ប្រចាំឆ្នាំ (មុនកាត់ពន្ធ)',savTerm:'រយៈពេល',savMethod:'វិធីគិតការប្រាក់',savSimple:'ការប្រាក់សាមញ្ញ',savCompound:'ការប្រាក់ដក់ប្រចាំខែ',savSimpleDesc:'ការប្រាក់គិតតែលើប្រាក់ដើមដំបូងប៉ុណ្ណោះ។ ប្រើច្រើនសម្រាប់ប្រាក់បញ្ញើមានកាលកំណត់ និងប្រាក់សន្សំបង់ប្រចាំខែទូទៅ។',savCompDesc:'ការប្រាក់ប្រចាំខែត្រូវបូកចូលប្រាក់ដើម ដូច្នេះការប្រាក់ក៏មានការប្រាក់ផងដែរ។ រយៈពេលកាន់តែយូរ ភាពខុសគ្នាកាន់តែធំ។',savTax:'អត្រាពន្ធលើការប្រាក់',savTaxGen:'ធម្មតា 15.4%',savTaxFree:'រួចពន្ធ 0%',savTaxHint:'ពន្ធលើការប្រាក់ធម្មតាគឺពន្ធលើប្រាក់ចំណូល 14% + ពន្ធមូលដ្ឋាន 1.4%។ សម្រាប់ផលិតផលពន្ធទាប ឬរួចពន្ធ សូមបញ្ចូលអត្រាដោយខ្លួនឯង។',savResult:'ប្រាក់ទទួលពេលផុតកំណត់ (ក្រោយកាត់ពន្ធ ប៉ាន់ស្មាន)',savPrinD:'ប្រាក់ដើមដែលបានដាក់',savPrinS:'ប្រាក់ដើមសរុបដែលបានបង់',savPeriod:'រយៈពេល',savMonthsV:'{0} ខែ',savGross:'ការប្រាក់មុនកាត់ពន្ធ',savTaxLine:'ពន្ធលើការប្រាក់ ({0}%)',savNetInt:'ការប្រាក់ក្រោយកាត់ពន្ធ',savYield:'អត្រាចំណេញក្រោយពន្ធលើប្រាក់ដើម',savLgN:'ការប្រាក់ក្រោយពន្ធ {0}%',savLgT:'ពន្ធ {0}%',savHalf:'ជាមួយប្រាក់សន្សំប្រចាំខែ ប្រាក់របស់អ្នកត្រូវបានរក្សាទុកជាមធ្យមត្រឹមប្រហែលពាក់កណ្តាលនៃរយៈពេល។ ទោះបីអត្រា {0}% ក្នុងមួយឆ្នាំ អត្រាចំណេញមុនពន្ធលើប្រាក់ដែលបានបង់មានតែប្រហែល {1}% ប៉ុណ្ណោះ។',savWarn:'ការប្រាក់នេះតែមួយគត់លើសពី 20 លានវ៉ុនហើយ។ ប្រសិនបើការប្រាក់ និងភាគលាភសរុបក្នុងមួយឆ្នាំលើសពី 20 លានវ៉ុន អ្នកអាចត្រូវបង់ពន្ធរួម។ សូមសួរការិយាល័យពន្ធ ឬអ្នកគណនេយ្យពន្ធ។',savTblH:'ការប្រាក់តាមចំនួនខែដែលរក្សា',savThM:'ខែ',savThP:'ប្រាក់ដើម',savThG:'ការប្រាក់មុនពន្ធ',savThN:'ក្រោយពន្ធ',savNote:'នេះជាការប៉ាន់ស្មាន ដោយសន្មតថាបង់នៅដើមខែ ហើយការប្រាក់ត្រូវបង្គត់ចុះទៅជាវ៉ុន។ អត្រាពិសេស ការដកមុនកំណត់ និងវិធីគិតរបស់ធនាគារនីមួយៗ អាចធ្វើឱ្យចំនួនពិតខុសបន្តិច។ អត្រាពន្ធខុសគ្នាតាមផលិតផល សូមសួរធនាគារមុនបើកគណនី។',enterSav:'បញ្ចូលចំនួនប្រាក់ និងរយៈពេល',titles:{saving:'ម៉ាស៊ីនគិតការប្រាក់ប្រាក់បញ្ញើ និងប្រាក់សន្សំ · ក្រោយពន្ធ | EasyCalc'}},
+ uz:{tabSave:'Jamgʻarma',savH:'Omonat va jamgʻarma foizi kalkulyatori',savLede:'Bir martalik omonat yoki oylik jamgʻarmadan soliq ushlangach amalda qancha olishingizni hisoblang. Oddiy va murakkab foiz hamda soliq stavkalarini solishtiring.',savKind:'Mahsulot turi',savDeposit:'Omonat (bir martalik)',savSaving:'Jamgʻarma (oylik)',savAmtD:'Omonat summasi',savAmtS:'Oylik toʻlov',savRate:'Yillik foiz stavkasi (soliqdan oldin)',savTerm:'Muddat',savMethod:'Foiz hisoblash usuli',savSimple:'Oddiy foiz',savCompound:'Oylik murakkab foiz',savSimpleDesc:'Foiz faqat dastlabki summaga hisoblanadi. Oddiy muddatli omonat va jamgʻarmalarda koʻp qoʻllanadi.',savCompDesc:'Har oylik foiz qoldiqqa qoʻshiladi, shuning uchun foizga ham foiz hisoblanadi. Muddat uzaygan sari farq kattalashadi.',savTax:'Foiz soligʻi stavkasi',savTaxGen:'Oddiy 15,4%',savTaxFree:'Soliqsiz 0%',savTaxHint:'Oddiy foiz soligʻi 14% daromad soligʻi + 1,4% mahalliy soliqdan iborat. Past stavkali yoki soliqsiz mahsulotlar uchun stavkani oʻzingiz kiriting.',savResult:'Muddat oxirida olinadigan summa (soliqdan keyin, taxminiy)',savPrinD:'Omonat asosiy summasi',savPrinS:'Jami toʻlangan asosiy summa',savPeriod:'Muddat',savMonthsV:'{0} oy',savGross:'Soliqdan oldingi foiz',savTaxLine:'Foiz soligʻi ({0}%)',savNetInt:'Soliqdan keyingi foiz',savYield:'Asosiy summaga soliqdan keyingi daromad',savLgN:'Soliqdan keyingi foiz {0}%',savLgT:'Soliq {0}%',savHalf:'Oylik jamgʻarmada pulingiz oʻrtacha muddatning taxminan yarmida saqlanadi. Yiliga {0}% boʻlsa ham, toʻlangan summaga nisbatan soliqdan oldingi daromad atigi taxminan {1}%.',savWarn:'Faqat shu foizning oʻzi 20 million vondan oshdi. Bir yilda olingan foiz va dividendlar yigʻindisi 20 million vondan oshsa, umumiy soliq solinishi mumkin. Soliq idorasi yoki soliq maslahatchisidan soʻrang.',savTblH:'Saqlangan oylar soniga koʻra foiz',savThM:'Oy',savThP:'Asosiy summa',savThG:'Soliqdan oldingi foiz',savThN:'Soliqdan keyin',savNote:'Bu taxminiy hisob: har bir toʻlov oy boshida qilinadi va foiz vongacha pastga yaxlitlanadi deb olingan. Qoʻshimcha stavkalar, muddatidan oldin yechish va bankning oʻz usuli haqiqiy summani biroz oʻzgartirishi mumkin. Soliq stavkasi mahsulotga qarab farq qiladi, ochishdan oldin bankdan aniqlang.',enterSav:'Summa va muddatni kiriting',titles:{saving:'Omonat va jamgʻarma foizi kalkulyatori · Soliqdan keyin | EasyCalc'}},
+ th:{tabSave:'เงินฝาก',savH:'เครื่องคิดดอกเบี้ยเงินฝากและเงินออม',savLede:'ดูว่าหลังหักภาษีแล้วคุณได้รับเงินจริงเท่าไร จากเงินฝากก้อนเดียวหรือเงินออมรายเดือน เปรียบเทียบดอกเบี้ยแบบง่าย แบบทบต้น และอัตราภาษี',savKind:'ประเภทผลิตภัณฑ์',savDeposit:'เงินฝาก (ก้อนเดียว)',savSaving:'เงินออม (รายเดือน)',savAmtD:'จำนวนเงินฝาก',savAmtS:'เงินออมต่อเดือน',savRate:'อัตราดอกเบี้ยต่อปี (ก่อนหักภาษี)',savTerm:'ระยะเวลา',savMethod:'วิธีคิดดอกเบี้ย',savSimple:'ดอกเบี้ยแบบง่าย',savCompound:'ทบต้นรายเดือน',savSimpleDesc:'ดอกเบี้ยคิดจากเงินต้นเริ่มแรกเท่านั้น พบบ่อยในเงินฝากประจำและเงินออมรายเดือนทั่วไป',savCompDesc:'ดอกเบี้ยแต่ละเดือนถูกรวมเข้ากับเงินต้น ทำให้ดอกเบี้ยมีดอกเบี้ยต่อ ยิ่งระยะเวลานาน ส่วนต่างยิ่งมาก',savTax:'อัตราภาษีดอกเบี้ย',savTaxGen:'ทั่วไป 15.4%',savTaxFree:'ยกเว้นภาษี 0%',savTaxHint:'ภาษีดอกเบี้ยทั่วไปคือภาษีเงินได้ 14% + ภาษีท้องถิ่น 1.4% สำหรับผลิตภัณฑ์ภาษีต่ำหรือยกเว้นภาษี ให้กรอกอัตราเอง',savResult:'เงินที่ได้รับเมื่อครบกำหนด (หลังหักภาษี โดยประมาณ)',savPrinD:'เงินต้นที่ฝาก',savPrinS:'เงินต้นที่ออมรวม',savPeriod:'ระยะเวลา',savMonthsV:'{0} เดือน',savGross:'ดอกเบี้ยก่อนหักภาษี',savTaxLine:'ภาษีดอกเบี้ย ({0}%)',savNetInt:'ดอกเบี้ยหลังหักภาษี',savYield:'ผลตอบแทนหลังภาษีต่อเงินต้น',savLgN:'ดอกเบี้ยหลังภาษี {0}%',savLgT:'ภาษี {0}%',savHalf:'เงินออมรายเดือนทำให้เงินของคุณถูกฝากเฉลี่ยเพียงประมาณครึ่งหนึ่งของระยะเวลา แม้ดอกเบี้ย {0}% ต่อปี ผลตอบแทนก่อนภาษีต่อเงินต้นที่ออมจริงเพียงประมาณ {1}%',savWarn:'ดอกเบี้ยนี้เพียงอย่างเดียวก็เกิน 20 ล้านวอนแล้ว หากดอกเบี้ยและเงินปันผลรวมกันในหนึ่งปีเกิน 20 ล้านวอน อาจต้องเสียภาษีแบบรวมรายได้ ควรสอบถามสำนักงานสรรพากรหรือนักบัญชีภาษี',savTblH:'ดอกเบี้ยตามจำนวนเดือนที่ฝาก',savThM:'เดือน',savThP:'เงินต้น',savThG:'ดอกเบี้ยก่อนภาษี',savThN:'หลังภาษี',savNote:'เป็นค่าประมาณ โดยสมมติว่าออมต้นเดือนและปัดดอกเบี้ยลงเป็นวอน ดอกเบี้ยพิเศษ การถอนก่อนกำหนด และวิธีคิดของแต่ละธนาคารอาจทำให้จำนวนจริงต่างออกไปเล็กน้อย อัตราภาษีต่างกันตามผลิตภัณฑ์ ควรสอบถามธนาคารก่อนเปิดบัญชี',enterSav:'กรอกจำนวนเงินและระยะเวลา',titles:{saving:'เครื่องคิดดอกเบี้ยเงินฝากและเงินออม · หลังหักภาษี | EasyCalc'}},
+ my:{tabSave:'စုဆောင်းငွေ',savH:'ငွေစုနှင့် ငွေပေါင်း အတိုးတွက်စက်',savLede:'တစ်ကြိမ်တည်းအပ်ငွေ သို့မဟုတ် လစဉ်စုငွေမှ အခွန်ဖြတ်ပြီးနောက် တကယ်ရမည့်ငွေကို တွက်ကြည့်ပါ။ ရိုးရိုးအတိုး၊ အတိုးပေါင်းထည့်အတိုးနှင့် အခွန်နှုန်းများကို နှိုင်းယှဉ်နိုင်သည်။',savKind:'ထုတ်ကုန်အမျိုးအစား',savDeposit:'အပ်ငွေ (တစ်ကြိမ်တည်း)',savSaving:'စုငွေ (လစဉ်)',savAmtD:'အပ်ငွေပမာဏ',savAmtS:'လစဉ်ထည့်ငွေ',savRate:'နှစ်စဉ်အတိုးနှုန်း (အခွန်မဖြတ်မီ)',savTerm:'ကာလ',savMethod:'အတိုးတွက်ချက်ပုံ',savSimple:'ရိုးရိုးအတိုး',savCompound:'လစဉ်အတိုးပေါင်းထည့်',savSimpleDesc:'အတိုးကို ကနဦးအရင်းပေါ်တွင်သာ တွက်သည်။ ပုံမှန်သတ်မှတ်ကာလအပ်ငွေနှင့် လစဉ်စုငွေများတွင် အသုံးများသည်။',savCompDesc:'လစဉ်အတိုးကို အရင်းထဲ ပေါင်းထည့်သဖြင့် အတိုးပေါ်တွင်လည်း အတိုးရသည်။ ကာလရှည်လေ ကွာခြားချက်ကြီးလေ ဖြစ်သည်။',savTax:'အတိုးအခွန်နှုန်း',savTaxGen:'ပုံမှန် 15.4%',savTaxFree:'အခွန်ကင်း 0%',savTaxHint:'ပုံမှန်အတိုးအခွန်သည် ဝင်ငွေခွန် 14% + ဒေသန္တရအခွန် 1.4% ဖြစ်သည်။ အခွန်နည်း သို့မဟုတ် အခွန်ကင်းထုတ်ကုန်များအတွက် နှုန်းကို ကိုယ်တိုင်ရိုက်ထည့်ပါ။',savResult:'ကာလပြည့်ရမည့်ငွေ (အခွန်ဖြတ်ပြီး၊ ခန့်မှန်း)',savPrinD:'အပ်ထားသောအရင်း',savPrinS:'စုစုပေါင်းထည့်ငွေအရင်း',savPeriod:'ကာလ',savMonthsV:'{0} လ',savGross:'အခွန်မဖြတ်မီအတိုး',savTaxLine:'အတိုးအခွန် ({0}%)',savNetInt:'အခွန်ဖြတ်ပြီးအတိုး',savYield:'အရင်းအပေါ် အခွန်ဖြတ်ပြီးအမြတ်နှုန်း',savLgN:'အခွန်ဖြတ်ပြီးအတိုး {0}%',savLgT:'အခွန် {0}%',savHalf:'လစဉ်စုငွေတွင် သင့်ငွေသည် ပျမ်းမျှအားဖြင့် ကာလ၏ ထက်ဝက်ခန့်သာ အပ်ထားရသည်။ တစ်နှစ်လျှင် {0}% ဖြစ်သော်လည်း ထည့်ငွေအရင်းအပေါ် အခွန်မဖြတ်မီ အမြတ်နှုန်းမှာ {1}% ခန့်သာ ရှိသည်။',savWarn:'ဤအတိုးတစ်ခုတည်းက ဝမ် သန်း 20 ကျော်နေသည်။ တစ်နှစ်အတွင်း ရသည့်အတိုးနှင့် အမြတ်ဝေစုပေါင်း ဝမ် သန်း 20 ကျော်ပါက ပေါင်းစည်းအခွန်ဆောင်ရနိုင်သည်။ အခွန်ရုံး သို့မဟုတ် အခွန်စာရင်းကိုင်ကို မေးပါ။',savTblH:'ထားသောလအရေအတွက်အလိုက် အတိုး',savThM:'လ',savThP:'အရင်း',savThG:'အခွန်မဖြတ်မီအတိုး',savThN:'အခွန်ဖြတ်ပြီး',savNote:'ဤသည်မှာ ခန့်မှန်းတွက်ချက်မှုဖြစ်ပြီး လစဉ်ငွေထည့်ခြင်းကို လဆန်းတွင်ပြုလုပ်ပြီး အတိုးကို ဝမ်အထိ ကျစေသည်ဟု ယူဆထားသည်။ အထူးအတိုးနှုန်း၊ ကာလမတိုင်မီထုတ်ခြင်းနှင့် ဘဏ်တစ်ခုချင်း၏တွက်နည်းတို့ကြောင့် အမှန်ပမာဏ အနည်းငယ်ကွာနိုင်သည်။ အခွန်နှုန်းသည် ထုတ်ကုန်အလိုက် ကွာသဖြင့် ဖွင့်မီ ဘဏ်တွင် မေးပါ။',enterSav:'ပမာဏနှင့် ကာလ ရိုက်ထည့်ပါ',titles:{saving:'ငွေစုနှင့် ငွေပေါင်း အတိုးတွက်စက် · အခွန်ဖြတ်ပြီး | EasyCalc'}}
+};for(const l in S){const tt=S[l].titles;delete S[l].titles;Object.assign(window.I18N[l],S[l]);Object.assign(window.I18N[l].titles,tt)}})();
 /* 큰 수 읽기 단위 / number words: [threshold, word]..., currency word */
 window.I18N_NUM={
  en:[[1e9,'billion'],[1e6,'million'],[1e3,'thousand'],'won'],
@@ -1097,12 +1172,12 @@ function setLang(l){
   const prev=lang;lang=l;store.set('lang',l);
   people.forEach((p,i)=>{if(p.name===T[prev].defPeople[i])p.name=T[l].defPeople[i]});
   items.forEach((it,i)=>{if(it.name===T[prev].defItems[i])it.name=T[l].defItems[i]});
-  applyLang();renderAll();calcLoan();calcSalary();calcSev();calcLeave();
+  applyLang();renderAll();calcLoan();calcSav();calcSalary();calcSev();calcLeave();
 }
 sel.onchange=()=>setLang(sel.value);
 
 /* ---------- tabs ---------- */
-const TABS=['salary','severance','leave','loan','dutch'];
+const TABS=['salary','severance','leave','loan','saving','dutch'];
 function showTab(x0){const x=TABS.includes(x0)?x0:'dutch';curTab=x;
   TABS.forEach(k=>{$(k).hidden=k!==x;$('tab-'+k).setAttribute('aria-selected',k===x)});store.set('tab',x);document.title=t('titles')[x]}
 TABS.forEach(k=>$('tab-'+k).onclick=()=>{if(onSite&&PAGE){if(k!==PAGE)location.href=base(lang)+k+'/';return}showTab(k);if(onSite)history.replaceState(null,'','#'+k)});
@@ -1226,6 +1301,58 @@ function calcLoan(){
   $('l-all').textContent=showAll?t('show12'):tf('showAll',n);$('l-all').hidden=n<=12;
 }
 
+/* ---------- 예·적금 / deposit & savings ---------- */
+let savKind='deposit',savComp='simple',savAll=false;
+/* amt: 예금=예치금, 적금=월 납입액(매달 첫날 납입), n: 개월, rate: 연 %, comp: simple|compound, taxPct: 총 세율 % */
+function savCalc(kind,amt,rate,n,comp,taxPct){
+  const i=rate/1200,pw=Math.pow(1+i,n),principal=kind==='saving'?amt*n:amt;
+  let g;
+  if(kind==='deposit')g=comp==='compound'?amt*(pw-1):amt*i*n;
+  else g=comp==='compound'?(i?amt*(pw-1)/i*(1+i)-principal:0):amt*i*n*(n+1)/2;
+  g=Math.floor(g+1e-6);
+  const tax=Math.floor(g*taxPct/100+1e-6);
+  return{principal,gross:g,tax,net:g-tax,maturity:principal+g-tax};
+}
+function calcSav(){
+  const amt=num($('g-amt').value),rate=Math.min(100,num($('g-rate').value)),tm=Math.floor(num($('g-term').value));
+  const n=Math.min(600,$('g-unit').value==='y'?tm*12:tm),tax=Math.min(100,num($('g-tax').value));
+  $('g-amt-l').textContent=t(savKind==='deposit'?'savAmtD':'savAmtS');
+  $('g-amt-kr').textContent=reading(amt);
+  $('g-c-desc').textContent=t(savComp==='simple'?'savSimpleDesc':'savCompDesc');
+  const warn=$('g-warn'),half=$('g-half');warn.hidden=true;half.hidden=true;
+  if(!amt||!n){$('g-big').innerHTML=bigM(0);$('g-big-s').textContent='';$('g-tag').textContent='';$('g-lines').innerHTML='';
+    $('g-split-n').style.width='0';$('g-split-t').style.width='0';$('g-lg-n').textContent='';$('g-lg-t').textContent='';
+    $('g-body').innerHTML=`<tr><td colspan="4" style="text-align:center;font-family:var(--f-body)">${esc(t('enterSav'))}</td></tr>`;$('g-all').hidden=true;return}
+  const r=savCalc(savKind,amt,rate,n,savComp,tax),taxTxt=String(+tax.toFixed(2));
+  $('g-tag').textContent=tf('savMonthsV',n);
+  $('g-big').innerHTML=bigM(r.maturity);$('g-big-s').textContent=reading(r.maturity);
+  $('g-lines').innerHTML=linesHTML([[t(savKind==='deposit'?'savPrinD':'savPrinS'),M(r.principal)],[t('savPeriod'),tf('savMonthsV',n)],
+    [t('savGross'),M(r.gross)],[tf('savTaxLine',taxTxt),'−'+M(r.tax)],[t('savNetInt'),M(r.net),'strong'],
+    [t('savYield'),(r.net/r.principal*100).toFixed(2)+'%']]);
+  const np=r.gross?r.net/r.gross*100:100;
+  $('g-split-n').style.width=np+'%';$('g-split-t').style.width=(100-np)+'%';
+  $('g-lg-n').textContent=tf('savLgN',np.toFixed(1));$('g-lg-t').textContent=tf('savLgT',(100-np).toFixed(1));
+  if(savKind==='saving'){half.textContent=tf('savHalf',String(rate),(r.gross/r.principal*100).toFixed(2));half.hidden=false}
+  if(r.gross>20000000){warn.textContent=t('savWarn');warn.hidden=false}
+  const cnt=savAll?n:Math.min(12,n),rows=[];
+  for(let k=1;k<=cnt;k++){const x=savCalc(savKind,amt,rate,k,savComp,tax);rows.push(`<tr><td>${k}</td><td>${won(x.principal)}</td><td>${won(x.gross)}</td><td>${won(x.net)}</td></tr>`)}
+  $('g-body').innerHTML=rows.join('');
+  $('g-all').textContent=savAll?t('show12'):tf('showAll',n);$('g-all').hidden=n<=12;
+}
+$('savKindSeg').onclick=e=>{const b=e.target.closest('[data-k]');if(!b)return;const k=b.dataset.k;
+  [...$('savKindSeg').children].forEach(c=>c.setAttribute('aria-pressed',c===b));
+  const el=$('g-amt'),dep='10,000,000',mon='500,000';  // 기본값 그대로일 때만 상품에 맞게 바꿈
+  if(k!==savKind&&el.value===(k==='saving'?dep:mon))el.value=k==='saving'?mon:dep;
+  savKind=k;calcSav()};
+$('savCompSeg').onclick=e=>{const b=e.target.closest('[data-c]');if(!b)return;savComp=b.dataset.c;
+  [...$('savCompSeg').children].forEach(c=>c.setAttribute('aria-pressed',c===b));calcSav()};
+$('g-amt').addEventListener('input',e=>{fmtInput(e.target);calcSav()});
+['g-rate','g-term','g-tax'].forEach(id=>$(id).addEventListener('input',calcSav));$('g-unit').onchange=calcSav;
+$('savChips').onclick=e=>{const b=e.target.closest('[data-gadd]');if(!b)return;const a=+b.dataset.gadd,el=$('g-amt');
+  el.value=a?(num(el.value)+a).toLocaleString('en-US'):'';calcSav();if(!a)el.focus()};
+$('savTaxChips').onclick=e=>{const b=e.target.closest('[data-tax]');if(!b)return;$('g-tax').value=b.dataset.tax;calcSav()};
+$('g-all').onclick=()=>{savAll=!savAll;calcSav()};
+
 /* ---------- 연봉 실수령 / take-home (2026.7 rates) ---------- */
 let sev=0,whr=100;
 const fl10=v=>Math.floor(v/10)*10;
@@ -1341,6 +1468,7 @@ const SHARE={
   salary:()=>({pay:num($('s-pay').value),free:num($('s-free').value),fam:num($('s-fam').value),kid:num($('s-kid').value),sev:sev,wh:whr}),
   severance:()=>({start:$('sv-start').value,end:$('sv-end').value,pay:num($('sv-pay').value),bonus:num($('sv-bonus').value),lpay:num($('sv-lpay').value)}),
   leave:()=>({start:$('lv-start').value,base:$('lv-base').value,wage:num($('lv-wage').value),unused:num($('lv-unused').value)}),
+  saving:()=>({kind:savKind,amt:num($('g-amt').value),rate:num($('g-rate').value),term:num($('g-term').value),unit:$('g-unit').value,c:savComp,tax:num($('g-tax').value)}),
   loan:()=>({amt:num($('l-amt').value),rate:num($('l-rate').value),term:num($('l-term').value),unit:$('l-unit').value,m:method}),
   dutch:()=>{const o={mode:mode,r:unit};
     if(mode==='simple'){o.total=num($('d-total').value);o.n=num($('d-people').value)}
@@ -1370,6 +1498,13 @@ function applyShared(tool){
     const tm=N('term',600);if(tm!==null)$('l-term').value=String(Math.floor(tm));
     if(['y','m'].includes(q.get('unit')))$('l-unit').value=q.get('unit');
     const m=q.get('m');if(['annuity','principal','bullet'].includes(m)){method=m;press($('methodSeg'),'data-m',m)}
+  }else if(tool==='saving'){
+    const k=q.get('kind');if(['deposit','saving'].includes(k)){savKind=k;press($('savKindSeg'),'data-k',k)}
+    const c=q.get('c');if(['simple','compound'].includes(c)){savComp=c;press($('savCompSeg'),'data-c',c)}
+    setN('g-amt','amt',1e12);const r=N('rate',100);if(r!==null)$('g-rate').value=String(r);
+    const tm=N('term',600);if(tm!==null)$('g-term').value=String(Math.floor(tm));
+    if(['y','m'].includes(q.get('unit')))$('g-unit').value=q.get('unit');
+    const tx=N('tax',100);if(tx!==null)$('g-tax').value=String(tx);
   }else if(tool==='dutch'){
     const r=N('r',1000);if([1,10,100,1000].includes(r)){unit=r;press($('roundChips'),'data-unit',r)}
     const ac=(q.get('acc')||'').trim().slice(0,60);if(ac)$('d-account').value=ac;
@@ -1400,7 +1535,7 @@ document.querySelectorAll('.sharebox').forEach(box=>{
 const h=location.hash.slice(1);
 showTab(TABS.includes(PAGE)?PAGE:TABS.includes(h)?h:(onSite?'salary':(store.get('tab')||'salary')));
 applyShared(curTab);
-applyLang();renderAll();calcLoan();calcSalary();calcSev();calcLeave();
+applyLang();renderAll();calcLoan();calcSav();calcSalary();calcSev();calcLeave();
 })();
 </script>
 

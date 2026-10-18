@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "เงินฝาก",
+   "url": "/th/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "หารบิล",
    "url": "/th/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

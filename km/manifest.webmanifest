@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "ប្រាក់សន្សំ",
+   "url": "/km/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "ចែកវិក្កយបត្រ",
    "url": "/km/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

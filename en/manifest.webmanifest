@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "Savings",
+   "url": "/en/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "Split bill",
    "url": "/en/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "Tiền gửi",
+   "url": "/vi/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "Chia tiền",
    "url": "/vi/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

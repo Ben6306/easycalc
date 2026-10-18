@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "बचत",
+   "url": "/ne/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "बिल बाँडफाँड",
    "url": "/ne/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

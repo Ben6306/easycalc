@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "စုဆောင်းငွေ",
+   "url": "/my/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "ငွေခွဲပေးရန်",
    "url": "/my/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

@@ -223,7 +223,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <select aria-label="Language / 언어" onchange="location.href=this.value"><option value="/guide/split-bill-fairly/" lang="ko" selected>한국어</option><option value="/en/" lang="en">English</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/zh/" lang="zh">简体中文</option><option value="/ne/" lang="ne">नेपाली</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/km/" lang="km">ខ្មែរ</option><option value="/uz/" lang="uz">Oʻzbekcha</option><option value="/th/" lang="th">ไทย</option><option value="/my/" lang="my">မြန်မာ</option></select>
     </label>
   </header>
-  <nav class="sitenav"><a href="/salary/">연봉 실수령</a><a href="/severance/">퇴직금</a><a href="/leave/">연차</a><a href="/loan/">대출이자</a><a href="/dutch/">더치페이</a><a href="/guide/" aria-current="page">가이드</a><a href="/about/">소개</a></nav>
+  <nav class="sitenav"><a href="/salary/">연봉 실수령</a><a href="/severance/">퇴직금</a><a href="/leave/">연차</a><a href="/loan/">대출이자</a><a href="/saving/">예·적금</a><a href="/dutch/">더치페이</a><a href="/guide/" aria-current="page">가이드</a><a href="/about/">소개</a></nav>
   <main class="page">
 <div class="crumb"><a href="/">홈</a> › <a href="/guide/">가이드</a></div>
 <article class="prose">
@@ -266,7 +266,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <p id="pwa-ios" class="pwa-ios" hidden>아이폰: 공유 버튼 → ‘홈 화면에 추가’를 누르면 앱처럼 쓸 수 있어요.</p></div>
 <script>(function(){
 var ok=/(^|\.)easycalc\.co\.kr$|^localhost$|^127\./.test(location.hostname);
-if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/", "/salary/", "/severance/", "/leave/", "/loan/", "/dutch/"]})}).catch(function(){})})}
+if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/", "/salary/", "/severance/", "/leave/", "/loan/", "/saving/", "/dutch/"]})}).catch(function(){})})}
 if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
 var b=document.getElementById('pwa-install'),ev=null;
 addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;b.hidden=false});

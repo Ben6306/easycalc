@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "存款",
+   "url": "/zh/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "AA分账",
    "url": "/zh/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [

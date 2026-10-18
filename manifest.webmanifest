@@ -72,6 +72,16 @@
    ]
   },
   {
+   "name": "예·적금",
+   "url": "/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "더치페이",
    "url": "/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
