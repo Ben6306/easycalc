@@ -35,7 +35,8 @@
 var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JQ5BBG87Z9';document.head.appendChild(s);
 window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());
 var m=(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)?'pwa':'browser';
-gtag('set','user_properties',{app_mode:m});gtag('config','G-JQ5BBG87Z9',{app_mode:m,site_lang:'uz'});})()</script>
+var u=location.search.replace(/^\?/,'').split('&').filter(function(x){return /^utm_/.test(x)}).join('&');
+gtag('set','user_properties',{app_mode:m});gtag('config','G-JQ5BBG87Z9',{app_mode:m,site_lang:'uz',page_location:location.origin+location.pathname+(u?'?'+u:'')});})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -169,6 +170,9 @@ td:first-child,th:first-child{text-align:center}
 tbody tr:nth-child(12n) td{border-bottom-color:var(--muted)}
 .note{font-size:12.5px;color:var(--muted);margin:0}
 footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
+.sharebox{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding-top:12px}
+.sharebox .btn{display:inline-flex;align-items:center;gap:8px}
+.sharelink{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:12.5px var(--f-num);padding:9px 10px}
 @media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
 @media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
 

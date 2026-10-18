@@ -36,7 +36,7 @@ self.addEventListener('fetch', e => {
   if (req.mode === 'navigate') {
     e.respondWith(
       fetch(req).then(res => {
-        if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
+        if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(url.origin + url.pathname, copy)); }  // 공유 링크의 ?입력값은 저장하지 않음
         return res;
       }).catch(() => caches.match(req, { ignoreSearch: true }).then(r => {
         if (r) return r;

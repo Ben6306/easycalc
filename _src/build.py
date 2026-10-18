@@ -82,7 +82,8 @@ try:
     js = re.search(r'<script>\s*/\*[^*]*번역[^*]*\*/\s*(.*?)</script>', calc, re.S).group(1)
     node = ("const window={};" + js + ";process.stdout.write(JSON.stringify({I18N:window.I18N,FONT:window.I18N_FONT},"
             "(k,v)=>typeof v==='function'?undefined:v))")
-    data = json.loads(subprocess.run(['node', '-e', node], capture_output=True, text=True, check=True).stdout)
+    # 코드가 길어도 되도록 인자(-e) 대신 표준입력으로 전달
+    data = json.loads(subprocess.run(['node', '-'], input=node, capture_output=True, text=True, check=True).stdout)
     json.dump(data, open(cache, 'w', encoding='utf-8'), ensure_ascii=False)
 except Exception as e:  # node가 없으면 마지막 캐시 사용
     print('node 실행 실패, 캐시 사용:', e, file=sys.stderr)
@@ -190,11 +191,13 @@ def head(l, title, desc, path, alts, extra=''):
 def ga_tag(l):
     # 실제 사이트 주소에서만 통계를 보냄 (내 컴퓨터 미리보기는 집계 안 됨)
     # app_mode: 홈 화면 앱으로 열었으면 'pwa', 브라우저면 'browser'
+    # page_location: 공유 링크의 ?입력값이 구글로 가지 않도록 utm_ 값만 남기고 주소를 정리
     return f'''<script>(function(){{if(!/(^|\\.)easycalc\\.co\\.kr$/.test(location.hostname))return;
 var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id={GA_ID}';document.head.appendChild(s);
 window.dataLayer=window.dataLayer||[];window.gtag=function(){{dataLayer.push(arguments)}};gtag('js',new Date());
 var m=(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)?'pwa':'browser';
-gtag('set','user_properties',{{app_mode:m}});gtag('config','{GA_ID}',{{app_mode:m,site_lang:'{l}'}});}})()</script>
+var u=location.search.replace(/^\\?/,'').split('&').filter(function(x){{return /^utm_/.test(x)}}).join('&');
+gtag('set','user_properties',{{app_mode:m}});gtag('config','{GA_ID}',{{app_mode:m,site_lang:'{l}',page_location:location.origin+location.pathname+(u?'?'+u:'')}});}})()</script>
 '''
 
 

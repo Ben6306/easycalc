@@ -35,7 +35,8 @@
 var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JQ5BBG87Z9';document.head.appendChild(s);
 window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());
 var m=(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)?'pwa':'browser';
-gtag('set','user_properties',{app_mode:m});gtag('config','G-JQ5BBG87Z9',{app_mode:m,site_lang:'my'});})()</script>
+var u=location.search.replace(/^\?/,'').split('&').filter(function(x){return /^utm_/.test(x)}).join('&');
+gtag('set','user_properties',{app_mode:m});gtag('config','G-JQ5BBG87Z9',{app_mode:m,site_lang:'my',page_location:location.origin+location.pathname+(u?'?'+u:'')});})()</script>
 <link id="font-my" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -170,6 +171,9 @@ td:first-child,th:first-child{text-align:center}
 tbody tr:nth-child(12n) td{border-bottom-color:var(--muted)}
 .note{font-size:12.5px;color:var(--muted);margin:0}
 footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
+.sharebox{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding-top:12px}
+.sharebox .btn{display:inline-flex;align-items:center;gap:8px}
+.sharelink{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:12.5px var(--f-num);padding:9px 10px}
 @media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
 @media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
 
@@ -288,6 +292,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <label class="lbl" for="d-share" data-t="shareLbl"></label>
       <textarea id="d-share" readonly></textarea>
       <div class="btnrow"><button class="btn" id="d-copy" data-t="copy"></button><span class="toast" id="d-toast" role="status"></span></div>
+      <div class="sharebox" data-share="dutch"><div class="btnrow"><button type="button" class="btn ghost shareBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span data-t="shareLink"></span></button><span class="toast" role="status"></span></div><input class="sharelink" readonly hidden aria-label="URL"><p class="note" data-t="shareNote"></p></div>
     </div>
   </section>
 
@@ -328,6 +333,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       </div>
       <div class="split" aria-hidden="true"><i id="split-p" style="background:var(--accent)"></i><i id="split-i" style="background:var(--interest)"></i></div>
       <div class="legend"><span style="--c:var(--accent)" id="lg-p"></span><span style="--c:var(--interest)" id="lg-i"></span></div>
+      <div class="sharebox" data-share="loan"><div class="btnrow"><button type="button" class="btn ghost shareBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span data-t="shareLink"></span></button><span class="toast" role="status"></span></div><input class="sharelink" readonly hidden aria-label="URL"><p class="note" data-t="shareNote"></p></div>
     </div>
 
     <div class="card">
@@ -390,6 +396,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <ul class="lines" id="s-lines"></ul>
       <div class="split" aria-hidden="true"><i id="s-split-n" style="background:var(--accent)"></i><i id="s-split-d" style="background:var(--interest)"></i></div>
       <div class="legend"><span style="--c:var(--accent)" id="s-lg-n"></span><span style="--c:var(--interest)" id="s-lg-d"></span></div>
+      <div class="sharebox" data-share="salary"><div class="btnrow"><button type="button" class="btn ghost shareBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span data-t="shareLink"></span></button><span class="toast" role="status"></span></div><input class="sharelink" readonly hidden aria-label="URL"><p class="note" data-t="shareNote"></p></div>
     </div>
 
     <div class="card">
@@ -442,6 +449,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <ul class="lines" id="sv-lines"></ul>
       <hr class="dash">
       <p class="note" data-t="svFormula"></p>
+      <div class="sharebox" data-share="severance"><div class="btnrow"><button type="button" class="btn ghost shareBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span data-t="shareLink"></span></button><span class="toast" role="status"></span></div><input class="sharelink" readonly hidden aria-label="URL"><p class="note" data-t="shareNote"></p></div>
     </div>
     <div class="card"><p class="note" data-t="svNote"></p></div>
   </section>
@@ -469,6 +477,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <div><div class="lbl" data-t="lvThis"></div><div class="big" id="lv-big">0</div><div class="hint" id="lv-big-s"></div></div>
       <hr class="dash">
       <ul class="lines" id="lv-lines"></ul>
+      <div class="sharebox" data-share="leave"><div class="btnrow"><button type="button" class="btn ghost shareBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span data-t="shareLink"></span></button><span class="toast" role="status"></span></div><input class="sharelink" readonly hidden aria-label="URL"><p class="note" data-t="shareNote"></p></div>
     </div>
 
     <div class="card">
@@ -508,7 +517,7 @@ ko:{langName:'한국어',
  dutchH:'더치페이 계산기',dutchLede:'총액을 똑같이 나누거나, 1차·2차처럼 항목별로 참석한 사람만 나눌 수 있어요.',
  modeSimple:'똑같이 나누기',modeItems:'항목별 나누기',total:'총 금액',people:'인원',attendees:'참석자',
  itemsLbl:'항목 (참석한 사람만 눌러 두세요)',addItem:'+ 항목 추가',addPerson:'+ 사람 추가',roundLbl:'끝자리 처리 (올림)',
- account:'받을 계좌 (선택, 공유 문구에만 들어가요)',accountPh:'예: 토스뱅크 홍길동',receipt:'정산 영수증',
+ account:'받을 계좌 (선택, 공유 문구와 공유 링크에 들어가요)',accountPh:'예: 토스뱅크 홍길동',receipt:'정산 영수증',
  shareLbl:'단톡방에 붙여넣을 문구',copy:'문구 복사',copied:'복사했어요',selected:'선택됐어요. 길게 눌러 복사하세요',
  perPerson:'1인당 ({0}명)',totalAmt:'총 금액',exact:'정확히 나누면',collected:'걷는 돈 합계',leftover:'총무에게 남는 돈',
  unassigned:'참석자 없는 항목',noName:'이름 없음',friend:'친구{0}',itemN:'{0}차',pplN:'{0}명',
@@ -546,7 +555,7 @@ en:{langName:'English',
  dutchH:'Bill Split Calculator',dutchLede:'Split a total evenly, or split item by item among only the people who joined each one.',
  modeSimple:'Split evenly',modeItems:'Split by item',total:'Total amount',people:'Number of people',attendees:'People',
  itemsLbl:'Items (tap who joined each one)',addItem:'+ Add item',addPerson:'+ Add person',roundLbl:'Round each share up to',
- account:'Where to pay (optional, only used in the message)',accountPh:'e.g. Toss Bank, Kim Minsu',receipt:'Receipt',
+ account:'Where to pay (optional, included in the message and share link)',accountPh:'e.g. Toss Bank, Kim Minsu',receipt:'Receipt',
  shareLbl:'Message to paste in your group chat',copy:'Copy message',copied:'Copied',selected:'Selected. Press and hold to copy.',
  perPerson:'Per person ({0})',totalAmt:'Total',exact:'Exact split',collected:'Total collected',leftover:'Left over for the payer',
  unassigned:'Items with nobody selected',noName:'No name',friend:'Friend {0}',itemN:'Item {0}',pplN:n=>n+(n===1?' person':' people'),
@@ -584,7 +593,7 @@ vi:{langName:'Tiếng Việt',
  dutchH:'Máy tính chia tiền',dutchLede:'Chia đều tổng số tiền, hoặc chia theo từng khoản chỉ cho những người đã tham gia khoản đó.',
  modeSimple:'Chia đều',modeItems:'Chia theo khoản',total:'Tổng số tiền',people:'Số người',attendees:'Người tham gia',
  itemsLbl:'Các khoản (chạm để chọn người đã tham gia từng khoản)',addItem:'+ Thêm khoản',addPerson:'+ Thêm người',roundLbl:'Làm tròn lên phần của mỗi người',
- account:'Tài khoản nhận tiền (không bắt buộc, chỉ dùng trong tin nhắn)',accountPh:'VD: Toss Bank, Nguyễn Văn An',receipt:'Hóa đơn',
+ account:'Tài khoản nhận tiền (không bắt buộc, có trong tin nhắn và liên kết chia sẻ)',accountPh:'VD: Toss Bank, Nguyễn Văn An',receipt:'Hóa đơn',
  shareLbl:'Tin nhắn để dán vào nhóm chat',copy:'Sao chép tin nhắn',copied:'Đã sao chép',selected:'Đã chọn. Nhấn giữ để sao chép.',
  perPerson:'Mỗi người ({0} người)',totalAmt:'Tổng cộng',exact:'Chia chính xác',collected:'Tổng tiền thu',leftover:'Tiền dư cho người trả',
  unassigned:'Khoản chưa chọn người',noName:'Chưa có tên',friend:'Bạn {0}',itemN:'Khoản {0}',pplN:'{0} người',
@@ -622,7 +631,7 @@ zh:{langName:'简体中文',
  dutchH:'AA分账计算器',dutchLede:'可以平均分摊总额，也可以按项目只在参加的人之间分摊。',
  modeSimple:'平均分摊',modeItems:'按项目分摊',total:'总金额',people:'人数',attendees:'参加者',
  itemsLbl:'项目（点选每项的参加者）',addItem:'+ 添加项目',addPerson:'+ 添加人',roundLbl:'每人金额向上取整到',
- account:'收款账户（选填，仅用于分享消息）',accountPh:'例如：Toss Bank 张伟',receipt:'账单',
+ account:'收款账户（选填，会包含在分享消息和分享链接中）',accountPh:'例如：Toss Bank 张伟',receipt:'账单',
  shareLbl:'复制到群聊的消息',copy:'复制消息',copied:'已复制',selected:'已选中，请长按复制。',
  perPerson:'每人（{0}人）',totalAmt:'合计',exact:'精确平分',collected:'实收合计',leftover:'付款人多收的金额',
  unassigned:'未选择参加者的项目',noName:'未命名',friend:'朋友{0}',itemN:'第{0}项',pplN:'{0}人',
@@ -660,7 +669,7 @@ ne:{langName:'नेपाली',
  dutchH:'बिल बाँडफाँड क्याल्कुलेटर',dutchLede:'कुल रकम बराबर बाँड्नुहोस्, वा हरेक खर्च त्यसमा सहभागी भएकाहरूबीच मात्र बाँड्नुहोस्।',
  modeSimple:'बराबर बाँड्नुहोस्',modeItems:'खर्च अनुसार बाँड्नुहोस्',total:'कुल रकम',people:'मानिसको संख्या',attendees:'सहभागीहरू',
  itemsLbl:'खर्चहरू (हरेकमा को-को सहभागी थिए छान्नुहोस्)',addItem:'+ खर्च थप्नुहोस्',addPerson:'+ मानिस थप्नुहोस्',roundLbl:'प्रत्येकको भाग माथि मिलाउनुहोस्',
- account:'पैसा पठाउने खाता (ऐच्छिक, सन्देशमा मात्र प्रयोग हुन्छ)',accountPh:'जस्तै: Toss Bank, राम श्रेष्ठ',receipt:'बिल',
+ account:'पैसा पठाउने खाता (ऐच्छिक, सन्देश र साझा लिङ्कमा समावेश हुन्छ)',accountPh:'जस्तै: Toss Bank, राम श्रेष्ठ',receipt:'बिल',
  shareLbl:'ग्रुप च्याटमा पेस्ट गर्ने सन्देश',copy:'सन्देश कपी गर्नुहोस्',copied:'कपी भयो',selected:'छानियो। कपी गर्न थिचिराख्नुहोस्।',
  perPerson:'प्रति व्यक्ति ({0} जना)',totalAmt:'जम्मा',exact:'ठ्याक्कै बाँड्दा',collected:'जम्मा उठेको रकम',leftover:'तिर्ने व्यक्तिलाई बचेको रकम',
  unassigned:'कोही नछानिएका खर्च',noName:'नाम छैन',friend:'साथी {0}',itemN:'खर्च {0}',pplN:'{0} जना',
@@ -698,7 +707,7 @@ id:{langName:'Bahasa Indonesia',
  dutchH:'Kalkulator Bagi Tagihan',dutchLede:'Bagi total secara rata, atau bagi per item hanya di antara orang yang ikut di item itu.',
  modeSimple:'Bagi rata',modeItems:'Bagi per item',total:'Jumlah total',people:'Jumlah orang',attendees:'Peserta',
  itemsLbl:'Item (pilih siapa saja yang ikut di tiap item)',addItem:'+ Tambah item',addPerson:'+ Tambah orang',roundLbl:'Bulatkan bagian tiap orang ke atas ke',
- account:'Rekening tujuan (opsional, hanya dipakai di pesan)',accountPh:'contoh: Toss Bank, Budi Santoso',receipt:'Struk',
+ account:'Rekening tujuan (opsional, disertakan di pesan dan tautan bagikan)',accountPh:'contoh: Toss Bank, Budi Santoso',receipt:'Struk',
  shareLbl:'Pesan untuk ditempel di grup chat',copy:'Salin pesan',copied:'Tersalin',selected:'Sudah dipilih. Tekan lama untuk menyalin.',
  perPerson:'Per orang ({0} orang)',totalAmt:'Total',exact:'Jika dibagi persis',collected:'Total terkumpul',leftover:'Sisa untuk yang membayar',
  unassigned:'Item tanpa peserta',noName:'Tanpa nama',friend:'Teman {0}',itemN:'Item {0}',pplN:'{0} orang',
@@ -736,7 +745,7 @@ km:{langName:'ខ្មែរ',
  dutchH:'ម៉ាស៊ីនគិតចែកវិក្កយបត្រ',dutchLede:'ចែកចំនួនសរុបស្មើៗគ្នា ឬចែកតាមមុខចំណាយ ដោយរាប់តែអ្នកដែលបានចូលរួមក្នុងមុខនោះប៉ុណ្ណោះ។',
  modeSimple:'ចែកស្មើ',modeItems:'ចែកតាមមុខចំណាយ',total:'ចំនួនទឹកប្រាក់សរុប',people:'ចំនួនមនុស្ស',attendees:'អ្នកចូលរួម',
  itemsLbl:'មុខចំណាយ (ជ្រើសអ្នកដែលចូលរួមក្នុងមុខនីមួយៗ)',addItem:'+ បន្ថែមមុខចំណាយ',addPerson:'+ បន្ថែមមនុស្ស',roundLbl:'បង្គត់ចំណែកម្នាក់ៗឡើងទៅ',
- account:'គណនីទទួលប្រាក់ (ស្រេចចិត្ត ប្រើតែក្នុងសារ)',accountPh:'ឧ. Toss Bank, សុខ ដារ៉ា',receipt:'វិក្កយបត្រ',
+ account:'គណនីទទួលប្រាក់ (ស្រេចចិត្ត មាននៅក្នុងសារ និងតំណចែករំលែក)',accountPh:'ឧ. Toss Bank, សុខ ដារ៉ា',receipt:'វិក្កយបត្រ',
  shareLbl:'សារសម្រាប់បិទភ្ជាប់ក្នុងក្រុមឆាត',copy:'ចម្លងសារ',copied:'បានចម្លង',selected:'បានជ្រើសរើស។ ចុចឱ្យយូរដើម្បីចម្លង។',
  perPerson:'ម្នាក់ៗ ({0} នាក់)',totalAmt:'សរុប',exact:'បើចែកត្រឹមត្រូវ',collected:'ប្រាក់ប្រមូលបានសរុប',leftover:'ប្រាក់សល់សម្រាប់អ្នកបង់',
  unassigned:'មុខចំណាយដែលគ្មានអ្នកចូលរួម',noName:'គ្មានឈ្មោះ',friend:'មិត្ត {0}',itemN:'មុខទី {0}',pplN:'{0} នាក់',
@@ -774,7 +783,7 @@ uz:{langName:'Oʻzbekcha',
  dutchH:'Hisobni boʻlish kalkulyatori',dutchLede:'Umumiy summani teng boʻling yoki har bir xarajatni faqat unda qatnashganlar orasida boʻling.',
  modeSimple:'Teng boʻlish',modeItems:'Xarajat boʻyicha',total:'Umumiy summa',people:'Odamlar soni',attendees:'Ishtirokchilar',
  itemsLbl:'Xarajatlar (har birida kim qatnashganini belgilang)',addItem:'+ Xarajat qoʻshish',addPerson:'+ Odam qoʻshish',roundLbl:'Har bir ulushni yuqoriga yaxlitlash',
- account:'Pul oʻtkaziladigan hisob raqam (ixtiyoriy, faqat xabarda ishlatiladi)',accountPh:'masalan: Toss Bank, Aziz Karimov',receipt:'Chek',
+ account:'Pul oʻtkaziladigan hisob raqam (ixtiyoriy, xabar va ulashish havolasiga kiritiladi)',accountPh:'masalan: Toss Bank, Aziz Karimov',receipt:'Chek',
  shareLbl:'Guruh chatiga joylash uchun xabar',copy:'Xabarni nusxalash',copied:'Nusxalandi',selected:'Belgilandi. Nusxalash uchun bosib turing.',
  perPerson:'Har bir kishiga ({0} kishi)',totalAmt:'Jami',exact:'Aniq boʻlinganda',collected:'Yigʻilgan jami',leftover:'Toʻlovchiga qoladigan ortiqcha',
  unassigned:'Ishtirokchi tanlanmagan xarajatlar',noName:'Nomsiz',friend:'Doʻst {0}',itemN:'Xarajat {0}',pplN:'{0} kishi',
@@ -812,7 +821,7 @@ th:{langName:'ไทย',
  dutchH:'เครื่องคิดเลขหารบิล',dutchLede:'หารยอดรวมเท่าๆ กัน หรือหารตามรายการเฉพาะคนที่ร่วมในรายการนั้น',
  modeSimple:'หารเท่ากัน',modeItems:'หารตามรายการ',total:'ยอดรวม',people:'จำนวนคน',attendees:'ผู้ร่วม',
  itemsLbl:'รายการ (แตะเลือกคนที่ร่วมในแต่ละรายการ)',addItem:'+ เพิ่มรายการ',addPerson:'+ เพิ่มคน',roundLbl:'ปัดส่วนของแต่ละคนขึ้นเป็น',
- account:'บัญชีรับเงิน (ไม่บังคับ ใช้ในข้อความเท่านั้น)',accountPh:'เช่น Toss Bank, สมชาย ใจดี',receipt:'ใบเสร็จ',
+ account:'บัญชีรับเงิน (ไม่บังคับ จะอยู่ในข้อความและลิงก์แชร์)',accountPh:'เช่น Toss Bank, สมชาย ใจดี',receipt:'ใบเสร็จ',
  shareLbl:'ข้อความสำหรับวางในแชทกลุ่ม',copy:'คัดลอกข้อความ',copied:'คัดลอกแล้ว',selected:'เลือกแล้ว กดค้างเพื่อคัดลอก',
  perPerson:'ต่อคน ({0} คน)',totalAmt:'รวม',exact:'ถ้าหารพอดี',collected:'ยอดที่เก็บได้',leftover:'เงินที่เหลือให้คนจ่าย',
  unassigned:'รายการที่ไม่มีผู้ร่วม',noName:'ไม่มีชื่อ',friend:'เพื่อน {0}',itemN:'รายการ {0}',pplN:'{0} คน',
@@ -850,7 +859,7 @@ my:{langName:'မြန်မာ',
  dutchH:'ငွေခွဲပေး တွက်စက်',dutchLede:'စုစုပေါင်းငွေကို တန်းတူခွဲနိုင်သလို၊ စရိတ်တစ်ခုချင်းစီကို ပါဝင်သူများကြားတွင်သာ ခွဲနိုင်သည်။',
  modeSimple:'တန်းတူခွဲရန်',modeItems:'စရိတ်အလိုက်ခွဲရန်',total:'စုစုပေါင်းငွေ',people:'လူဦးရေ',attendees:'ပါဝင်သူများ',
  itemsLbl:'စရိတ်များ (တစ်ခုချင်းစီတွင် ပါဝင်သူကို ရွေးပါ)',addItem:'+ စရိတ်ထည့်ရန်',addPerson:'+ လူထည့်ရန်',roundLbl:'တစ်ဦးချင်းဝေစုကို အပေါ်သို့ ပြည့်ကိန်းယူရန်',
- account:'ငွေလွှဲရမည့်အကောင့် (မဖြစ်မနေမဟုတ်၊ စာတိုတွင်သာ သုံးသည်)',accountPh:'ဥပမာ - Toss Bank, အောင်ကျော်',receipt:'ငွေစာရင်း',
+ account:'ငွေလွှဲရမည့်အကောင့် (မဖြစ်မနေမဟုတ်၊ စာတိုနှင့် မျှဝေလင့်ခ်တွင် ပါဝင်သည်)',accountPh:'ဥပမာ - Toss Bank, အောင်ကျော်',receipt:'ငွေစာရင်း',
  shareLbl:'အုပ်စုချက်တွင် ကူးထည့်ရန် စာတို',copy:'စာတိုကို ကူးယူရန်',copied:'ကူးယူပြီးပါပြီ',selected:'ရွေးပြီးပါပြီ။ ကူးယူရန် ဖိထားပါ။',
  perPerson:'တစ်ဦးလျှင် ({0} ယောက်)',totalAmt:'စုစုပေါင်း',exact:'အတိအကျခွဲလျှင်',collected:'ကောက်ခံရငွေ စုစုပေါင်း',leftover:'ပေးချေသူထံ ပိုကျန်ငွေ',
  unassigned:'ပါဝင်သူ မရွေးရသေးသော စရိတ်',noName:'အမည်မရှိ',friend:'သူငယ်ချင်း {0}',itemN:'စရိတ် {0}',pplN:'{0} ယောက်',
@@ -999,6 +1008,19 @@ my:{tabSev:'အလုပ်ထွက်ထောက်ပံ့ငွေ',svH:'�
 };for(const l in X){const tt=X[l].titles;delete X[l].titles;Object.assign(window.I18N[l],X[l]);Object.assign(window.I18N[l].titles,tt)}})();
 /* 간이세액표 적용 문구 / withholding-table strings */
 (function(){const Y={"ko": {"whRate": "소득세 원천징수 비율", "whHint": "80%면 매달 덜 떼고 연말정산 환급이 줄어듭니다. 1년 세금 총액은 같습니다.", "itax": "소득세", "ltax": "지방소득세", "netEst": "월 실수령액", "howNote": "소득세는 국세청 근로소득 간이세액표(2026년 3월 1일 시행)에서 월급여액(비과세 제외)과 부양가족 수로 찾은 금액입니다. 8~20세 자녀 공제와 원천징수 비율(80·100·120%)도 반영했습니다. 매달 떼는 세금은 미리 내는 금액이라, 실제 1년 세금과의 차이는 이듬해 연말정산에서 환급 또는 추가 납부로 정리됩니다."}, "en": {"whRate": "Income tax withholding rate", "whHint": "At 80% less is withheld each month and your year-end refund shrinks. Your total annual tax is the same.", "itax": "Income tax", "ltax": "Local income tax", "netEst": "Monthly take-home", "howNote": "Income tax is taken from the National Tax Service withholding table (effective March 1, 2026) using your monthly pay excluding tax-free items and your number of dependents, including the deduction for children aged 8–20 and your chosen withholding rate (80%, 100% or 120%). Monthly withholding is a prepayment; the difference from your actual annual tax is settled in the year-end tax settlement."}, "vi": {"whRate": "Tỷ lệ khấu trừ thuế thu nhập", "whHint": "Chọn 80% thì mỗi tháng bị trừ ít hơn và tiền hoàn thuế cuối năm giảm. Tổng thuế cả năm không đổi.", "itax": "Thuế thu nhập", "ltax": "Thuế thu nhập địa phương", "netEst": "Lương thực nhận hằng tháng", "howNote": "Thuế thu nhập được lấy từ bảng khấu trừ thuế giản lược của Cục Thuế Quốc gia (áp dụng từ 1/3/2026) theo lương tháng (không gồm khoản miễn thuế) và số người phụ thuộc, có tính khoản giảm cho con 8–20 tuổi và tỷ lệ khấu trừ bạn chọn (80%, 100% hoặc 120%). Thuế khấu trừ hằng tháng là khoản nộp trước; phần chênh lệch với thuế thực tế cả năm sẽ được điều chỉnh khi quyết toán thuế cuối năm."}, "zh": {"whRate": "所得税扣缴比例", "whHint": "选择80%时每月少扣一些，年末退税也相应减少。全年税款总额不变。", "itax": "所得税", "ltax": "地方所得税", "netEst": "每月实发工资", "howNote": "所得税按照国税厅工资所得简易税额表（2026年3月1日起施行），根据月工资（不含免税项目）和抚养家属人数查得，并反映8–20岁子女扣除和您选择的扣缴比例（80%、100%或120%）。每月代扣的税款属于预缴，与全年实际税额的差额在年末结算时多退少补。"}, "ne": {"whRate": "आयकर कट्टी दर", "whHint": "80% छान्दा हरेक महिना कम कट्टी हुन्छ र वर्षान्त फिर्ता कम हुन्छ। वार्षिक कुल कर उस्तै रहन्छ।", "itax": "आयकर", "ltax": "स्थानीय आयकर", "netEst": "मासिक हातमा आउने तलब", "howNote": "आयकर राष्ट्रिय कर सेवाको सरल कर कट्टी तालिका (1 मार्च 2026 देखि लागू) बाट मासिक तलब (करमुक्त रकम बाहेक) र आश्रित संख्या अनुसार लिइएको हो, जसमा 8–20 वर्षका छोराछोरीको कटौती र तपाईंले छानेको कट्टी दर (80%, 100% वा 120%) पनि समावेश छ। मासिक कट्टी अग्रिम भुक्तानी हो; वास्तविक वार्षिक करसँगको फरक वर्षान्त कर मिलानमा मिलाइन्छ।"}, "id": {"whRate": "Tarif potongan pajak penghasilan", "whHint": "Dengan 80%, potongan tiap bulan lebih kecil dan pengembalian akhir tahun berkurang. Total pajak setahun tetap sama.", "itax": "Pajak penghasilan", "ltax": "Pajak penghasilan daerah", "netEst": "Gaji bersih bulanan", "howNote": "Pajak penghasilan diambil dari tabel potongan pajak sederhana Badan Pajak Nasional (berlaku 1 Maret 2026) berdasarkan gaji bulanan tanpa komponen bebas pajak dan jumlah tanggungan, termasuk pengurangan untuk anak usia 8–20 tahun dan tarif potongan yang Anda pilih (80%, 100%, atau 120%). Potongan bulanan adalah pembayaran di muka; selisihnya dengan pajak tahunan yang sebenarnya diselesaikan saat penyelesaian pajak akhir tahun."}, "km": {"whRate": "អត្រាកាត់ពន្ធលើប្រាក់ចំណូល", "whHint": "បើជ្រើស 80% ការកាត់ប្រចាំខែតិចជាង ហើយប្រាក់សងវិញចុងឆ្នាំក៏តិចដែរ។ ពន្ធសរុបប្រចាំឆ្នាំនៅដដែល។", "itax": "ពន្ធលើប្រាក់ចំណូល", "ltax": "ពន្ធលើប្រាក់ចំណូលមូលដ្ឋាន", "netEst": "ប្រាក់ខែទទួលបានពិតប្រចាំខែ", "howNote": "ពន្ធលើប្រាក់ចំណូលត្រូវបានយកពីតារាងកាត់ពន្ធសាមញ្ញរបស់សេវាពន្ធដារជាតិ (អនុវត្តចាប់ពីថ្ងៃទី 1 ខែមីនា ឆ្នាំ 2026) តាមប្រាក់ខែប្រចាំខែ (មិនរួមប្រាក់រួចពន្ធ) និងចំនួនអ្នកនៅក្នុងបន្ទុក ដោយរួមទាំងការកាត់សម្រាប់កូនអាយុ 8–20 ឆ្នាំ និងអត្រាកាត់ពន្ធដែលអ្នកជ្រើស (80%, 100% ឬ 120%)។ ការកាត់ពន្ធប្រចាំខែគឺជាការបង់ទុកមុន ហើយភាពខុសគ្នាជាមួយពន្ធប្រចាំឆ្នាំពិតប្រាកដ នឹងត្រូវទូទាត់នៅពេលទូទាត់ពន្ធចុងឆ្នាំ។"}, "uz": {"whRate": "Daromad soligʻi ushlab qolish foizi", "whHint": "80% tanlansa, har oy kamroq ushlanadi va yil oxiridagi qaytim kamayadi. Yillik soliq jami oʻzgarmaydi.", "itax": "Daromad soligʻi", "ltax": "Mahalliy daromad soligʻi", "netEst": "Oylik qoʻlga tegadigan maosh", "howNote": "Daromad soligʻi Milliy soliq xizmatining soddalashtirilgan ushlab qolish jadvalidan (2026-yil 1-martdan amalda) oylik maosh (soliqdan ozod summalarsiz) va qaramogʻidagilar soni boʻyicha olinadi, 8–20 yoshli farzandlar uchun chegirma va siz tanlagan ushlab qolish foizi (80%, 100% yoki 120%) ham hisobga olinadi. Oylik ushlanma oldindan toʻlov boʻlib, haqiqiy yillik soliq bilan farqi yil yakunidagi soliq hisob-kitobida toʻgʻrilanadi."}, "th": {"whRate": "อัตราหักภาษีเงินได้ ณ ที่จ่าย", "whHint": "ถ้าเลือก 80% จะถูกหักน้อยลงทุกเดือน และเงินคืนภาษีตอนสิ้นปีจะลดลง ภาษีรวมทั้งปีเท่าเดิม", "itax": "ภาษีเงินได้", "ltax": "ภาษีเงินได้ท้องถิ่น", "netEst": "เงินเดือนสุทธิต่อเดือน", "howNote": "ภาษีเงินได้นำมาจากตารางหักภาษี ณ ที่จ่ายแบบง่ายของกรมสรรพากรแห่งชาติเกาหลี (มีผล 1 มีนาคม 2026) ตามเงินเดือนต่อเดือน (ไม่รวมส่วนที่ไม่ต้องเสียภาษี) และจำนวนผู้อยู่ในอุปการะ รวมการลดหย่อนสำหรับบุตรอายุ 8–20 ปี และอัตราหักภาษีที่คุณเลือก (80%, 100% หรือ 120%) ภาษีที่หักทุกเดือนเป็นการจ่ายล่วงหน้า ส่วนต่างกับภาษีจริงทั้งปีจะปรับตอนปรับภาษีสิ้นปี"}, "my": {"whRate": "ဝင်ငွေခွန် နုတ်ယူနှုန်း", "whHint": "80% ရွေးပါက လစဉ် နုတ်ယူငွေ နည်းပြီး နှစ်ကုန် ပြန်အမ်းငွေ လျော့မည်။ နှစ်စဉ် စုစုပေါင်းအခွန် မပြောင်းပါ။", "itax": "ဝင်ငွေခွန်", "ltax": "ဒေသဆိုင်ရာ ဝင်ငွေခွန်", "netEst": "လစဉ် လက်ခံရလစာ", "howNote": "ဝင်ငွေခွန်ကို အမျိုးသားအခွန်ဌာန၏ ရိုးရှင်းသော အခွန်နုတ်ယူမှုဇယား (2026 မတ်လ 1 ရက်မှ စတင်အသက်ဝင်) မှ လစဉ်လစာ (အခွန်ကင်းငွေ မပါ) နှင့် မှီခိုသူ အရေအတွက်အလိုက် ယူထားပြီး အသက် 8–20 နှစ် သားသမီး နုတ်ယူခွင့်နှင့် သင်ရွေးသော နုတ်ယူနှုန်း (80%, 100% သို့မဟုတ် 120%) ကိုပါ ထည့်တွက်ထားသည်။ လစဉ်နုတ်ယူငွေသည် ကြိုတင်ပေးချေမှု ဖြစ်ပြီး အမှန်တကယ် နှစ်စဉ်အခွန်နှင့် ကွာခြားချက်ကို နှစ်ကုန် အခွန်စာရင်းရှင်းချိန်တွင် ညှိသည်။"}};for(const l in Y)Object.assign(window.I18N[l],Y[l])})();
+/* 결과 링크 공유 문구 / share-link strings */
+(function(){const S={
+ ko:{shareLink:'결과 링크 공유',linkCopied:'링크를 복사했어요',linkManual:'아래 링크를 길게 눌러 복사하세요',shareNote:'링크에 지금 입력한 값이 들어 있어요. 받는 사람이 열면 같은 결과를 볼 수 있어요.'},
+ en:{shareLink:'Share result link',linkCopied:'Link copied',linkManual:'Press and hold the link below to copy',shareNote:'The link contains the values you entered. Whoever opens it sees the same result.'},
+ vi:{shareLink:'Chia sẻ liên kết kết quả',linkCopied:'Đã sao chép liên kết',linkManual:'Nhấn giữ liên kết bên dưới để sao chép',shareNote:'Liên kết chứa các giá trị bạn đã nhập. Người mở sẽ thấy cùng kết quả.'},
+ zh:{shareLink:'分享结果链接',linkCopied:'链接已复制',linkManual:'长按下方链接进行复制',shareNote:'链接中包含您输入的数值，对方打开后会看到相同的结果。'},
+ ne:{shareLink:'नतिजाको लिङ्क साझा गर्नुहोस्',linkCopied:'लिङ्क कपी भयो',linkManual:'तलको लिङ्क थिचिराखेर कपी गर्नुहोस्',shareNote:'लिङ्कमा तपाईंले हालेका मानहरू समावेश छन्। खोल्ने व्यक्तिले उही नतिजा देख्नेछ।'},
+ id:{shareLink:'Bagikan tautan hasil',linkCopied:'Tautan disalin',linkManual:'Tekan lama tautan di bawah untuk menyalin',shareNote:'Tautan berisi angka yang Anda masukkan. Siapa pun yang membukanya akan melihat hasil yang sama.'},
+ km:{shareLink:'ចែករំលែកតំណលទ្ធផល',linkCopied:'បានចម្លងតំណ',linkManual:'ចុចលើតំណខាងក្រោមឱ្យជាប់ ដើម្បីចម្លង',shareNote:'តំណមានតម្លៃដែលអ្នកបានបញ្ចូល។ អ្នកដែលបើកនឹងឃើញលទ្ធផលដូចគ្នា។'},
+ uz:{shareLink:'Natija havolasini ulashish',linkCopied:'Havola nusxalandi',linkManual:'Nusxalash uchun quyidagi havolani bosib turing',shareNote:'Havolada siz kiritgan qiymatlar bor. Ochgan kishi bir xil natijani koʻradi.'},
+ th:{shareLink:'แชร์ลิงก์ผลลัพธ์',linkCopied:'คัดลอกลิงก์แล้ว',linkManual:'กดลิงก์ด้านล่างค้างไว้เพื่อคัดลอก',shareNote:'ลิงก์มีค่าที่คุณกรอกอยู่ ผู้ที่เปิดจะเห็นผลลัพธ์เดียวกัน'},
+ my:{shareLink:'ရလဒ်လင့်ခ်ကို မျှဝေရန်',linkCopied:'လင့်ခ်ကို ကူးယူပြီးပါပြီ',linkManual:'ကူးယူရန် အောက်ပါလင့်ခ်ကို ဖိထားပါ',shareNote:'လင့်ခ်တွင် သင်ထည့်ထားသော တန်ဖိုးများ ပါဝင်သည်။ ဖွင့်သူသည် ရလဒ်တူကို မြင်ရမည်။'}
+};for(const l in S)Object.assign(window.I18N[l],S[l])})();
 /* 큰 수 읽기 단위 / number words: [threshold, word]..., currency word */
 window.I18N_NUM={
  en:[[1e9,'billion'],[1e6,'million'],[1e3,'thousand'],'won'],
@@ -1072,7 +1094,7 @@ const PAGE=document.documentElement.dataset.page||'';
 const base=l=>l==='ko'?'/':'/'+l+'/';
 function setLang(l){
   if(l===lang||!LANGS.includes(l))return;
-  if(onSite){location.href=base(l)+(TABS.includes(PAGE)?PAGE+'/':'');return}
+  if(onSite){location.href=base(l)+(TABS.includes(PAGE)?PAGE+'/'+location.search:'');return}
   const prev=lang;lang=l;store.set('lang',l);
   people.forEach((p,i)=>{if(p.name===T[prev].defPeople[i])p.name=T[l].defPeople[i]});
   items.forEach((it,i)=>{if(it.name===T[prev].defItems[i])it.name=T[l].defItems[i]});
@@ -1314,9 +1336,71 @@ function calcLeave(){
 if(!$('sv-end').value)$('sv-end').value=todayISO;
 if(!$('lv-base').value)$('lv-base').value=todayISO;
 
+/* ---------- 결과 링크 공유 / share link (입력값을 주소의 ?뒤에 담음, 서버 저장 없음) ---------- */
+const clean=s=>String(s).replace(/[|~]/g,' ').trim().slice(0,30);
+const SHARE={
+  salary:()=>({pay:num($('s-pay').value),free:num($('s-free').value),fam:num($('s-fam').value),kid:num($('s-kid').value),sev:sev,wh:whr}),
+  severance:()=>({start:$('sv-start').value,end:$('sv-end').value,pay:num($('sv-pay').value),bonus:num($('sv-bonus').value),lpay:num($('sv-lpay').value)}),
+  leave:()=>({start:$('lv-start').value,base:$('lv-base').value,wage:num($('lv-wage').value),unused:num($('lv-unused').value)}),
+  loan:()=>({amt:num($('l-amt').value),rate:num($('l-rate').value),term:num($('l-term').value),unit:$('l-unit').value,m:method}),
+  dutch:()=>{const o={mode:mode,r:unit};
+    if(mode==='simple'){o.total=num($('d-total').value);o.n=num($('d-people').value)}
+    else{o.p=people.map(p=>clean(p.name)).join('|');o.i=items.map(it=>[clean(it.name),it.amount,people.map(p=>it.who.has(p.id)?1:0).join('')].join('~'))}
+    const ac=$('d-account').value.trim().slice(0,60);if(ac)o.acc=ac;
+    return o}
+};
+function shareURL(tool){const q=new URLSearchParams(),o=SHARE[tool]();
+  for(const k in o){Array.isArray(o[k])?o[k].forEach(v=>q.append(k,v)):q.set(k,o[k])}
+  return location.origin+location.pathname+'?'+q.toString()+(PAGE?'':'#'+tool)}
+function press(box,attr,val){box.querySelectorAll('['+attr+']').forEach(b=>b.setAttribute('aria-pressed',b.getAttribute(attr)===String(val)))}
+function applyShared(tool){
+  const q=new URLSearchParams(location.search);if(![...q].length)return;
+  const N=(k,max)=>{const s=q.get(k);return s!==null&&/^\d{1,12}(\.\d{1,4})?$/.test(s)?Math.min(+s,max):null};
+  const setN=(id,k,max)=>{const v=N(k,max);if(v!==null)$(id).value=v.toLocaleString('en-US')};
+  const setD=(id,k)=>{const s=q.get(k)||'';if(/^\d{4}-\d{2}-\d{2}$/.test(s)&&!isNaN(D(s)))$(id).value=s};
+  if(tool==='salary'){
+    setN('s-pay','pay',1e11);setN('s-free','free',1e9);setN('s-fam','fam',99);setN('s-kid','kid',99);
+    const sv=N('sev',1);if(sv!==null){sev=sv?1:0;press($('sevSeg'),'data-sev',sev)}
+    const w=N('wh',120);if([80,100,120].includes(w)){whr=w;press($('whSeg'),'data-wh',w)}
+  }else if(tool==='severance'){
+    setD('sv-start','start');setD('sv-end','end');setN('sv-pay','pay',1e10);setN('sv-bonus','bonus',1e11);setN('sv-lpay','lpay',1e10);
+  }else if(tool==='leave'){
+    setD('lv-start','start');setD('lv-base','base');setN('lv-wage','wage',1e10);setN('lv-unused','unused',99);
+  }else if(tool==='loan'){
+    setN('l-amt','amt',1e12);const r=N('rate',100);if(r!==null)$('l-rate').value=String(r);
+    const tm=N('term',600);if(tm!==null)$('l-term').value=String(Math.floor(tm));
+    if(['y','m'].includes(q.get('unit')))$('l-unit').value=q.get('unit');
+    const m=q.get('m');if(['annuity','principal','bullet'].includes(m)){method=m;press($('methodSeg'),'data-m',m)}
+  }else if(tool==='dutch'){
+    const r=N('r',1000);if([1,10,100,1000].includes(r)){unit=r;press($('roundChips'),'data-unit',r)}
+    const ac=(q.get('acc')||'').trim().slice(0,60);if(ac)$('d-account').value=ac;
+    if(q.get('mode')==='items'){
+      const names=(q.get('p')||'').split('|').map(s=>s.trim().slice(0,30)),its=q.getAll('i').slice(0,30);
+      if(names.length>=2&&names.length<=20&&its.length){
+        people.length=0;names.forEach(n=>people.push({id:++uid,name:n}));
+        items.length=0;its.forEach(s=>{const [nm,am,w]=s.split('~'),a=/^\d{1,12}$/.test(am||'')?+am:0;
+          items.push({id:++uid,name:(nm||'').trim().slice(0,30),amount:a,who:new Set(people.filter((p,i)=>(w||'')[i]==='1').map(p=>p.id))})});
+        setMode('items')}
+    }else if(q.get('mode')==='simple'){setN('d-total','total',1e11);setN('d-people','n',1000)}
+  }
+}
+let toastTimer;
+document.querySelectorAll('.sharebox').forEach(box=>{
+  const btn=box.querySelector('.shareBtn'),toast=box.querySelector('.toast'),inp=box.querySelector('.sharelink');
+  const say=m=>{toast.textContent=m;clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.textContent='',2500)};
+  btn.onclick=async()=>{
+    const tool=box.dataset.share,url=shareURL(tool);
+    try{window.gtag&&gtag('event','share',{method:'link',content_type:tool})}catch(e){}
+    if(navigator.share&&matchMedia('(pointer:coarse)').matches){
+      try{await navigator.share({title:document.title,url});return}catch(e){if(e&&e.name==='AbortError')return}}
+    try{await navigator.clipboard.writeText(url);inp.hidden=true;say(t('linkCopied'));return}catch(e){}
+    inp.value=url;inp.hidden=false;inp.focus();inp.select();say(t('linkManual'))};
+});
+
 /* ---------- start ---------- */
 const h=location.hash.slice(1);
 showTab(TABS.includes(PAGE)?PAGE:TABS.includes(h)?h:(onSite?'salary':(store.get('tab')||'salary')));
+applyShared(curTab);
 applyLang();renderAll();calcLoan();calcSalary();calcSev();calcLeave();
 })();
 </script>

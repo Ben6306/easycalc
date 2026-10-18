@@ -3,7 +3,7 @@
  * - 아이콘·글꼴: 저장본 우선 (빠르게)
  * VERSION은 build.py가 빌드 날짜로 바꿔 넣습니다. 바뀌면 이전 저장본은 자동 삭제됩니다.
  */
-const VERSION = "2026-10-18-0bc155cf";
+const VERSION = "2026-10-18-3c051270";
 const CACHE = 'easycalc-' + VERSION;
 const PRECACHE = ["/", "/salary/", "/severance/", "/leave/", "/loan/", "/dutch/", "/icons/icon-192.png", "/icons/favicon-32.png"];
 
@@ -36,7 +36,7 @@ self.addEventListener('fetch', e => {
   if (req.mode === 'navigate') {
     e.respondWith(
       fetch(req).then(res => {
-        if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
+        if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(url.origin + url.pathname, copy)); }  // 공유 링크의 ?입력값은 저장하지 않음
         return res;
       }).catch(() => caches.match(req, { ignoreSearch: true }).then(r => {
         if (r) return r;

@@ -27,7 +27,8 @@
 var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-JQ5BBG87Z9';document.head.appendChild(s);
 window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());
 var m=(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)?'pwa':'browser';
-gtag('set','user_properties',{app_mode:m});gtag('config','G-JQ5BBG87Z9',{app_mode:m,site_lang:'ko'});})()</script>
+var u=location.search.replace(/^\?/,'').split('&').filter(function(x){return /^utm_/.test(x)}).join('&');
+gtag('set','user_properties',{app_mode:m});gtag('config','G-JQ5BBG87Z9',{app_mode:m,site_lang:'ko',page_location:location.origin+location.pathname+(u?'?'+u:'')});})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -161,6 +162,9 @@ td:first-child,th:first-child{text-align:center}
 tbody tr:nth-child(12n) td{border-bottom-color:var(--muted)}
 .note{font-size:12.5px;color:var(--muted);margin:0}
 footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
+.sharebox{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding-top:12px}
+.sharebox .btn{display:inline-flex;align-items:center;gap:8px}
+.sharelink{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:12.5px var(--f-num);padding:9px 10px}
 @media (max-width:420px){.big{font-size:34px}.item-top{grid-template-columns:1fr auto}.item-top .amt{grid-column:1 / -1;grid-row:2}}
 @media (prefers-reduced-motion:no-preference){.cmp-row .bar i,.split i{transition:width .35s ease}}
 
@@ -233,6 +237,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <li><b>브라우저 저장소(localStorage):</b> 마지막으로 연 계산기 탭 등 편의 설정을 이용자 기기의 브라우저에만 저장합니다. 이 정보는 사이트로 전송되지 않으며, 브라우저 설정에서 언제든 삭제할 수 있습니다.</li>
 <li><b>접속 기록:</b> 사이트는 GitHub Pages를 통해 제공되며, 서비스 제공자가 보안과 운영을 위해 IP 주소 등 접속 기록을 처리할 수 있습니다.</li>
 <li><b>방문 통계(Google Analytics):</b> 사이트 개선을 위해 Google Analytics를 사용합니다. 방문한 페이지, 방문 시간, 기기·브라우저 종류, 대략적인 지역(국가·도시 수준), 유입 경로 같은 정보가 쿠키 등을 통해 Google에 전송되며, 개인을 식별하지 않는 통계로만 확인합니다. <b>계산기에 입력한 숫자와 내용은 전송되지 않습니다.</b> 수집을 원하지 않으면 <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics 차단 브라우저 부가기능</a>을 설치하거나 브라우저에서 쿠키를 차단할 수 있습니다. 자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 참고하세요.</li>
+<li><b>결과 공유 링크:</b> 이용자가 “결과 링크 공유” 버튼을 누르면, 그때 입력해 둔 값이 주소(URL)에 담긴 링크가 만들어집니다. 링크는 이용자의 기기에서만 만들어지며 사이트가 저장하지 않습니다. 이 링크를 누군가에게 보내면 받는 사람은 같은 입력값과 결과를 보게 되므로, 연봉처럼 민감한 숫자나 입금 계좌는 믿을 수 있는 사람에게만 보내세요. 방문 통계에는 입력값이 담긴 주소 대신 정리된 주소만 전송됩니다.</li>
 <li><b>글꼴 서비스:</b> 화면 표시를 위해 Google Fonts에서 글꼴을 불러오며, 이 과정에서 Google이 IP 주소 등 기술 정보를 받을 수 있습니다.</li>
 </ul>
 

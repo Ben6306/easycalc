@@ -34,11 +34,21 @@
 - 아이폰: 바닥글에 "공유 → 홈 화면에 추가" 안내 문구
 - 광고·외부 스크립트는 서비스 워커가 건드리지 않음
 
+### 결과 공유 링크 (2026-10-18 추가)
+- 5개 계산기 결과 카드 아래 "결과 링크 공유" 버튼. 휴대폰(터치 기기)은 공유 시트, PC는 클립보드 복사(실패 시 링크 칸을 보여 줌)
+- 입력값을 주소 `?`뒤에 담는 방식(서버·DB 없음). 예: `/salary/?pay=72000000&free=100000&fam=3&kid=1&sev=1&wh=80`
+- 파라미터: salary(pay, free, fam, kid, sev, wh) / severance(start, end, pay, bonus, lpay) / leave(start, base, wage, unused) / loan(amt, rate, term, unit, m) / dutch(mode, r, acc, total, n 또는 p, i)
+- 더치페이: 받을 계좌는 사용자가 입력했을 때만 `acc`로 링크에 포함(받는 사람이 입금할 계좌가 필요하므로, 입력란 안내 문구에도 명시). 열 때 숫자·날짜는 범위·형식을 검사하고 이름은 `esc()`로 출력
+- 언어를 바꿔도 `location.search`를 유지. 서비스 워커는 `?` 없는 주소로만 저장
+- GA는 `page_location`을 `origin+pathname(+utm_*)`로 정리해 입력값이 구글로 가지 않게 함. 버튼 클릭은 GA `share` 이벤트(content_type=계산기 이름)
+- 개인정보처리방침(ko/en)에 "결과 공유 링크" 항목 추가. 새 문구 4개(shareLink, linkCopied, linkManual, shareNote)는 10개 언어, km·my·ne·uz는 원어민 검수 필요
+- `build.py`: 번역 추출 시 node에 코드를 표준입력으로 전달(리눅스에서 인자 길이 초과 오류 수정)
+
 ### 방문 통계 (Google Analytics 4, 2026-10-18 추가)
 - 측정 ID `G-JQ5BBG87Z9` (build.py의 `GA_ID`), 계정 easycalc.kr@gmail.com
 - easycalc.co.kr에서만 전송 (localhost 미리보기는 집계 안 됨)
 - 홈 화면 앱 구분: ① 앱 시작 주소에 `utm_source=homescreen&utm_medium=pwa` ② 모든 방문에 `app_mode`(pwa/browser), `site_lang` 값 첨부
-- GA 관리 화면에서 `app_mode`, `site_lang`을 맞춤 측정기준으로 등록해야 보고서에서 볼 수 있음
+- GA 관리 화면에서 `app_mode`, `site_lang`을 맞춤 측정기준으로 등록해야 보고서에서 볼 수 있음 (등록 완료, 2026-10-18)
 - 개인정보처리방침(ko/en)에 GA 고지 추가
 
 ## 3. 적용 중인 요율·기준 (2026)
@@ -82,7 +92,7 @@ easycalc/
 - [ ] 서치 콘솔에서 색인 확인 후 애드센스 신청 → 승인 시 ads.txt·광고 코드 추가
 
 ## 6. 다음 로드맵 (합의된 방향)
-1. 계산 결과 공유 링크 (PWA는 완료)
+1. ~~계산 결과 공유 링크~~ 완료 (2026-10-18). 다음: 서치 콘솔 검색어 기반 개선 또는 계산기 확장
 1-1. 앱스토어: 트래픽 안정 후 안드로이드 TWA → 아이폰은 앱 전용 기능(위젯 등) 생기면
 2. 계산기 확장: 예·적금 이자(세후) → 시급↔월급·주휴수당(최저임금 매년 확인) → 전월세 전환 → 실업급여·취득세(유지보수 부담 큼)
 3. 외국인 특화: 고향 통화 환산, 국민연금 반환일시금·출국만기보험 가이드, 가이드 다국어화
