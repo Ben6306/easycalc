@@ -5,7 +5,7 @@
  "description": "Koreyada qoʻlga tegadigan maosh, kredit foizi va hisobni boʻlishni bepul hisoblang. Oʻrnatish va roʻyxatdan oʻtish shart emas.",
  "lang": "uz",
  "dir": "ltr",
- "start_url": "/uz/",
+ "start_url": "/uz/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "Qoʻlga tegadigan maosh",
-   "url": "/uz/salary/",
+   "url": "/uz/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "Nafaqa",
-   "url": "/uz/severance/",
+   "url": "/uz/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "Yillik taʼtil",
-   "url": "/uz/leave/",
+   "url": "/uz/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "Kredit foizi",
-   "url": "/uz/loan/",
+   "url": "/uz/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "Hisobni boʻlish",
-   "url": "/uz/dutch/",
+   "url": "/uz/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

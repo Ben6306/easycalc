@@ -34,6 +34,13 @@
 - 아이폰: 바닥글에 "공유 → 홈 화면에 추가" 안내 문구
 - 광고·외부 스크립트는 서비스 워커가 건드리지 않음
 
+### 방문 통계 (Google Analytics 4, 2026-10-18 추가)
+- 측정 ID `G-JQ5BBG87Z9` (build.py의 `GA_ID`), 계정 easycalc.kr@gmail.com
+- easycalc.co.kr에서만 전송 (localhost 미리보기는 집계 안 됨)
+- 홈 화면 앱 구분: ① 앱 시작 주소에 `utm_source=homescreen&utm_medium=pwa` ② 모든 방문에 `app_mode`(pwa/browser), `site_lang` 값 첨부
+- GA 관리 화면에서 `app_mode`, `site_lang`을 맞춤 측정기준으로 등록해야 보고서에서 볼 수 있음
+- 개인정보처리방침(ko/en)에 GA 고지 추가
+
 ## 3. 적용 중인 요율·기준 (2026)
 | 항목 | 값 |
 |---|---|

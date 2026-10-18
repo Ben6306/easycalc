@@ -5,7 +5,7 @@
  "description": "कोरियामा हातमा आउने तलब, ऋणको ब्याज र बिल बाँडफाँड निःशुल्क हिसाब गर्नुहोस्। इन्स्टल वा साइन-अप आवश्यक छैन।",
  "lang": "ne",
  "dir": "ltr",
- "start_url": "/ne/",
+ "start_url": "/ne/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "हातमा आउने तलब",
-   "url": "/ne/salary/",
+   "url": "/ne/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "सेवा समाप्ति भत्ता",
-   "url": "/ne/severance/",
+   "url": "/ne/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "वार्षिक बिदा",
-   "url": "/ne/leave/",
+   "url": "/ne/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "ऋणको ब्याज",
-   "url": "/ne/loan/",
+   "url": "/ne/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "बिल बाँडफाँड",
-   "url": "/ne/dutch/",
+   "url": "/ne/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

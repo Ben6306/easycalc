@@ -5,7 +5,7 @@
  "description": "คำนวณเงินเดือนสุทธิในเกาหลี ดอกเบี้ยเงินกู้ และหารบิลได้ฟรี ไม่ต้องติดตั้ง ไม่ต้องสมัคร",
  "lang": "th",
  "dir": "ltr",
- "start_url": "/th/",
+ "start_url": "/th/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "เงินเดือนสุทธิ",
-   "url": "/th/salary/",
+   "url": "/th/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "เงินชดเชย",
-   "url": "/th/severance/",
+   "url": "/th/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "วันลาพักร้อน",
-   "url": "/th/leave/",
+   "url": "/th/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "ดอกเบี้ยเงินกู้",
-   "url": "/th/loan/",
+   "url": "/th/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "หารบิล",
-   "url": "/th/dutch/",
+   "url": "/th/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

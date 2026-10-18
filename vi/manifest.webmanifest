@@ -5,7 +5,7 @@
  "description": "Tính lương thực nhận tại Hàn Quốc, lãi vay và chia tiền miễn phí. Không cần cài đặt, không cần đăng ký.",
  "lang": "vi",
  "dir": "ltr",
- "start_url": "/vi/",
+ "start_url": "/vi/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "Lương thực nhận",
-   "url": "/vi/salary/",
+   "url": "/vi/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "Trợ cấp thôi việc",
-   "url": "/vi/severance/",
+   "url": "/vi/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "Nghỉ phép năm",
-   "url": "/vi/leave/",
+   "url": "/vi/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "Lãi vay",
-   "url": "/vi/loan/",
+   "url": "/vi/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "Chia tiền",
-   "url": "/vi/dutch/",
+   "url": "/vi/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

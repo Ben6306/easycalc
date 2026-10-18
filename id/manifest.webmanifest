@@ -5,7 +5,7 @@
  "description": "Hitung gaji bersih di Korea, bunga pinjaman, dan bagi tagihan secara gratis. Tanpa instal, tanpa daftar.",
  "lang": "id",
  "dir": "ltr",
- "start_url": "/id/",
+ "start_url": "/id/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "Gaji bersih",
-   "url": "/id/salary/",
+   "url": "/id/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "Pesangon",
-   "url": "/id/severance/",
+   "url": "/id/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "Cuti tahunan",
-   "url": "/id/leave/",
+   "url": "/id/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "Bunga pinjaman",
-   "url": "/id/loan/",
+   "url": "/id/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "Bagi tagihan",
-   "url": "/id/dutch/",
+   "url": "/id/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

@@ -38,7 +38,7 @@ self.addEventListener('fetch', e => {
       fetch(req).then(res => {
         if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); }
         return res;
-      }).catch(() => caches.match(req).then(r => {
+      }).catch(() => caches.match(req, { ignoreSearch: true }).then(r => {
         if (r) return r;
         const seg = url.pathname.split('/')[1];      // 언어 폴더(/en/ 등)의 첫 화면으로 대신 열기
         return caches.match('/' + seg + '/').then(x => x || caches.match('/'));

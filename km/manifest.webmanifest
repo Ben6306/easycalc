@@ -5,7 +5,7 @@
  "description": "គណនាប្រាក់ខែទទួលបានពិតនៅកូរ៉េ ការប្រាក់កម្ចី និងចែកវិក្កយបត្រដោយឥតគិតថ្លៃ។ មិនចាំបាច់ដំឡើង មិនចាំបាច់ចុះឈ្មោះ។",
  "lang": "km",
  "dir": "ltr",
- "start_url": "/km/",
+ "start_url": "/km/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "ប្រាក់ខែទទួលបានពិត",
-   "url": "/km/salary/",
+   "url": "/km/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "ប្រាក់បំណាច់",
-   "url": "/km/severance/",
+   "url": "/km/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "ច្បាប់ប្រចាំឆ្នាំ",
-   "url": "/km/leave/",
+   "url": "/km/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "ការប្រាក់កម្ចី",
-   "url": "/km/loan/",
+   "url": "/km/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "ចែកវិក្កយបត្រ",
-   "url": "/km/dutch/",
+   "url": "/km/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

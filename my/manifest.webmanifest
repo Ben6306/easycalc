@@ -5,7 +5,7 @@
  "description": "ကိုရီးယားတွင် လက်ခံရလစာ၊ ချေးငွေအတိုးနှင့် ငွေခွဲပေးခြင်းကို အခမဲ့ တွက်ပါ။ ထည့်သွင်းရန် မလို၊ အကောင့်ဖွင့်ရန် မလို။",
  "lang": "my",
  "dir": "ltr",
- "start_url": "/my/",
+ "start_url": "/my/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "လက်ခံရလစာ",
-   "url": "/my/salary/",
+   "url": "/my/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "အလုပ်ထွက်ထောက်ပံ့ငွေ",
-   "url": "/my/severance/",
+   "url": "/my/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "နှစ်စဉ်ခွင့်",
-   "url": "/my/leave/",
+   "url": "/my/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "ချေးငွေအတိုး",
-   "url": "/my/loan/",
+   "url": "/my/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "ငွေခွဲပေးရန်",
-   "url": "/my/dutch/",
+   "url": "/my/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

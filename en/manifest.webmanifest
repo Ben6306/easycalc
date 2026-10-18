@@ -5,7 +5,7 @@
  "description": "Free calculators for take-home pay, severance pay and annual leave in Korea, plus loan interest and bill splitting. No install, no sign-up.",
  "lang": "en",
  "dir": "ltr",
- "start_url": "/en/",
+ "start_url": "/en/?utm_source=homescreen&utm_medium=pwa",
  "scope": "/",
  "display": "standalone",
  "background_color": "#F2F5F3",
@@ -33,7 +33,7 @@
  "shortcuts": [
   {
    "name": "Take-home pay",
-   "url": "/en/salary/",
+   "url": "/en/salary/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -43,7 +43,7 @@
   },
   {
    "name": "Severance",
-   "url": "/en/severance/",
+   "url": "/en/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -53,7 +53,7 @@
   },
   {
    "name": "Annual leave",
-   "url": "/en/leave/",
+   "url": "/en/leave/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -63,7 +63,7 @@
   },
   {
    "name": "Loan",
-   "url": "/en/loan/",
+   "url": "/en/loan/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",
@@ -73,7 +73,7 @@
   },
   {
    "name": "Split bill",
-   "url": "/en/dutch/",
+   "url": "/en/dutch/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

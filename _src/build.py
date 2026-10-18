@@ -52,6 +52,7 @@ PWA = {
  'my': ['ပင်မမျက်နှာပြင်သို့ ထည့်ရန်', 'iPhone တွင် Share ကိုနှိပ်ပြီး “Add to Home Screen” ကိုရွေးပါ။ အက်ပ်ကဲ့သို့ သုံးနိုင်ပါသည်။'],
 }
 THEME = '#0E6A55'
+GA_ID = 'G-JQ5BBG87Z9'  # 구글 애널리틱스 측정 ID (easycalc.co.kr에서만 작동)
 
 CONTENT_LANGS = ['ko', 'en']  # 가이드·소개 등이 있는 언어
 
@@ -183,7 +184,18 @@ def head(l, title, desc, path, alts, extra=''):
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="EasyCalc">
-{fl}{head_links}{extra}'''
+{ga_tag(l)}{fl}{head_links}{extra}'''
+
+
+def ga_tag(l):
+    # 실제 사이트 주소에서만 통계를 보냄 (내 컴퓨터 미리보기는 집계 안 됨)
+    # app_mode: 홈 화면 앱으로 열었으면 'pwa', 브라우저면 'browser'
+    return f'''<script>(function(){{if(!/(^|\\.)easycalc\\.co\\.kr$/.test(location.hostname))return;
+var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id={GA_ID}';document.head.appendChild(s);
+window.dataLayer=window.dataLayer||[];window.gtag=function(){{dataLayer.push(arguments)}};gtag('js',new Date());
+var m=(matchMedia('(display-mode: standalone)').matches||navigator.standalone===true)?'pwa':'browser';
+gtag('set','user_properties',{{app_mode:m}});gtag('config','{GA_ID}',{{app_mode:m,site_lang:'{l}'}});}})()</script>
+'''
 
 
 def nav(l, current=None, tools=True):
@@ -386,6 +398,7 @@ open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(x)
 # ---------- 6. 홈 화면 앱(PWA) / manifest, service worker, icons ----------
 import shutil
 ST = os.path.join(SRC, 'static')
+UTM = '?utm_source=homescreen&utm_medium=pwa'  # 홈 화면 앱 유입 표시
 os.makedirs(os.path.join(OUT, 'icons'), exist_ok=True)
 for fn in os.listdir(os.path.join(ST, 'icons')):
     shutil.copyfile(os.path.join(ST, 'icons', fn), os.path.join(OUT, 'icons', fn))
@@ -393,14 +406,14 @@ for l in LANGS:
     t = I18N[l]
     m = {
         'id': base(l), 'name': 'EasyCalc', 'short_name': 'EasyCalc', 'description': t['metaDesc'],
-        'lang': HREFLANG.get(l, l), 'dir': 'ltr', 'start_url': base(l), 'scope': '/',
+        'lang': HREFLANG.get(l, l), 'dir': 'ltr', 'start_url': base(l) + UTM, 'scope': '/',
         'display': 'standalone', 'background_color': '#F2F5F3', 'theme_color': THEME,
         'icons': [
             {'src': '/icons/icon-192.png', 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any'},
             {'src': '/icons/icon-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'any'},
             {'src': '/icons/maskable-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'maskable'},
         ],
-        'shortcuts': [{'name': t[TOOL_TAB[x]], 'url': base(l) + x + '/',
+        'shortcuts': [{'name': t[TOOL_TAB[x]], 'url': base(l) + x + '/' + UTM,
                        'icons': [{'src': '/icons/icon-192.png', 'sizes': '192x192'}]} for x in TOOLS],
         'categories': ['finance', 'utilities'],
     }
