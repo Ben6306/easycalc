@@ -42,6 +42,16 @@
    ]
   },
   {
+   "name": "Tăng lương",
+   "url": "/vi/raise/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "Trợ cấp thôi việc",
    "url": "/vi/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
@@ -74,6 +84,26 @@
   {
    "name": "Tiền gửi",
    "url": "/vi/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Lãi kép",
+   "url": "/vi/invest/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Lạm phát",
+   "url": "/vi/inflation/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

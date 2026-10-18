@@ -42,6 +42,16 @@
    ]
   },
   {
+   "name": "Kenaikan gaji",
+   "url": "/id/raise/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "Pesangon",
    "url": "/id/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
@@ -74,6 +84,26 @@
   {
    "name": "Tabungan",
    "url": "/id/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Bunga majemuk",
+   "url": "/id/invest/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Inflasi",
+   "url": "/id/inflation/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

@@ -42,6 +42,16 @@
    ]
   },
   {
+   "name": "ขึ้นเงินเดือน",
+   "url": "/th/raise/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "เงินชดเชย",
    "url": "/th/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
@@ -74,6 +84,26 @@
   {
    "name": "เงินฝาก",
    "url": "/th/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ลงทุนทบต้น",
+   "url": "/th/invest/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "เงินเฟ้อ",
+   "url": "/th/inflation/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

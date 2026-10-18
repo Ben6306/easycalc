@@ -43,13 +43,15 @@ def js_const(name):
 wh = re.search(r'^window\.WH_TABLE=.*$', calc, re.M).group(0)
 JS = 'const window={};' + wh + '\n' + '\n'.join(
     [js_const(n) for n in ['fl10', 'pad', 'D', 'addM', 'fullMonths', 'leaveDays']] +
-    [js_function(n) for n in ['whBase', 'withholding', 'netPay', 'schedule', 'savCalc', 'severance']]) + r'''
+    [js_function(n) for n in ['whBase', 'withholding', 'netPay', 'schedule', 'savCalc', 'severance', 'invCalc', 'inflCalc', 'raiseCalc']]) + r'''
 const C=JSON.parse(require('fs').readFileSync(0,'utf8')),R={};
 R.salary=C.salary.map(a=>netPay(...a));
 R.loan=C.loan.map(a=>{const s=schedule(...a);return{ti:s.ti,total:s.total,first:s.rows[0][1],last:s.rows[s.rows.length-1][1],bal:s.rows[s.rows.length-1][4]}});
 R.saving=C.saving.map(a=>savCalc(...a));
 R.sev=C.sev.map(([s,e,p,b,l])=>severance(D(s),D(e),p,b,l));
 R.leave=C.leave.map(([s,b])=>{const m=fullMonths(D(s),D(b)),y=Math.floor(m/12);return y<1?Math.min(11,m):leaveDays(y)});
+R.invest=C.invest.map(a=>invCalc(...a));R.infl=C.infl.map(a=>inflCalc(...a));
+R.raise=C.raise.map(a=>{const r=raiseCalc(...a);r.chk=netPay(r.newPay,a[2],a[3],a[4],0,100).net-netPay(a[0],a[2],a[3],a[4],0,100).net;return r});
 process.stdout.write(JSON.stringify(R));'''
 
 
@@ -127,6 +129,20 @@ def py_leave(s, b):
     return min(11, m) if y < 1 else min(25, 15 + (y - 1) // 2)  # 근로기준법 제60조
 
 
+def py_invest(init, mon, rate, n, comp):
+    R = Dc(str(rate)) / 100
+    i = (1 + R) ** (Dc(1) / 12) - 1 if comp == 'y' else R / 12
+    pw = (1 + i) ** n
+    value = init * pw + (mon * (pw - 1) / i * (1 + i) if i else Dc(mon) * n)
+    principal = init + mon * n
+    return {'principal': principal, 'value': value, 'gain': value - principal}
+
+
+def py_infl(amt, rate, yrs):
+    f = (1 + Dc(str(rate)) / 100) ** yrs
+    return {'future': amt * f, 'value': amt / f, 'loss': 1 - 1 / f}
+
+
 # ---------- 검산 조합 ----------
 CASES = {
     'salary': [list(a) for a, _ in GOLDEN_SALARY] + [[a, f, fam, k, sv, w] for a in (24_000_000, 36_000_000, 50_000_000, 72_000_000, 100_000_000, 150_000_000, 300_000_000)
@@ -137,6 +153,10 @@ CASES = {
                for c in ('simple', 'compound') for t in (15.4, 0)],
     'sev': [['2021-03-02', '2026-10-18', 3_500_000, 3_000_000, 0], ['2025-11-01', '2026-10-31', 2_500_000, 0, 0],
             ['2025-11-01', '2026-10-30', 2_500_000, 0, 0], ['2016-01-01', '2026-02-28', 5_000_000, 6_000_000, 400_000]],
+    'invest': [[i0, m, r, n, c] for i0, m in ((10_000_000, 500_000), (0, 300_000), (50_000_000, 0)) for r, n in ((7, 240), (4.5, 120), (0, 60))
+               for c in ('m', 'y')],
+    'infl': [[a, r, y] for a in (1_000_000, 123_456_789) for r, y in ((2, 10), (3.5, 30), (0, 5), (10, 1))],
+    'raise': [[p, pct, f, fam, k] for p in (30_000_000, 50_000_000, 100_000_000) for pct, f, fam, k in ((5, 200_000, 1, 0), (3, 0, 3, 1), (10, 200_000, 4, 2))],
     'leave': [['2023-03-02', '2026-10-18'], ['2026-01-15', '2026-10-18'], ['2025-10-18', '2026-10-18'], ['2025-10-19', '2026-10-18'],
               ['2024-10-18', '2026-10-18'], ['2003-05-01', '2026-10-18'], ['2024-01-31', '2024-02-29']],
 }
@@ -189,6 +209,23 @@ def main():
     for a, r in zip(CASES['leave'], R['leave']):
         check(f'연차 {a}', r, py_leave(*a))
 
+    for a, r in zip(CASES['invest'], R['invest']):
+        w = py_invest(*a)
+        for k in w:
+            check(f'복리투자 {a} {k}', r[k], w[k], max(1e-6, abs(float(w[k])) * 1e-12))
+    # 연복리는 12개월마다 정확히 연 수익률만큼 늘어야 함
+    for a, r in zip(CASES['invest'], R['invest']):
+        if a[4] == 'y' and a[1] == 0 and a[0]:
+            check(f'연복리 검증 {a}', r['value'], a[0] * (1 + Dc(str(a[2])) / 100) ** (a[3] // 12), abs(a[0]) * 1e-9)
+    for a, r in zip(CASES['infl'], R['infl']):
+        w = py_infl(*a)
+        for k in w:
+            check(f'물가 {a} {k}', r[k], w[k], max(1e-9, abs(float(w[k])) * 1e-12))
+    for a, r in zip(CASES['raise'], R['raise']):
+        check(f'연봉인상 {a} 인상 후 연봉', r['newPay'], int((Dc(a[0]) * (1 + Dc(str(a[1])) / 100)).quantize(Dc(1), ROUND_HALF_UP)))
+        check(f'연봉인상 {a} 실수령 증가', r['net'], r['chk'], 1e-6)
+        check(f'연봉인상 {a} 세전 증가', r['gross'], (r['newPay'] - a[0]) / 12, 1e-6)
+        check(f'연봉인상 {a} 빠지는 몫', r['lost'], r['gross'] - r['net'], 1e-6)
     if fails:
         print(f'test_calc: {len(fails)}건 실패 / 전체 {n}건'); print('\n'.join('  ✗ ' + f for f in fails[:40]))
         return 1

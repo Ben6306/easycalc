@@ -19,10 +19,10 @@ LANGS = ['ko', 'en', 'vi', 'zh', 'ne', 'id', 'km', 'uz', 'th', 'my']
 HREFLANG = {'zh': 'zh-Hans'}
 OGLOC = {'ko': 'ko_KR', 'en': 'en_US', 'vi': 'vi_VN', 'zh': 'zh_CN', 'ne': 'ne_NP', 'id': 'id_ID',
          'km': 'km_KH', 'uz': 'uz_UZ', 'th': 'th_TH', 'my': 'my_MM'}
-TOOLS = ['salary', 'severance', 'leave', 'loan', 'saving', 'dutch']
-TOOL_H = {'salary': 'salH', 'severance': 'svH', 'leave': 'lvH', 'loan': 'loanH', 'saving': 'savH', 'dutch': 'dutchH'}
-TOOL_LEDE = {'salary': 'salLede', 'severance': 'svLede', 'leave': 'lvLede', 'loan': 'loanLede', 'saving': 'savLede', 'dutch': 'dutchLede'}
-TOOL_TAB = {'salary': 'tabSalary', 'severance': 'tabSev', 'leave': 'tabLeave', 'loan': 'tabLoan', 'saving': 'tabSave', 'dutch': 'tabDutch'}
+TOOLS = ['salary', 'raise', 'severance', 'leave', 'loan', 'saving', 'invest', 'inflation', 'dutch']
+TOOL_H = {'raise': 'rsH', 'invest': 'ivH', 'inflation': 'ifH', 'salary': 'salH', 'severance': 'svH', 'leave': 'lvH', 'loan': 'loanH', 'saving': 'savH', 'dutch': 'dutchH'}
+TOOL_LEDE = {'raise': 'rsLede', 'invest': 'ivLede', 'inflation': 'ifLede', 'salary': 'salLede', 'severance': 'svLede', 'leave': 'lvLede', 'loan': 'loanLede', 'saving': 'savLede', 'dutch': 'dutchLede'}
+TOOL_TAB = {'raise': 'tabRaise', 'invest': 'tabInvest', 'inflation': 'tabInfl', 'salary': 'tabSalary', 'severance': 'tabSev', 'leave': 'tabLeave', 'loan': 'tabLoan', 'saving': 'tabSave', 'dutch': 'tabDutch'}
 
 # 사이트 공통 메뉴 문구 / chrome strings
 CH = {
@@ -322,9 +322,13 @@ def glist(l, guides):
         f'<a href="{base(l)}guide/{g["slug"]}/"><b>{esc(g["title"])}</b><span>{esc(g["desc"])}</span></a>' for g in guides) + '</div>'
 
 
+REL_ALIAS = {'raise': 'salary'}  # 전용 가이드가 없는 계산기는 가까운 주제 가이드로 연결
+
+
 def relguides(l, tool):
     """계산기 결과 아래 관련 가이드 (최대 3편)"""
     c = clang(l)
+    tool = REL_ALIAS.get(tool, tool)
     gs = [g for g in GUIDE[c] if g.get('tool') == tool or tool in g.get('tools', [])][:3]
     return f'<section class="relg"><h2 class="sec-h">{esc(RELG[l])}</h2>{glist(c, gs)}</section>' if gs else ''
 

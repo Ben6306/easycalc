@@ -42,6 +42,16 @@
    ]
   },
   {
+   "name": "ដំឡើងប្រាក់ខែ",
+   "url": "/km/raise/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "ប្រាក់បំណាច់",
    "url": "/km/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
@@ -74,6 +84,26 @@
   {
    "name": "ប្រាក់សន្សំ",
    "url": "/km/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "វិនិយោគការប្រាក់ដក់",
+   "url": "/km/invest/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "អតិផរណា",
+   "url": "/km/inflation/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

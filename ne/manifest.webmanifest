@@ -42,6 +42,16 @@
    ]
   },
   {
+   "name": "तलब वृद्धि",
+   "url": "/ne/raise/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "सेवा समाप्ति भत्ता",
    "url": "/ne/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
@@ -74,6 +84,26 @@
   {
    "name": "बचत",
    "url": "/ne/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "चक्रवृद्धि लगानी",
+   "url": "/ne/invest/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "मूल्यवृद्धि",
+   "url": "/ne/inflation/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

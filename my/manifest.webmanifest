@@ -42,6 +42,16 @@
    ]
   },
   {
+   "name": "လစာတိုး",
+   "url": "/my/raise/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "အလုပ်ထွက်ထောက်ပံ့ငွေ",
    "url": "/my/severance/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
@@ -74,6 +84,26 @@
   {
    "name": "စုဆောင်းငွေ",
    "url": "/my/saving/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "အတိုးပေါင်း ရင်းနှီးမြှုပ်နှံမှု",
+   "url": "/my/invest/?utm_source=homescreen&utm_medium=pwa",
+   "icons": [
+    {
+     "src": "/icons/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "ငွေကြေးဖောင်းပွမှု",
+   "url": "/my/inflation/?utm_source=homescreen&utm_medium=pwa",
    "icons": [
     {
      "src": "/icons/icon-192.png",

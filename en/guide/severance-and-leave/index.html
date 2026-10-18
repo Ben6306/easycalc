@@ -232,7 +232,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
       <select aria-label="Language / 언어" onchange="location.href=this.value"><option value="/" lang="ko">한국어</option><option value="/en/guide/severance-and-leave/" lang="en" selected>English</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/zh/" lang="zh">简体中文</option><option value="/ne/" lang="ne">नेपाली</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/km/" lang="km">ខ្មែរ</option><option value="/uz/" lang="uz">Oʻzbekcha</option><option value="/th/" lang="th">ไทย</option><option value="/my/" lang="my">မြန်မာ</option></select>
     </label>
   </header>
-  <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/severance/">Severance</a><a href="/en/leave/">Annual leave</a><a href="/en/loan/">Loan</a><a href="/en/saving/">Savings</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/" aria-current="page">Guides</a><a href="/en/about/">About</a></nav>
+  <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/raise/">Pay raise</a><a href="/en/severance/">Severance</a><a href="/en/leave/">Annual leave</a><a href="/en/loan/">Loan</a><a href="/en/saving/">Savings</a><a href="/en/invest/">Compound</a><a href="/en/inflation/">Inflation</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/" aria-current="page">Guides</a><a href="/en/about/">About</a></nav>
   <main class="page">
 <div class="crumb"><a href="/en/">Home</a> › <a href="/en/guide/">Guides</a></div>
 <article class="prose">
@@ -284,7 +284,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 <p id="pwa-ios" class="pwa-ios" hidden>On iPhone, tap Share, then “Add to Home Screen” to use it like an app.</p></div>
 <script>(function(){
 var ok=/(^|\.)easycalc\.co\.kr$|^localhost$|^127\./.test(location.hostname);
-if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/en/", "/en/salary/", "/en/severance/", "/en/leave/", "/en/loan/", "/en/saving/", "/en/dutch/"]})}).catch(function(){})})}
+if(ok&&'serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){return navigator.serviceWorker.ready}).then(function(r){r.active&&r.active.postMessage({precache:["/en/", "/en/salary/", "/en/raise/", "/en/severance/", "/en/leave/", "/en/loan/", "/en/saving/", "/en/invest/", "/en/inflation/", "/en/dutch/"]})}).catch(function(){})})}
 if(matchMedia('(display-mode: standalone)').matches||navigator.standalone)return;
 var b=document.getElementById('pwa-install'),ev=null;
 addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;b.hidden=false});

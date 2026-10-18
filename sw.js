@@ -3,9 +3,9 @@
  * - 아이콘·글꼴: 저장본 우선 (빠르게)
  * VERSION은 build.py가 빌드 날짜로 바꿔 넣습니다. 바뀌면 이전 저장본은 자동 삭제됩니다.
  */
-const VERSION = "2026-10-18-68e607ee";
+const VERSION = "2026-10-18-7bee103d";
 const CACHE = 'easycalc-' + VERSION;
-const PRECACHE = ["/", "/salary/", "/severance/", "/leave/", "/loan/", "/saving/", "/dutch/", "/icons/icon-192.png", "/icons/favicon-32.png"];
+const PRECACHE = ["/", "/salary/", "/raise/", "/severance/", "/leave/", "/loan/", "/saving/", "/invest/", "/inflation/", "/dutch/", "/icons/icon-192.png", "/icons/favicon-32.png"];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
