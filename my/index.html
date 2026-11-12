@@ -188,8 +188,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 .relg{display:flex;flex-direction:column;gap:10px}
 
 .pwa{margin:0 0 10px}
-.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
-.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:color .15s ease-out,border-color .15s ease-out}
+.pwa-btn:hover{color:var(--ink);border-color:var(--muted)}
 .pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
@@ -221,9 +221,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .cta .btn,.card .btn{text-decoration:none;display:inline-block}
 .callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
 .callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
 .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
 .glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -231,6 +229,28 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .glist a:hover b{color:var(--accent)}
 .glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
 .sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+/* 홈 / home: 영수증 1장만 색을 쓰고 나머지는 조용하게 */
+.home{display:flex;flex-direction:column;gap:40px}
+:root[lang="ko"] .home{word-break:keep-all}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:32px;align-items:center;padding-top:8px}
+.hero-t{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.page .hero h1{font:400 32px/1.3 var(--f-display);letter-spacing:0;margin:0;text-wrap:balance}
+:root[data-lx] .page .hero h1{font:600 24px/1.45 var(--f-body)}
+.hero-t .btn{margin-top:8px;text-decoration:none;transition:background-color .15s ease-out}
+.hero .receipt{padding:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tool{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;padding:16px 44px 16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);color:var(--ink);text-decoration:none;transition:border-color .15s ease-out}
+.tool h3{margin:0;font:600 16px/1.4 var(--f-body)}
+.tool p{margin:0;color:var(--muted);font-size:14px}
+.tool::after{content:'→';position:absolute;top:16px;right:20px;color:var(--muted);font-size:16px;line-height:1.4;transition:color .15s ease-out}
+.tool:hover{border-color:var(--muted)}
+.tool:hover::after{color:var(--accent)}
+.tool:focus-visible,.home .glist a:focus-visible,.hero-t .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hsec{display:flex;flex-direction:column;gap:12px}
+.home .sec-h{font-weight:600;margin:0}
+.home .glist a{padding:12px 20px}
+.home .glist b{font-weight:600}
+@media (max-width:640px){.home{gap:32px}.hero{grid-template-columns:1fr;gap:24px;padding-top:0}.page .hero h1{font-size:28px}}
 </style>
 </head>
 <body>
@@ -244,9 +264,21 @@ main.page{display:flex;flex-direction:column;gap:18px}
   </header>
   <nav class="sitenav"><a href="/my/salary/">လက်ခံရလစာ</a><a href="/my/raise/">လစာတိုး</a><a href="/my/severance/">အလုပ်ထွက်ထောက်ပံ့ငွေ</a><a href="/my/leave/">နှစ်စဉ်ခွင့်</a><a href="/my/loan/">ချေးငွေအတိုး</a><a href="/my/saving/">စုဆောင်းငွေ</a><a href="/my/invest/">အတိုးပေါင်း ရင်းနှီးမြှုပ်နှံမှု</a><a href="/my/inflation/">ငွေကြေးဖောင်းပွမှု</a><a href="/my/dutch/">ငွေခွဲပေးရန်</a><a href="/en/guide/">လမ်းညွှန်</a><a href="/en/about/">ကျွန်ုပ်တို့အကြောင်း</a></nav>
   <main class="page">
-<h1>ကိုရီးယား လက်ခံရလစာ၊ ချေးငွေအတိုး၊ ငွေခွဲပေး တွက်စက်</h1>
-<div class="cards"><div class="card"><h3>ကိုရီးယားတွင် လက်ခံရလစာ တွက်စက် 2026</h3><p>ကိုရီးယားတွင် အလုပ်လုပ်သူများအတွက် - လူမှုဖူလုံရေးအာမခံနှင့် အခွန်များ နုတ်ပြီးနောက် လစဉ် ဘဏ်အကောင့်သို့ ဝင်မည့်ငွေ။ 2026 ဇူလိုင်လ နှုန်းထားဖြင့် တွက်သည်။</p><div><a class="btn" href="/my/salary/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>လစာတိုး တွက်စက်</h3><p>လစာတက်လျှင် အာမခံနှင့် အခွန်လည်း တက်သည်။ တိုးငွေထဲမှ အကောင့်ထဲ အမှန်တကယ် မည်မျှဝင်သည်ကို ကြည့်ပါ။</p><div><a class="btn" href="/my/raise/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>အလုပ်ထွက်ထောက်ပံ့ငွေ တွက်စက် (ကိုရီးယား)</h3><p>အလုပ်စဝင်သည့်ရက်၊ နောက်ဆုံးအလုပ်ဆင်းရက်နှင့် လတ်တလောလစာကို ထည့်၍ ကိုရီးယားဥပဒေအရ အလုပ်ထွက်ထောက်ပံ့ငွေကို တွက်ပါ။</p><div><a class="btn" href="/my/severance/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>နှစ်စဉ်ခွင့် တွက်စက် (ကိုရီးယား)</h3><p>အလုပ်စဝင်သည့်ရက်ကို ထည့်၍ လုပ်သက်အလိုက် လစာပါ နှစ်စဉ်ခွင့်ရက်များနှင့် မသုံးရသေးသော ခွင့်ရက်ငွေကို ခန့်မှန်းကြည့်ပါ။</p><div><a class="btn" href="/my/leave/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>ချေးငွေအတိုး တွက်စက်</h3><p>ပြန်ဆပ်ပုံအလိုက် လစဉ်ပေးငွေနှင့် စုစုပေါင်းအတိုး မည်သို့ ပြောင်းလဲသည်ကို ကြည့်ပါ။</p><div><a class="btn" href="/my/loan/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>ငွေစုနှင့် ငွေပေါင်း အတိုးတွက်စက်</h3><p>တစ်ကြိမ်တည်းအပ်ငွေ သို့မဟုတ် လစဉ်စုငွေမှ အခွန်ဖြတ်ပြီးနောက် တကယ်ရမည့်ငွေကို တွက်ကြည့်ပါ။ ရိုးရိုးအတိုး၊ အတိုးပေါင်းထည့်အတိုးနှင့် အခွန်နှုန်းများကို နှိုင်းယှဉ်နိုင်သည်။</p><div><a class="btn" href="/my/saving/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>အတိုးပေါင်း ရင်းနှီးမြှုပ်နှံမှု တွက်စက်</h3><p>စတင်ငွေနှင့် လစဉ်ထည့်ငွေသည် မျှော်မှန်းနှစ်စဉ်အမြတ်နှုန်းဖြင့် နှစ်များအကြာတွင် မည်မျှဖြစ်မည်ကို ကြည့်ပါ။</p><div><a class="btn" href="/my/invest/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>ငွေကြေးဖောင်းပွမှု တွက်စက်</h3><p>ဈေးနှုန်းတက်လျှင် ငွေတူဖြင့် ဝယ်နိုင်သည်က လျော့သွားသည်။ နှစ်အနည်းငယ်အကြာ ပစ္စည်းတူ၏ ဈေးနှုန်းနှင့် ယခုငွေ၏ တန်ဖိုးကို ကြည့်ပါ။</p><div><a class="btn" href="/my/inflation/">တွက်စက်ဖွင့်ရန်</a></div></div><div class="card"><h3>ငွေခွဲပေး တွက်စက်</h3><p>စုစုပေါင်းငွေကို တန်းတူခွဲနိုင်သလို၊ စရိတ်တစ်ခုချင်းစီကို ပါဝင်သူများကြားတွင်သာ ခွဲနိုင်သည်။</p><div><a class="btn" href="/my/dutch/">တွက်စက်ဖွင့်ရန်</a></div></div></div>
-<h2 class="sec-h">လမ်းညွှန်</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div>
+<div class="home">
+<section class="hero">
+<div class="hero-t"><h1>ကိုရီးယားရှိ လစာ၊ ချေးငွေနှင့် စုငွေ - တကယ်ရမည့်ငွေနှင့် ပေးရမည့်ငွေ</h1><p class="lede">လူမှုဖူလုံရေးအာမခံကို 2026 ဇူလိုင်နှုန်းဖြင့်၊ ဝင်ငွေခွန်ကို အမျိုးသားအခွန်ဝန်ဆောင်မှု၏ ဖြတ်တောက်ခွန်ဇယား (2026 မတ် 1 မှစ၍) ဖြင့် တွက်သည်</p><a class="btn" href="/my/salary/#pay=50000000&amp;free=200000&amp;fam=1&amp;kid=0&amp;sev=0&amp;wh=100">ဤဂဏန်းများဖြင့် တွက်ကြည့်ရန်</a></div>
+<div class="receipt">
+<div class="rhead"><span>လစဉ်လစာစာရင်း</span><span>နှုန်း - 2026 ဇူလိုင်</span></div>
+<div><div class="lbl">လစဉ် လက်ခံရလစာ</div><div class="big"><small style="margin:0 2px 0 0">₩</small>3,571,587</div></div>
+<hr class="dash">
+<ul class="lines"><li><span>အခွန်မနုတ်မီ လစဉ်လစာ</span><span>₩4,166,667</span></li><li><span>အမျိုးသားပင်စင်</span><span>−₩188,380</span></li><li><span>ကျန်းမာရေးအာမခံ</span><span>−₩142,600</span></li><li><span>ရေရှည်စောင့်ရှောက်မှုအာမခံ</span><span>−₩18,730</span></li><li><span>အလုပ်အကိုင်အာမခံ</span><span>−₩35,690</span></li><li><span>ဝင်ငွေခွန်</span><span>−₩190,620</span></li><li><span>ဒေသဆိုင်ရာ ဝင်ငွေခွန်</span><span>−₩19,060</span></li><li class="strong"><span>နုတ်ငွေ စုစုပေါင်း</span><span>₩595,080</span></li></ul>
+<hr class="dash">
+<p class="note">ဥပမာ · နှစ်စဉ်လစာ ₩50,000,000၊ ကိုယ်တိုင် 1 ဦး၊ အခွန်ကင်း အစားအသောက်ထောက်ပံ့ငွေ လစဉ် ₩200,000</p>
+</div>
+</section>
+<div class="tools"><a class="tool" href="/my/salary/"><h3>ကိုရီးယားတွင် လက်ခံရလစာ တွက်စက် 2026</h3><p>ကိုရီးယားတွင် အလုပ်လုပ်သူများအတွက် - လူမှုဖူလုံရေးအာမခံနှင့် အခွန်များ နုတ်ပြီးနောက် လစဉ် ဘဏ်အကောင့်သို့ ဝင်မည့်ငွေ။ 2026 ဇူလိုင်လ နှုန်းထားဖြင့် တွက်သည်။</p></a><a class="tool" href="/my/raise/"><h3>လစာတိုး တွက်စက်</h3><p>လစာတက်လျှင် အာမခံနှင့် အခွန်လည်း တက်သည်။ တိုးငွေထဲမှ အကောင့်ထဲ အမှန်တကယ် မည်မျှဝင်သည်ကို ကြည့်ပါ။</p></a><a class="tool" href="/my/severance/"><h3>အလုပ်ထွက်ထောက်ပံ့ငွေ တွက်စက် (ကိုရီးယား)</h3><p>အလုပ်စဝင်သည့်ရက်၊ နောက်ဆုံးအလုပ်ဆင်းရက်နှင့် လတ်တလောလစာကို ထည့်၍ ကိုရီးယားဥပဒေအရ အလုပ်ထွက်ထောက်ပံ့ငွေကို တွက်ပါ။</p></a><a class="tool" href="/my/leave/"><h3>နှစ်စဉ်ခွင့် တွက်စက် (ကိုရီးယား)</h3><p>အလုပ်စဝင်သည့်ရက်ကို ထည့်၍ လုပ်သက်အလိုက် လစာပါ နှစ်စဉ်ခွင့်ရက်များနှင့် မသုံးရသေးသော ခွင့်ရက်ငွေကို ခန့်မှန်းကြည့်ပါ။</p></a><a class="tool" href="/my/loan/"><h3>ချေးငွေအတိုး တွက်စက်</h3><p>ပြန်ဆပ်ပုံအလိုက် လစဉ်ပေးငွေနှင့် စုစုပေါင်းအတိုး မည်သို့ ပြောင်းလဲသည်ကို ကြည့်ပါ။</p></a><a class="tool" href="/my/saving/"><h3>ငွေစုနှင့် ငွေပေါင်း အတိုးတွက်စက်</h3><p>တစ်ကြိမ်တည်းအပ်ငွေ သို့မဟုတ် လစဉ်စုငွေမှ အခွန်ဖြတ်ပြီးနောက် တကယ်ရမည့်ငွေကို တွက်ကြည့်ပါ။ ရိုးရိုးအတိုး၊ အတိုးပေါင်းထည့်အတိုးနှင့် အခွန်နှုန်းများကို နှိုင်းယှဉ်နိုင်သည်။</p></a><a class="tool" href="/my/invest/"><h3>အတိုးပေါင်း ရင်းနှီးမြှုပ်နှံမှု တွက်စက်</h3><p>စတင်ငွေနှင့် လစဉ်ထည့်ငွေသည် မျှော်မှန်းနှစ်စဉ်အမြတ်နှုန်းဖြင့် နှစ်များအကြာတွင် မည်မျှဖြစ်မည်ကို ကြည့်ပါ။</p></a><a class="tool" href="/my/inflation/"><h3>ငွေကြေးဖောင်းပွမှု တွက်စက်</h3><p>ဈေးနှုန်းတက်လျှင် ငွေတူဖြင့် ဝယ်နိုင်သည်က လျော့သွားသည်။ နှစ်အနည်းငယ်အကြာ ပစ္စည်းတူ၏ ဈေးနှုန်းနှင့် ယခုငွေ၏ တန်ဖိုးကို ကြည့်ပါ။</p></a><a class="tool" href="/my/dutch/"><h3>ငွေခွဲပေး တွက်စက်</h3><p>စုစုပေါင်းငွေကို တန်းတူခွဲနိုင်သလို၊ စရိတ်တစ်ခုချင်းစီကို ပါဝင်သူများကြားတွင်သာ ခွဲနိုင်သည်။</p></a></div>
+<section class="hsec"><h2 class="sec-h">လမ်းညွှန်</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div></section>
+</div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">ကျွန်ုပ်တို့အကြောင်း</a><a href="/en/contact/">ဆက်သွယ်ရန်</a><a href="/en/privacy/">ကိုယ်ရေးအချက်အလက်မူဝါဒ</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>ပင်မမျက်နှာပြင်သို့ ထည့်ရန်</button>

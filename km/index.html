@@ -188,8 +188,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 .relg{display:flex;flex-direction:column;gap:10px}
 
 .pwa{margin:0 0 10px}
-.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
-.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:color .15s ease-out,border-color .15s ease-out}
+.pwa-btn:hover{color:var(--ink);border-color:var(--muted)}
 .pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
@@ -221,9 +221,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .cta .btn,.card .btn{text-decoration:none;display:inline-block}
 .callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
 .callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
 .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
 .glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -231,6 +229,28 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .glist a:hover b{color:var(--accent)}
 .glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
 .sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+/* 홈 / home: 영수증 1장만 색을 쓰고 나머지는 조용하게 */
+.home{display:flex;flex-direction:column;gap:40px}
+:root[lang="ko"] .home{word-break:keep-all}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:32px;align-items:center;padding-top:8px}
+.hero-t{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.page .hero h1{font:400 32px/1.3 var(--f-display);letter-spacing:0;margin:0;text-wrap:balance}
+:root[data-lx] .page .hero h1{font:600 24px/1.45 var(--f-body)}
+.hero-t .btn{margin-top:8px;text-decoration:none;transition:background-color .15s ease-out}
+.hero .receipt{padding:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tool{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;padding:16px 44px 16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);color:var(--ink);text-decoration:none;transition:border-color .15s ease-out}
+.tool h3{margin:0;font:600 16px/1.4 var(--f-body)}
+.tool p{margin:0;color:var(--muted);font-size:14px}
+.tool::after{content:'→';position:absolute;top:16px;right:20px;color:var(--muted);font-size:16px;line-height:1.4;transition:color .15s ease-out}
+.tool:hover{border-color:var(--muted)}
+.tool:hover::after{color:var(--accent)}
+.tool:focus-visible,.home .glist a:focus-visible,.hero-t .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hsec{display:flex;flex-direction:column;gap:12px}
+.home .sec-h{font-weight:600;margin:0}
+.home .glist a{padding:12px 20px}
+.home .glist b{font-weight:600}
+@media (max-width:640px){.home{gap:32px}.hero{grid-template-columns:1fr;gap:24px;padding-top:0}.page .hero h1{font-size:28px}}
 </style>
 </head>
 <body>
@@ -244,9 +264,21 @@ main.page{display:flex;flex-direction:column;gap:18px}
   </header>
   <nav class="sitenav"><a href="/km/salary/">ប្រាក់ខែទទួលបានពិត</a><a href="/km/raise/">ដំឡើងប្រាក់ខែ</a><a href="/km/severance/">ប្រាក់បំណាច់</a><a href="/km/leave/">ច្បាប់ប្រចាំឆ្នាំ</a><a href="/km/loan/">ការប្រាក់កម្ចី</a><a href="/km/saving/">ប្រាក់សន្សំ</a><a href="/km/invest/">វិនិយោគការប្រាក់ដក់</a><a href="/km/inflation/">អតិផរណា</a><a href="/km/dutch/">ចែកវិក្កយបត្រ</a><a href="/en/guide/">មគ្គុទ្ទេសក៍</a><a href="/en/about/">អំពីយើង</a></nav>
   <main class="page">
-<h1>គណនាប្រាក់ខែនៅកូរ៉េ ការប្រាក់កម្ចី និងចែកវិក្កយបត្រ</h1>
-<div class="cards"><div class="card"><h3>ម៉ាស៊ីនគិតប្រាក់ខែទទួលបានពិតនៅកូរ៉េ 2026</h3><p>សម្រាប់អ្នកធ្វើការនៅកូរ៉េ៖ ប្រាក់ដែលចូលគណនីរៀងរាល់ខែ បន្ទាប់ពីកាត់ធានារ៉ាប់រងសង្គម និងពន្ធ។ អត្រាគិតត្រឹមខែកក្កដា ឆ្នាំ 2026។</p><div><a class="btn" href="/km/salary/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតការដំឡើងប្រាក់ខែ</h3><p>ពេលប្រាក់ខែឡើង ធានារ៉ាប់រង និងពន្ធក៏ឡើងដែរ។ មើលថាការដំឡើងចូលគណនីអ្នកពិតប្រាកដប៉ុន្មាន។</p><div><a class="btn" href="/km/raise/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតប្រាក់បំណាច់ឈប់ពីការងារ (កូរ៉េ)</h3><p>បញ្ចូលថ្ងៃចូលធ្វើការ ថ្ងៃធ្វើការចុងក្រោយ និងប្រាក់ខែថ្មីៗ ដើម្បីគណនាប្រាក់បំណាច់តាមច្បាប់កូរ៉េ។</p><div><a class="btn" href="/km/severance/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតច្បាប់ឈប់សម្រាកប្រចាំឆ្នាំ (កូរ៉េ)</h3><p>បញ្ចូលថ្ងៃចូលធ្វើការ ដើម្បីមើលចំនួនថ្ងៃច្បាប់ប្រចាំឆ្នាំតាមអតីតភាពការងារ និងប៉ាន់ស្មានប្រាក់សម្រាប់ថ្ងៃច្បាប់មិនបានប្រើ។</p><div><a class="btn" href="/km/leave/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតការប្រាក់កម្ចី</h3><p>មើលថាប្រាក់បង់ប្រចាំខែ និងការប្រាក់សរុបប្រែប្រួលយ៉ាងណាតាមវិធីសងប្រាក់។</p><div><a class="btn" href="/km/loan/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតការប្រាក់ប្រាក់បញ្ញើ និងប្រាក់សន្សំ</h3><p>មើលថាតើអ្នកទទួលបានប្រាក់ប៉ុន្មានពិតប្រាកដក្រោយកាត់ពន្ធ ពីប្រាក់បញ្ញើមួយដង ឬប្រាក់សន្សំប្រចាំខែ។ ប្រៀបធៀបការប្រាក់សាមញ្ញ ការប្រាក់ដក់ និងអត្រាពន្ធ។</p><div><a class="btn" href="/km/saving/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតវិនិយោគការប្រាក់ដក់</h3><p>មើលថាប្រាក់ដើម និងប្រាក់ដាក់ប្រចាំខែ អាចកើនដល់ប៉ុន្មានក្រោយច្រើនឆ្នាំ តាមអត្រាផលចំណេញប្រចាំឆ្នាំដែលរំពឹងទុក។</p><div><a class="btn" href="/km/invest/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតអតិផរណា</h3><p>ពេលតម្លៃឡើង ប្រាក់ដដែលទិញបានតិចជាងមុន។ មើលតម្លៃទំនិញដដែលក្នុងប៉ុន្មានឆ្នាំខាងមុខ និងតម្លៃប្រាក់របស់អ្នកនាពេលនេះ។</p><div><a class="btn" href="/km/inflation/">បើកម៉ាស៊ីនគិតលេខ</a></div></div><div class="card"><h3>ម៉ាស៊ីនគិតចែកវិក្កយបត្រ</h3><p>ចែកចំនួនសរុបស្មើៗគ្នា ឬចែកតាមមុខចំណាយ ដោយរាប់តែអ្នកដែលបានចូលរួមក្នុងមុខនោះប៉ុណ្ណោះ។</p><div><a class="btn" href="/km/dutch/">បើកម៉ាស៊ីនគិតលេខ</a></div></div></div>
-<h2 class="sec-h">មគ្គុទ្ទេសក៍</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div>
+<div class="home">
+<section class="hero">
+<div class="hero-t"><h1>ប្រាក់ខែ កម្ចី និងការសន្សំនៅកូរ៉េ៖ ប្រាក់ដែលអ្នកទទួលបាន និងបង់ពិតប្រាកដ</h1><p class="lede">ធានារ៉ាប់រងសង្គមតាមអត្រាខែកក្កដា 2026 ពន្ធលើប្រាក់ចំណូលតាមតារាងកាត់ពន្ធរបស់អគ្គនាយកដ្ឋានពន្ធដារជាតិ (អនុវត្តពីថ្ងៃទី 1 ខែមីនា 2026)</p><a class="btn" href="/km/salary/#pay=50000000&amp;free=200000&amp;fam=1&amp;kid=0&amp;sev=0&amp;wh=100">សាកល្បងលេខទាំងនេះ</a></div>
+<div class="receipt">
+<div class="rhead"><span>តារាងប្រាក់ខែប្រចាំខែ</span><span>អត្រា៖ កក្កដា 2026</span></div>
+<div><div class="lbl">ប្រាក់ខែទទួលបានពិតប្រចាំខែ</div><div class="big"><small style="margin:0 2px 0 0">₩</small>3,571,587</div></div>
+<hr class="dash">
+<ul class="lines"><li><span>ប្រាក់ខែប្រចាំខែមុនកាត់ពន្ធ</span><span>₩4,166,667</span></li><li><span>សោធននិវត្តន៍ជាតិ</span><span>−₩188,380</span></li><li><span>ធានារ៉ាប់រងសុខភាព</span><span>−₩142,600</span></li><li><span>ធានារ៉ាប់រងថែទាំរយៈពេលវែង</span><span>−₩18,730</span></li><li><span>ធានារ៉ាប់រងការងារ</span><span>−₩35,690</span></li><li><span>ពន្ធលើប្រាក់ចំណូល</span><span>−₩190,620</span></li><li><span>ពន្ធលើប្រាក់ចំណូលមូលដ្ឋាន</span><span>−₩19,060</span></li><li class="strong"><span>ការកាត់សរុប</span><span>₩595,080</span></li></ul>
+<hr class="dash">
+<p class="note">ឧទាហរណ៍ · ប្រាក់ខែប្រចាំឆ្នាំ ₩50,000,000 ម្នាក់ឯង ប្រាក់ឧបត្ថម្ភអាហារមិនជាប់ពន្ធ ₩200,000 ក្នុងមួយខែ</p>
+</div>
+</section>
+<div class="tools"><a class="tool" href="/km/salary/"><h3>ម៉ាស៊ីនគិតប្រាក់ខែទទួលបានពិតនៅកូរ៉េ 2026</h3><p>សម្រាប់អ្នកធ្វើការនៅកូរ៉េ៖ ប្រាក់ដែលចូលគណនីរៀងរាល់ខែ បន្ទាប់ពីកាត់ធានារ៉ាប់រងសង្គម និងពន្ធ។ អត្រាគិតត្រឹមខែកក្កដា ឆ្នាំ 2026។</p></a><a class="tool" href="/km/raise/"><h3>ម៉ាស៊ីនគិតការដំឡើងប្រាក់ខែ</h3><p>ពេលប្រាក់ខែឡើង ធានារ៉ាប់រង និងពន្ធក៏ឡើងដែរ។ មើលថាការដំឡើងចូលគណនីអ្នកពិតប្រាកដប៉ុន្មាន។</p></a><a class="tool" href="/km/severance/"><h3>ម៉ាស៊ីនគិតប្រាក់បំណាច់ឈប់ពីការងារ (កូរ៉េ)</h3><p>បញ្ចូលថ្ងៃចូលធ្វើការ ថ្ងៃធ្វើការចុងក្រោយ និងប្រាក់ខែថ្មីៗ ដើម្បីគណនាប្រាក់បំណាច់តាមច្បាប់កូរ៉េ។</p></a><a class="tool" href="/km/leave/"><h3>ម៉ាស៊ីនគិតច្បាប់ឈប់សម្រាកប្រចាំឆ្នាំ (កូរ៉េ)</h3><p>បញ្ចូលថ្ងៃចូលធ្វើការ ដើម្បីមើលចំនួនថ្ងៃច្បាប់ប្រចាំឆ្នាំតាមអតីតភាពការងារ និងប៉ាន់ស្មានប្រាក់សម្រាប់ថ្ងៃច្បាប់មិនបានប្រើ។</p></a><a class="tool" href="/km/loan/"><h3>ម៉ាស៊ីនគិតការប្រាក់កម្ចី</h3><p>មើលថាប្រាក់បង់ប្រចាំខែ និងការប្រាក់សរុបប្រែប្រួលយ៉ាងណាតាមវិធីសងប្រាក់។</p></a><a class="tool" href="/km/saving/"><h3>ម៉ាស៊ីនគិតការប្រាក់ប្រាក់បញ្ញើ និងប្រាក់សន្សំ</h3><p>មើលថាតើអ្នកទទួលបានប្រាក់ប៉ុន្មានពិតប្រាកដក្រោយកាត់ពន្ធ ពីប្រាក់បញ្ញើមួយដង ឬប្រាក់សន្សំប្រចាំខែ។ ប្រៀបធៀបការប្រាក់សាមញ្ញ ការប្រាក់ដក់ និងអត្រាពន្ធ។</p></a><a class="tool" href="/km/invest/"><h3>ម៉ាស៊ីនគិតវិនិយោគការប្រាក់ដក់</h3><p>មើលថាប្រាក់ដើម និងប្រាក់ដាក់ប្រចាំខែ អាចកើនដល់ប៉ុន្មានក្រោយច្រើនឆ្នាំ តាមអត្រាផលចំណេញប្រចាំឆ្នាំដែលរំពឹងទុក។</p></a><a class="tool" href="/km/inflation/"><h3>ម៉ាស៊ីនគិតអតិផរណា</h3><p>ពេលតម្លៃឡើង ប្រាក់ដដែលទិញបានតិចជាងមុន។ មើលតម្លៃទំនិញដដែលក្នុងប៉ុន្មានឆ្នាំខាងមុខ និងតម្លៃប្រាក់របស់អ្នកនាពេលនេះ។</p></a><a class="tool" href="/km/dutch/"><h3>ម៉ាស៊ីនគិតចែកវិក្កយបត្រ</h3><p>ចែកចំនួនសរុបស្មើៗគ្នា ឬចែកតាមមុខចំណាយ ដោយរាប់តែអ្នកដែលបានចូលរួមក្នុងមុខនោះប៉ុណ្ណោះ។</p></a></div>
+<section class="hsec"><h2 class="sec-h">មគ្គុទ្ទេសក៍</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div></section>
+</div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">អំពីយើង</a><a href="/en/contact/">ទំនាក់ទំនង</a><a href="/en/privacy/">គោលការណ៍ឯកជនភាព</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>បន្ថែមទៅអេក្រង់ដើម</button>

@@ -188,8 +188,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 .relg{display:flex;flex-direction:column;gap:10px}
 
 .pwa{margin:0 0 10px}
-.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
-.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:color .15s ease-out,border-color .15s ease-out}
+.pwa-btn:hover{color:var(--ink);border-color:var(--muted)}
 .pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
@@ -221,9 +221,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .cta .btn,.card .btn{text-decoration:none;display:inline-block}
 .callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
 .callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
 .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
 .glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -231,6 +229,28 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .glist a:hover b{color:var(--accent)}
 .glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
 .sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+/* 홈 / home: 영수증 1장만 색을 쓰고 나머지는 조용하게 */
+.home{display:flex;flex-direction:column;gap:40px}
+:root[lang="ko"] .home{word-break:keep-all}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:32px;align-items:center;padding-top:8px}
+.hero-t{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.page .hero h1{font:400 32px/1.3 var(--f-display);letter-spacing:0;margin:0;text-wrap:balance}
+:root[data-lx] .page .hero h1{font:600 24px/1.45 var(--f-body)}
+.hero-t .btn{margin-top:8px;text-decoration:none;transition:background-color .15s ease-out}
+.hero .receipt{padding:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tool{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;padding:16px 44px 16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);color:var(--ink);text-decoration:none;transition:border-color .15s ease-out}
+.tool h3{margin:0;font:600 16px/1.4 var(--f-body)}
+.tool p{margin:0;color:var(--muted);font-size:14px}
+.tool::after{content:'→';position:absolute;top:16px;right:20px;color:var(--muted);font-size:16px;line-height:1.4;transition:color .15s ease-out}
+.tool:hover{border-color:var(--muted)}
+.tool:hover::after{color:var(--accent)}
+.tool:focus-visible,.home .glist a:focus-visible,.hero-t .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hsec{display:flex;flex-direction:column;gap:12px}
+.home .sec-h{font-weight:600;margin:0}
+.home .glist a{padding:12px 20px}
+.home .glist b{font-weight:600}
+@media (max-width:640px){.home{gap:32px}.hero{grid-template-columns:1fr;gap:24px;padding-top:0}.page .hero h1{font-size:28px}}
 </style>
 </head>
 <body>
@@ -244,9 +264,21 @@ main.page{display:flex;flex-direction:column;gap:18px}
   </header>
   <nav class="sitenav"><a href="/vi/salary/">Lương thực nhận</a><a href="/vi/raise/">Tăng lương</a><a href="/vi/severance/">Trợ cấp thôi việc</a><a href="/vi/leave/">Nghỉ phép năm</a><a href="/vi/loan/">Lãi vay</a><a href="/vi/saving/">Tiền gửi</a><a href="/vi/invest/">Lãi kép</a><a href="/vi/inflation/">Lạm phát</a><a href="/vi/dutch/">Chia tiền</a><a href="/en/guide/">Hướng dẫn</a><a href="/en/about/">Giới thiệu</a></nav>
   <main class="page">
-<h1>Tính lương thực nhận tại Hàn Quốc, lãi vay, chia tiền</h1>
-<div class="cards"><div class="card"><h3>Tính lương thực nhận tại Hàn Quốc 2026</h3><p>Dành cho người lao động tại Hàn Quốc: số tiền thực nhận vào tài khoản mỗi tháng sau khi trừ bảo hiểm xã hội và thuế. Áp dụng mức đóng từ tháng 7/2026.</p><div><a class="btn" href="/vi/salary/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính tăng lương thực nhận</h3><p>Khi lương tăng, bảo hiểm và thuế cũng tăng. Xem phần tăng thực sự vào tài khoản là bao nhiêu.</p><div><a class="btn" href="/vi/raise/">Mở máy tính</a></div></div><div class="card"><h3>Tính trợ cấp thôi việc (Hàn Quốc)</h3><p>Nhập ngày vào làm, ngày làm việc cuối cùng và lương gần đây để tính trợ cấp thôi việc theo luật Hàn Quốc.</p><div><a class="btn" href="/vi/severance/">Mở máy tính</a></div></div><div class="card"><h3>Tính ngày nghỉ phép năm (Hàn Quốc)</h3><p>Nhập ngày vào làm để xem số ngày phép năm theo thâm niên và ước tính tiền phép chưa dùng.</p><div><a class="btn" href="/vi/leave/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính lãi vay</h3><p>Xem số tiền trả hằng tháng và tổng tiền lãi thay đổi thế nào theo phương thức trả nợ.</p><div><a class="btn" href="/vi/loan/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính lãi tiền gửi và tiết kiệm</h3><p>Xem bạn thực nhận bao nhiêu sau thuế khi gửi một lần hoặc gửi góp hằng tháng. So sánh lãi đơn, lãi kép và các mức thuế.</p><div><a class="btn" href="/vi/saving/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính đầu tư lãi kép</h3><p>Xem số tiền ban đầu cùng khoản góp hằng tháng có thể tăng lên bao nhiêu sau nhiều năm theo lợi suất năm dự kiến.</p><div><a class="btn" href="/vi/invest/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính lạm phát</h3><p>Khi giá tăng, cùng số tiền mua được ít hơn. Xem vài năm nữa món đồ giá bao nhiêu và tiền hiện có còn giá trị bao nhiêu.</p><div><a class="btn" href="/vi/inflation/">Mở máy tính</a></div></div><div class="card"><h3>Máy tính chia tiền</h3><p>Chia đều tổng số tiền, hoặc chia theo từng khoản chỉ cho những người đã tham gia khoản đó.</p><div><a class="btn" href="/vi/dutch/">Mở máy tính</a></div></div></div>
-<h2 class="sec-h">Hướng dẫn</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div>
+<div class="home">
+<section class="hero">
+<div class="hero-t"><h1>Lương thực nhận, khoản vay và tiết kiệm tại Hàn Quốc: số tiền bạn thực sự nhận và trả</h1><p class="lede">Bảo hiểm xã hội theo mức tháng 7/2026, thuế thu nhập theo bảng khấu trừ của Cục Thuế Quốc gia áp dụng từ 1/3/2026</p><a class="btn" href="/vi/salary/#pay=50000000&amp;free=200000&amp;fam=1&amp;kid=0&amp;sev=0&amp;wh=100">Thử với các số này</a></div>
+<div class="receipt">
+<div class="rhead"><span>Bảng lương tháng</span><span>Mức đóng 07/2026</span></div>
+<div><div class="lbl">Lương thực nhận hằng tháng</div><div class="big"><small style="margin:0 2px 0 0">₩</small>3,571,587</div></div>
+<hr class="dash">
+<ul class="lines"><li><span>Lương tháng trước thuế</span><span>₩4,166,667</span></li><li><span>Bảo hiểm hưu trí quốc dân</span><span>−₩188,380</span></li><li><span>Bảo hiểm y tế</span><span>−₩142,600</span></li><li><span>Bảo hiểm chăm sóc dài hạn</span><span>−₩18,730</span></li><li><span>Bảo hiểm việc làm</span><span>−₩35,690</span></li><li><span>Thuế thu nhập</span><span>−₩190,620</span></li><li><span>Thuế thu nhập địa phương</span><span>−₩19,060</span></li><li class="strong"><span>Tổng khấu trừ</span><span>₩595,080</span></li></ul>
+<hr class="dash">
+<p class="note">Ví dụ · lương năm ₩50,000,000, 1 người, phụ cấp ăn miễn thuế ₩200,000/tháng</p>
+</div>
+</section>
+<div class="tools"><a class="tool" href="/vi/salary/"><h3>Tính lương thực nhận tại Hàn Quốc 2026</h3><p>Dành cho người lao động tại Hàn Quốc: số tiền thực nhận vào tài khoản mỗi tháng sau khi trừ bảo hiểm xã hội và thuế. Áp dụng mức đóng từ tháng 7/2026.</p></a><a class="tool" href="/vi/raise/"><h3>Máy tính tăng lương thực nhận</h3><p>Khi lương tăng, bảo hiểm và thuế cũng tăng. Xem phần tăng thực sự vào tài khoản là bao nhiêu.</p></a><a class="tool" href="/vi/severance/"><h3>Tính trợ cấp thôi việc (Hàn Quốc)</h3><p>Nhập ngày vào làm, ngày làm việc cuối cùng và lương gần đây để tính trợ cấp thôi việc theo luật Hàn Quốc.</p></a><a class="tool" href="/vi/leave/"><h3>Tính ngày nghỉ phép năm (Hàn Quốc)</h3><p>Nhập ngày vào làm để xem số ngày phép năm theo thâm niên và ước tính tiền phép chưa dùng.</p></a><a class="tool" href="/vi/loan/"><h3>Máy tính lãi vay</h3><p>Xem số tiền trả hằng tháng và tổng tiền lãi thay đổi thế nào theo phương thức trả nợ.</p></a><a class="tool" href="/vi/saving/"><h3>Máy tính lãi tiền gửi và tiết kiệm</h3><p>Xem bạn thực nhận bao nhiêu sau thuế khi gửi một lần hoặc gửi góp hằng tháng. So sánh lãi đơn, lãi kép và các mức thuế.</p></a><a class="tool" href="/vi/invest/"><h3>Máy tính đầu tư lãi kép</h3><p>Xem số tiền ban đầu cùng khoản góp hằng tháng có thể tăng lên bao nhiêu sau nhiều năm theo lợi suất năm dự kiến.</p></a><a class="tool" href="/vi/inflation/"><h3>Máy tính lạm phát</h3><p>Khi giá tăng, cùng số tiền mua được ít hơn. Xem vài năm nữa món đồ giá bao nhiêu và tiền hiện có còn giá trị bao nhiêu.</p></a><a class="tool" href="/vi/dutch/"><h3>Máy tính chia tiền</h3><p>Chia đều tổng số tiền, hoặc chia theo từng khoản chỉ cho những người đã tham gia khoản đó.</p></a></div>
+<section class="hsec"><h2 class="sec-h">Hướng dẫn</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div></section>
+</div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">Giới thiệu</a><a href="/en/contact/">Liên hệ</a><a href="/en/privacy/">Chính sách quyền riêng tư</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Thêm vào màn hình chính</button>

@@ -187,8 +187,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 .relg{display:flex;flex-direction:column;gap:10px}
 
 .pwa{margin:0 0 10px}
-.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
-.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:color .15s ease-out,border-color .15s ease-out}
+.pwa-btn:hover{color:var(--ink);border-color:var(--muted)}
 .pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
@@ -220,9 +220,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .cta .btn,.card .btn{text-decoration:none;display:inline-block}
 .callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
 .callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
 .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
 .glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -230,6 +228,28 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .glist a:hover b{color:var(--accent)}
 .glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
 .sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+/* 홈 / home: 영수증 1장만 색을 쓰고 나머지는 조용하게 */
+.home{display:flex;flex-direction:column;gap:40px}
+:root[lang="ko"] .home{word-break:keep-all}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:32px;align-items:center;padding-top:8px}
+.hero-t{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.page .hero h1{font:400 32px/1.3 var(--f-display);letter-spacing:0;margin:0;text-wrap:balance}
+:root[data-lx] .page .hero h1{font:600 24px/1.45 var(--f-body)}
+.hero-t .btn{margin-top:8px;text-decoration:none;transition:background-color .15s ease-out}
+.hero .receipt{padding:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tool{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;padding:16px 44px 16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);color:var(--ink);text-decoration:none;transition:border-color .15s ease-out}
+.tool h3{margin:0;font:600 16px/1.4 var(--f-body)}
+.tool p{margin:0;color:var(--muted);font-size:14px}
+.tool::after{content:'→';position:absolute;top:16px;right:20px;color:var(--muted);font-size:16px;line-height:1.4;transition:color .15s ease-out}
+.tool:hover{border-color:var(--muted)}
+.tool:hover::after{color:var(--accent)}
+.tool:focus-visible,.home .glist a:focus-visible,.hero-t .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hsec{display:flex;flex-direction:column;gap:12px}
+.home .sec-h{font-weight:600;margin:0}
+.home .glist a{padding:12px 20px}
+.home .glist b{font-weight:600}
+@media (max-width:640px){.home{gap:32px}.hero{grid-template-columns:1fr;gap:24px;padding-top:0}.page .hero h1{font-size:28px}}
 </style>
 </head>
 <body>
@@ -243,9 +263,21 @@ main.page{display:flex;flex-direction:column;gap:18px}
   </header>
   <nav class="sitenav"><a href="/uz/salary/">Qoʻlga tegadigan maosh</a><a href="/uz/raise/">Maosh oshishi</a><a href="/uz/severance/">Nafaqa</a><a href="/uz/leave/">Yillik taʼtil</a><a href="/uz/loan/">Kredit foizi</a><a href="/uz/saving/">Jamgʻarma</a><a href="/uz/invest/">Murakkab foiz</a><a href="/uz/inflation/">Inflyatsiya</a><a href="/uz/dutch/">Hisobni boʻlish</a><a href="/en/guide/">Qoʻllanmalar</a><a href="/en/about/">Biz haqimizda</a></nav>
   <main class="page">
-<h1>Koreyada maosh, kredit foizi va hisobni boʻlish kalkulyatori</h1>
-<div class="cards"><div class="card"><h3>Koreyada qoʻlga tegadigan maosh kalkulyatori 2026</h3><p>Koreyada ishlovchilar uchun: ijtimoiy sugʻurta va soliqlar ushlab qolingandan keyin har oy hisobingizga tushadigan pul. 2026-yil iyul stavkalari asosida.</p><div><a class="btn" href="/uz/salary/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Maosh oshishi kalkulyatori</h3><p>Maosh oshganda sugʻurta va soliq ham oshadi. Oshgan summaning qanchasi haqiqatda hisobingizga tushishini koʻring.</p><div><a class="btn" href="/uz/raise/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Ishdan boʻshash nafaqasi kalkulyatori (Koreya)</h3><p>Ishga kirgan sana, oxirgi ish kuni va soʻnggi maoshni kiritib, Koreya qonuni boʻyicha ishdan boʻshash nafaqasini (퇴직금) hisoblang.</p><div><a class="btn" href="/uz/severance/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Yillik taʼtil kalkulyatori (Koreya)</h3><p>Ishga kirgan sanani kiritib, ish staji boʻyicha haq toʻlanadigan yillik taʼtil kunlarini va foydalanilmagan taʼtil pulini koʻring.</p><div><a class="btn" href="/uz/leave/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Kredit foizi kalkulyatori</h3><p>Toʻlov usuliga qarab oylik toʻlov va umumiy foiz qanday oʻzgarishini koʻring.</p><div><a class="btn" href="/uz/loan/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Omonat va jamgʻarma foizi kalkulyatori</h3><p>Bir martalik omonat yoki oylik jamgʻarmadan soliq ushlangach amalda qancha olishingizni hisoblang. Oddiy va murakkab foiz hamda soliq stavkalarini solishtiring.</p><div><a class="btn" href="/uz/saving/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Murakkab investitsiya kalkulyatori</h3><p>Boshlangʻich summa va oylik badallar kutilgan yillik daromadda bir necha yildan keyin qancha boʻlishini koʻring.</p><div><a class="btn" href="/uz/invest/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Inflyatsiya kalkulyatori</h3><p>Narxlar oshsa, bir xil pulga kamroq narsa olinadi. Bir necha yildan keyin bir xil buyum narxi va hozirgi pulingiz qiymatini koʻring.</p><div><a class="btn" href="/uz/inflation/">Kalkulyatorni ochish</a></div></div><div class="card"><h3>Hisobni boʻlish kalkulyatori</h3><p>Umumiy summani teng boʻling yoki har bir xarajatni faqat unda qatnashganlar orasida boʻling.</p><div><a class="btn" href="/uz/dutch/">Kalkulyatorni ochish</a></div></div></div>
-<h2 class="sec-h">Qoʻllanmalar</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div>
+<div class="home">
+<section class="hero">
+<div class="hero-t"><h1>Koreyada maosh, kredit va jamgʻarma: aslida qancha olasiz va toʻlaysiz</h1><p class="lede">Ijtimoiy sugʻurta 2026-yil iyul stavkalarida, daromad soligʻi Milliy soliq xizmatining ushlab qolish jadvali boʻyicha (2026-yil 1-martdan amalda)</p><a class="btn" href="/uz/salary/#pay=50000000&amp;free=200000&amp;fam=1&amp;kid=0&amp;sev=0&amp;wh=100">Shu raqamlar bilan hisoblash</a></div>
+<div class="receipt">
+<div class="rhead"><span>Oylik maosh varaqasi</span><span>Stavka: 2026-yil iyul</span></div>
+<div><div class="lbl">Oylik qoʻlga tegadigan maosh</div><div class="big"><small style="margin:0 2px 0 0">₩</small>3,571,587</div></div>
+<hr class="dash">
+<ul class="lines"><li><span>Soliqqacha oylik maosh</span><span>₩4,166,667</span></li><li><span>Milliy pensiya</span><span>−₩188,380</span></li><li><span>Tibbiy sugʻurta</span><span>−₩142,600</span></li><li><span>Uzoq muddatli parvarish sugʻurtasi</span><span>−₩18,730</span></li><li><span>Bandlik sugʻurtasi</span><span>−₩35,690</span></li><li><span>Daromad soligʻi</span><span>−₩190,620</span></li><li><span>Mahalliy daromad soligʻi</span><span>−₩19,060</span></li><li class="strong"><span>Jami ushlanmalar</span><span>₩595,080</span></li></ul>
+<hr class="dash">
+<p class="note">Misol · yillik maosh ₩50,000,000, 1 kishi, soliqsiz ovqat puli oyiga ₩200,000</p>
+</div>
+</section>
+<div class="tools"><a class="tool" href="/uz/salary/"><h3>Koreyada qoʻlga tegadigan maosh kalkulyatori 2026</h3><p>Koreyada ishlovchilar uchun: ijtimoiy sugʻurta va soliqlar ushlab qolingandan keyin har oy hisobingizga tushadigan pul. 2026-yil iyul stavkalari asosida.</p></a><a class="tool" href="/uz/raise/"><h3>Maosh oshishi kalkulyatori</h3><p>Maosh oshganda sugʻurta va soliq ham oshadi. Oshgan summaning qanchasi haqiqatda hisobingizga tushishini koʻring.</p></a><a class="tool" href="/uz/severance/"><h3>Ishdan boʻshash nafaqasi kalkulyatori (Koreya)</h3><p>Ishga kirgan sana, oxirgi ish kuni va soʻnggi maoshni kiritib, Koreya qonuni boʻyicha ishdan boʻshash nafaqasini (퇴직금) hisoblang.</p></a><a class="tool" href="/uz/leave/"><h3>Yillik taʼtil kalkulyatori (Koreya)</h3><p>Ishga kirgan sanani kiritib, ish staji boʻyicha haq toʻlanadigan yillik taʼtil kunlarini va foydalanilmagan taʼtil pulini koʻring.</p></a><a class="tool" href="/uz/loan/"><h3>Kredit foizi kalkulyatori</h3><p>Toʻlov usuliga qarab oylik toʻlov va umumiy foiz qanday oʻzgarishini koʻring.</p></a><a class="tool" href="/uz/saving/"><h3>Omonat va jamgʻarma foizi kalkulyatori</h3><p>Bir martalik omonat yoki oylik jamgʻarmadan soliq ushlangach amalda qancha olishingizni hisoblang. Oddiy va murakkab foiz hamda soliq stavkalarini solishtiring.</p></a><a class="tool" href="/uz/invest/"><h3>Murakkab investitsiya kalkulyatori</h3><p>Boshlangʻich summa va oylik badallar kutilgan yillik daromadda bir necha yildan keyin qancha boʻlishini koʻring.</p></a><a class="tool" href="/uz/inflation/"><h3>Inflyatsiya kalkulyatori</h3><p>Narxlar oshsa, bir xil pulga kamroq narsa olinadi. Bir necha yildan keyin bir xil buyum narxi va hozirgi pulingiz qiymatini koʻring.</p></a><a class="tool" href="/uz/dutch/"><h3>Hisobni boʻlish kalkulyatori</h3><p>Umumiy summani teng boʻling yoki har bir xarajatni faqat unda qatnashganlar orasida boʻling.</p></a></div>
+<section class="hsec"><h2 class="sec-h">Qoʻllanmalar</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div></section>
+</div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">Biz haqimizda</a><a href="/en/contact/">Aloqa</a><a href="/en/privacy/">Maxfiylik siyosati</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Bosh ekranga qoʻshish</button>

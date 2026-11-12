@@ -17,6 +17,8 @@ calc = open(os.path.join(SRC, 'calc.html'), encoding='utf-8').read()
 # ---------- 고정 검산값 (공식 자료로 직접 확인한 값) ----------
 # 연봉 5,000만, 본인 1명, 자녀 0, 식대 20만, 퇴직금 별도, 원천징수 100% (간이세액표 2026.3.1 시행판)
 GOLDEN_SALARY = [((50_000_000, 200_000, 1, 0, 0, 100), {'itax': 190_620, 'ltax': 19_060, 'net': 3_571_587})]
+# 홈 첫 화면 영수증 예시값 (build.py에 한 줄로 적힌 HOME_SAMPLE을 읽음)
+HOME_SAMPLE = json.loads(re.search(r'^HOME_SAMPLE = (\{.*\})$', open(os.path.join(SRC, 'build.py'), encoding='utf-8').read(), re.M).group(1))
 # 4대보험 근로자 요율 (2026.7~): 국민연금 4.75%(기준소득월액 41만~659만), 건강 3.595%, 장기요양 13.14%, 고용 0.9%
 PENSION, P_LO, P_HI, HEALTH, CARE, EMP = Dc('0.0475'), 410_000, 6_590_000, Dc('0.03595'), Dc('0.1314'), Dc('0.009')
 
@@ -146,7 +148,8 @@ def py_infl(amt, rate, yrs):
 # ---------- 검산 조합 ----------
 CASES = {
     'salary': [list(a) for a, _ in GOLDEN_SALARY] + [[a, f, fam, k, sv, w] for a in (24_000_000, 36_000_000, 50_000_000, 72_000_000, 100_000_000, 150_000_000, 300_000_000)
-                                                     for f, fam, k, sv, w in ((200_000, 1, 0, 0, 100), (0, 3, 1, 1, 80), (200_000, 4, 2, 0, 120))],
+                                                     for f, fam, k, sv, w in ((200_000, 1, 0, 0, 100), (0, 3, 1, 1, 80), (200_000, 4, 2, 0, 120))]
+              + [HOME_SAMPLE['args']],
     'loan': [[P, r, n, m] for P, r, n in ((300_000_000, 4.2, 360), (10_000_000, 5.5, 12), (50_000_000, 0, 60), (123_456_789, 3.85, 240))
              for m in ('annuity', 'principal', 'bullet')],
     'saving': [[k, a, r, n, c, t] for k, a in (('deposit', 10_000_000), ('saving', 500_000)) for r, n in ((3.5, 12), (4.1, 36), (0, 12))
@@ -183,6 +186,11 @@ def main():
         r = R['salary'][0]
         for k, v in want.items():
             check(f'연봉 고정값 {a} {k}', round(r[k]), v)
+    # 홈 첫 화면 영수증 숫자(build.py HOME_SAMPLE)가 실제 계산 결과와 같은지
+    r = R['salary'][-1]
+    for k, v in HOME_SAMPLE.items():
+        if k != 'args':
+            check(f'홈 영수증 {k}', round(r[k]), v)
     for a, r in zip(CASES['salary'], R['salary']):
         monthly, pension, health, care, emp = py_insurance(a[0], a[1], a[4])
         check(f'연봉 {a} 국민연금', r['pension'], pension); check(f'연봉 {a} 건강', r['health'], health)
@@ -191,7 +199,7 @@ def main():
         check(f'연봉 {a} 실수령 합계', r['net'], float(monthly) - (pension + health + care + emp + r['itax'] + r['ltax']), 1e-6)
         check(f'연봉 {a} 소득세 10원 단위', r['itax'] % 10, 0)
     # 소득세는 월급이 오르면 줄지 않고, 가족이 늘면 늘지 않아야 함
-    it = [r['itax'] for a, r in list(zip(CASES['salary'], R['salary']))[len(GOLDEN_SALARY):] if a[1:] == [200_000, 1, 0, 0, 100]]
+    it = [r['itax'] for a, r in list(zip(CASES['salary'], R['salary']))[len(GOLDEN_SALARY):-1] if a[1:] == [200_000, 1, 0, 0, 100]]
     check('소득세 단조 증가(연봉↑)', it == sorted(it), True)
     for a, r in zip(CASES['loan'], R['loan']):
         w = py_loan(*a)

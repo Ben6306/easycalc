@@ -187,8 +187,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 .relg{display:flex;flex-direction:column;gap:10px}
 
 .pwa{margin:0 0 10px}
-.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
-.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:color .15s ease-out,border-color .15s ease-out}
+.pwa-btn:hover{color:var(--ink);border-color:var(--muted)}
 .pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
@@ -220,9 +220,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .cta .btn,.card .btn{text-decoration:none;display:inline-block}
 .callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
 .callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
 .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
 .glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -230,6 +228,28 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .glist a:hover b{color:var(--accent)}
 .glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
 .sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+/* 홈 / home: 영수증 1장만 색을 쓰고 나머지는 조용하게 */
+.home{display:flex;flex-direction:column;gap:40px}
+:root[lang="ko"] .home{word-break:keep-all}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:32px;align-items:center;padding-top:8px}
+.hero-t{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.page .hero h1{font:400 32px/1.3 var(--f-display);letter-spacing:0;margin:0;text-wrap:balance}
+:root[data-lx] .page .hero h1{font:600 24px/1.45 var(--f-body)}
+.hero-t .btn{margin-top:8px;text-decoration:none;transition:background-color .15s ease-out}
+.hero .receipt{padding:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tool{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;padding:16px 44px 16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);color:var(--ink);text-decoration:none;transition:border-color .15s ease-out}
+.tool h3{margin:0;font:600 16px/1.4 var(--f-body)}
+.tool p{margin:0;color:var(--muted);font-size:14px}
+.tool::after{content:'→';position:absolute;top:16px;right:20px;color:var(--muted);font-size:16px;line-height:1.4;transition:color .15s ease-out}
+.tool:hover{border-color:var(--muted)}
+.tool:hover::after{color:var(--accent)}
+.tool:focus-visible,.home .glist a:focus-visible,.hero-t .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hsec{display:flex;flex-direction:column;gap:12px}
+.home .sec-h{font-weight:600;margin:0}
+.home .glist a{padding:12px 20px}
+.home .glist b{font-weight:600}
+@media (max-width:640px){.home{gap:32px}.hero{grid-template-columns:1fr;gap:24px;padding-top:0}.page .hero h1{font-size:28px}}
 </style>
 </head>
 <body>
@@ -243,9 +263,21 @@ main.page{display:flex;flex-direction:column;gap:18px}
   </header>
   <nav class="sitenav"><a href="/en/salary/">Take-home pay</a><a href="/en/raise/">Pay raise</a><a href="/en/severance/">Severance</a><a href="/en/leave/">Annual leave</a><a href="/en/loan/">Loan</a><a href="/en/saving/">Savings</a><a href="/en/invest/">Compound</a><a href="/en/inflation/">Inflation</a><a href="/en/dutch/">Split bill</a><a href="/en/guide/">Guides</a><a href="/en/about/">About</a></nav>
   <main class="page">
-<h1>Korea Salary, Severance, Annual Leave, Loan &amp; Bill Split Calculators</h1>
-<div class="cards"><div class="card"><h3>Korea Take-Home Pay Calculator 2026</h3><p>For employees in Korea: what reaches your bank account each month after social insurance and tax. Rates as of July 2026.</p><div><a class="btn" href="/en/salary/">Open calculator</a></div></div><div class="card"><h3>Pay Raise Take-Home Calculator</h3><p>When your salary goes up, social insurance and income tax go up too. See how much of a raise actually reaches your bank account.</p><div><a class="btn" href="/en/raise/">Open calculator</a></div></div><div class="card"><h3>Severance Pay Calculator (Korea)</h3><p>Enter your start date, last working day and recent monthly pay to calculate your legal severance pay in Korea.</p><div><a class="btn" href="/en/severance/">Open calculator</a></div></div><div class="card"><h3>Annual Leave Calculator (Korea)</h3><p>Enter your start date to see your paid annual leave by year of service and an estimate of unused leave pay.</p><div><a class="btn" href="/en/leave/">Open calculator</a></div></div><div class="card"><h3>Loan Interest Calculator</h3><p>See how your monthly payment and total interest change with the repayment method.</p><div><a class="btn" href="/en/loan/">Open calculator</a></div></div><div class="card"><h3>Deposit &amp; Savings Interest Calculator</h3><p>See how much you actually receive after tax on a lump-sum deposit or a monthly savings plan. Compare simple vs compound interest and different tax rates.</p><div><a class="btn" href="/en/saving/">Open calculator</a></div></div><div class="card"><h3>Compound Investment Calculator</h3><p>See how much a starting amount plus monthly contributions could grow to over the years at an expected annual return.</p><div><a class="btn" href="/en/invest/">Open calculator</a></div></div><div class="card"><h3>Inflation Calculator</h3><p>When prices rise, the same money buys less. See what the same item may cost in a few years and what your money will be worth.</p><div><a class="btn" href="/en/inflation/">Open calculator</a></div></div><div class="card"><h3>Bill Split Calculator</h3><p>Split a total evenly, or split item by item among only the people who joined each one.</p><div><a class="btn" href="/en/dutch/">Open calculator</a></div></div></div>
-<h2 class="sec-h">Guides</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div>
+<div class="home">
+<section class="hero">
+<div class="hero-t"><h1>What you actually take home, owe and save in Korea</h1><p class="lede">Social insurance at July 2026 rates, income tax from the National Tax Service withholding table effective March 1, 2026</p><a class="btn" href="/en/salary/#pay=50000000&amp;free=200000&amp;fam=1&amp;kid=0&amp;sev=0&amp;wh=100">Try these numbers</a></div>
+<div class="receipt">
+<div class="rhead"><span>Monthly payslip</span><span>Rates: Jul 2026</span></div>
+<div><div class="lbl">Monthly take-home</div><div class="big"><small style="margin:0 2px 0 0">₩</small>3,571,587</div></div>
+<hr class="dash">
+<ul class="lines"><li><span>Monthly gross</span><span>₩4,166,667</span></li><li><span>National Pension</span><span>−₩188,380</span></li><li><span>Health Insurance</span><span>−₩142,600</span></li><li><span>Long-term Care Insurance</span><span>−₩18,730</span></li><li><span>Employment Insurance</span><span>−₩35,690</span></li><li><span>Income tax</span><span>−₩190,620</span></li><li><span>Local income tax</span><span>−₩19,060</span></li><li class="strong"><span>Total deductions</span><span>₩595,080</span></li></ul>
+<hr class="dash">
+<p class="note">Example · ₩50,000,000 a year, single, ₩200,000 tax-free meal allowance a month</p>
+</div>
+</section>
+<div class="tools"><a class="tool" href="/en/salary/"><h3>Korea Take-Home Pay Calculator 2026</h3><p>For employees in Korea: what reaches your bank account each month after social insurance and tax. Rates as of July 2026.</p></a><a class="tool" href="/en/raise/"><h3>Pay Raise Take-Home Calculator</h3><p>When your salary goes up, social insurance and income tax go up too. See how much of a raise actually reaches your bank account.</p></a><a class="tool" href="/en/severance/"><h3>Severance Pay Calculator (Korea)</h3><p>Enter your start date, last working day and recent monthly pay to calculate your legal severance pay in Korea.</p></a><a class="tool" href="/en/leave/"><h3>Annual Leave Calculator (Korea)</h3><p>Enter your start date to see your paid annual leave by year of service and an estimate of unused leave pay.</p></a><a class="tool" href="/en/loan/"><h3>Loan Interest Calculator</h3><p>See how your monthly payment and total interest change with the repayment method.</p></a><a class="tool" href="/en/saving/"><h3>Deposit &amp; Savings Interest Calculator</h3><p>See how much you actually receive after tax on a lump-sum deposit or a monthly savings plan. Compare simple vs compound interest and different tax rates.</p></a><a class="tool" href="/en/invest/"><h3>Compound Investment Calculator</h3><p>See how much a starting amount plus monthly contributions could grow to over the years at an expected annual return.</p></a><a class="tool" href="/en/inflation/"><h3>Inflation Calculator</h3><p>When prices rise, the same money buys less. See what the same item may cost in a few years and what your money will be worth.</p></a><a class="tool" href="/en/dutch/"><h3>Bill Split Calculator</h3><p>Split a total evenly, or split item by item among only the people who joined each one.</p></a></div>
+<section class="hsec"><h2 class="sec-h">Guides</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div></section>
+</div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/privacy/">Privacy Policy</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Add to home screen</button>

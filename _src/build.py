@@ -55,6 +55,8 @@ PWA = {
 RELG = {'ko': '관련 가이드', 'en': 'Related guides', 'vi': 'Hướng dẫn liên quan (tiếng Anh)', 'zh': '相关指南（英文）',
         'ne': 'सम्बन्धित गाइड (अंग्रेजी)', 'id': 'Panduan terkait (bahasa Inggris)', 'km': 'មគ្គុទ្ទេសក៍ពាក់ព័ន្ធ (ភាសាអង់គ្លេស)',
         'uz': 'Tegishli qoʻllanmalar (ingliz tilida)', 'th': 'คู่มือที่เกี่ยวข้อง (ภาษาอังกฤษ)', 'my': 'ဆက်စပ်လမ်းညွှန် (အင်္ဂလိပ်ဘာသာ)'}
+# 홈 첫 화면 영수증 예시 (calc.html netPay 결과. test_calc.py가 매 빌드마다 netPay와 비교하므로 요율이 바뀌면 같이 고치기)
+HOME_SAMPLE = {"args": [50000000, 200000, 1, 0, 0, 100], "monthly": 4166667, "pension": 188380, "health": 142600, "care": 18730, "emp": 35690, "itax": 190620, "ltax": 19060, "ded": 595080, "net": 3571587}
 THEME = '#0E6A55'
 GA_ID = 'G-JQ5BBG87Z9'  # 구글 애널리틱스 측정 ID (easycalc.co.kr에서만 작동)
 
@@ -110,8 +112,8 @@ calc_body = calc[calc.index('</style>') + len('</style>'):].lstrip()
 
 EXTRA_CSS = r"""
 .pwa{margin:0 0 10px}
-.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
-.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:color .15s ease-out,border-color .15s ease-out}
+.pwa-btn:hover{color:var(--ink);border-color:var(--muted)}
 .pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
@@ -143,9 +145,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .cta .btn,.card .btn{text-decoration:none;display:inline-block}
 .callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
 .callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
 .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
 .glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -153,6 +153,28 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .glist a:hover b{color:var(--accent)}
 .glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
 .sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+/* 홈 / home: 영수증 1장만 색을 쓰고 나머지는 조용하게 */
+.home{display:flex;flex-direction:column;gap:40px}
+:root[lang="ko"] .home{word-break:keep-all}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:32px;align-items:center;padding-top:8px}
+.hero-t{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.page .hero h1{font:400 32px/1.3 var(--f-display);letter-spacing:0;margin:0;text-wrap:balance}
+:root[data-lx] .page .hero h1{font:600 24px/1.45 var(--f-body)}
+.hero-t .btn{margin-top:8px;text-decoration:none;transition:background-color .15s ease-out}
+.hero .receipt{padding:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tool{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;padding:16px 44px 16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);color:var(--ink);text-decoration:none;transition:border-color .15s ease-out}
+.tool h3{margin:0;font:600 16px/1.4 var(--f-body)}
+.tool p{margin:0;color:var(--muted);font-size:14px}
+.tool::after{content:'→';position:absolute;top:16px;right:20px;color:var(--muted);font-size:16px;line-height:1.4;transition:color .15s ease-out}
+.tool:hover{border-color:var(--muted)}
+.tool:hover::after{color:var(--accent)}
+.tool:focus-visible,.home .glist a:focus-visible,.hero-t .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hsec{display:flex;flex-direction:column;gap:12px}
+.home .sec-h{font-weight:600;margin:0}
+.home .glist a{padding:12px 20px}
+.home .glist b{font-weight:600}
+@media (max-width:640px){.home{gap:32px}.hero{grid-template-columns:1fr;gap:24px;padding-top:0}.page .hero h1{font-size:28px}}
 """
 
 
@@ -358,15 +380,44 @@ for l in LANGS:
         SITEMAP.append((path, alts))
 
 # ---------- 2. 언어별 홈 / hub per language ----------
+def money(l, n):
+    """calc.html의 M()과 같은 표기: ko는 3,571,587원, 그 외는 ₩3,571,587"""
+    v = f'{int(n):,}'
+    return v + '원' if l == 'ko' else '₩' + v
+
+
+def home_receipt(l):
+    """홈 첫 화면 영수증: 연봉 실수령 계산기와 같은 문구·같은 계산 결과"""
+    t, s = I18N[l], HOME_SAMPLE
+    big = f'{s["net"]:,}<small>원</small>' if l == 'ko' else f'<small style="margin:0 2px 0 0">₩</small>{s["net"]:,}'
+    rows = [('grossM', s['monthly'], '', '')] + [(k, s[k], '−', '') for k in ('pension', 'health', 'care', 'emp', 'itax', 'ltax')] + [('dedTotal', s['ded'], '', ' class="strong"')]
+    lines = ''.join(f'<li{c}><span>{esc(t[k])}</span><span>{sign}{money(l, v)}</span></li>' for k, v, sign, c in rows)
+    return f'''<div class="receipt">
+<div class="rhead"><span>{esc(t["payslip"])}</span><span>{esc(t["rateTag"])}</span></div>
+<div><div class="lbl">{esc(t["netEst"])}</div><div class="big">{big}</div></div>
+<hr class="dash">
+<ul class="lines">{lines}</ul>
+<hr class="dash">
+<p class="note">{esc(t["homeEx"])}</p>
+</div>'''
+
+
 for l in LANGS:
     t = I18N[l]
-    cards = ''.join(f'''<div class="card"><h3>{esc(t[TOOL_H[x]])}</h3><p>{esc(t[TOOL_LEDE[x]])}</p><div><a class="btn" href="{base(l)}{x}/">{esc(ch(l, OPEN))}</a></div></div>''' for x in TOOLS)
+    a = HOME_SAMPLE['args']
+    try_url = f'{base(l)}salary/#pay={a[0]}&free={a[1]}&fam={a[2]}&kid={a[3]}&sev={a[4]}&wh={a[5]}'
+    tools = ''.join(f'<a class="tool" href="{base(l)}{x}/"><h3>{esc(t[TOOL_H[x]])}</h3><p>{esc(t[TOOL_LEDE[x]])}</p></a>' for x in TOOLS)
     c = clang(l)
     gs = GUIDE[c]
-    gsec = f'<h2 class="sec-h">{esc(ch(l, GUIDES))}</h2>{glist(c, gs)}' if gs else ''
-    main = f'''<h1>{esc(t["metaTitle"].split(" | ")[0])}</h1>
-<div class="cards">{cards}</div>
-{gsec}'''
+    gsec = f'<section class="hsec"><h2 class="sec-h">{esc(ch(l, GUIDES))}</h2>{glist(c, gs)}</section>' if gs else ''
+    main = f'''<div class="home">
+<section class="hero">
+<div class="hero-t"><h1>{esc(t["homeH"])}</h1><p class="lede">{esc(t["homeLede"])}</p><a class="btn" href="{esc(try_url)}">{esc(t["homeTry"])}</a></div>
+{home_receipt(l)}
+</section>
+<div class="tools">{tools}</div>
+{gsec}
+</div>'''
     alts = {x: base(x) for x in LANGS}
     write(base(l), page_shell(l, t['metaTitle'], t['metaDesc'], base(l), alts, alts, main))
     SITEMAP.append((base(l), alts))

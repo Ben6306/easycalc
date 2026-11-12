@@ -188,8 +188,8 @@ footer{font-size:12px;color:var(--muted);text-align:center;padding-top:8px}
 .relg{display:flex;flex-direction:column;gap:10px}
 
 .pwa{margin:0 0 10px}
-.pwa-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
-.pwa-btn:hover{background:var(--accent);color:var(--accent-ink)}
+.pwa-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:color .15s ease-out,border-color .15s ease-out}
+.pwa-btn:hover{color:var(--ink);border-color:var(--muted)}
 .pwa-ios{margin:0;font-size:12px;color:var(--muted)}
 .wrap.wide{max-width:720px}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
@@ -221,9 +221,7 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .cta .btn,.card .btn{text-decoration:none;display:inline-block}
 .callout{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:4px}
 .callout .mail{font:600 20px var(--f-num);overflow-wrap:anywhere}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.card h3{margin:0;font:700 17px/1.4 var(--f-body)}
 .card p{margin:0;color:var(--muted);font-size:14px;flex:1}
 .glist{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .glist a{display:flex;flex-direction:column;gap:2px;padding:14px 18px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line)}
@@ -231,6 +229,28 @@ main.page{display:flex;flex-direction:column;gap:18px}
 .glist a:hover b{color:var(--accent)}
 .glist b{font-size:15.5px}.glist span{font-size:13.5px;color:var(--muted)}
 .sec-h{font:700 18px var(--f-body);margin:6px 0 0}
+/* 홈 / home: 영수증 1장만 색을 쓰고 나머지는 조용하게 */
+.home{display:flex;flex-direction:column;gap:40px}
+:root[lang="ko"] .home{word-break:keep-all}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:32px;align-items:center;padding-top:8px}
+.hero-t{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.page .hero h1{font:400 32px/1.3 var(--f-display);letter-spacing:0;margin:0;text-wrap:balance}
+:root[data-lx] .page .hero h1{font:600 24px/1.45 var(--f-body)}
+.hero-t .btn{margin-top:8px;text-decoration:none;transition:background-color .15s ease-out}
+.hero .receipt{padding:20px}
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.tool{position:relative;display:flex;flex-direction:column;gap:4px;min-width:0;padding:16px 44px 16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);color:var(--ink);text-decoration:none;transition:border-color .15s ease-out}
+.tool h3{margin:0;font:600 16px/1.4 var(--f-body)}
+.tool p{margin:0;color:var(--muted);font-size:14px}
+.tool::after{content:'→';position:absolute;top:16px;right:20px;color:var(--muted);font-size:16px;line-height:1.4;transition:color .15s ease-out}
+.tool:hover{border-color:var(--muted)}
+.tool:hover::after{color:var(--accent)}
+.tool:focus-visible,.home .glist a:focus-visible,.hero-t .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hsec{display:flex;flex-direction:column;gap:12px}
+.home .sec-h{font-weight:600;margin:0}
+.home .glist a{padding:12px 20px}
+.home .glist b{font-weight:600}
+@media (max-width:640px){.home{gap:32px}.hero{grid-template-columns:1fr;gap:24px;padding-top:0}.page .hero h1{font-size:28px}}
 </style>
 </head>
 <body>
@@ -244,9 +264,21 @@ main.page{display:flex;flex-direction:column;gap:18px}
   </header>
   <nav class="sitenav"><a href="/zh/salary/">实发工资</a><a href="/zh/raise/">加薪</a><a href="/zh/severance/">退职金</a><a href="/zh/leave/">年假</a><a href="/zh/loan/">贷款利息</a><a href="/zh/saving/">存款</a><a href="/zh/invest/">复利投资</a><a href="/zh/inflation/">通胀</a><a href="/zh/dutch/">AA分账</a><a href="/en/guide/">指南</a><a href="/en/about/">关于</a></nav>
   <main class="page">
-<h1>韩国实发工资、贷款利息、AA分账计算器</h1>
-<div class="cards"><div class="card"><h3>韩国实发工资计算器 2026</h3><p>适用于在韩国工作的人：扣除四大保险和税金后，每月实际到账的金额。按2026年7月费率计算。</p><div><a class="btn" href="/zh/salary/">打开计算器</a></div></div><div class="card"><h3>加薪实发工资计算器</h3><p>工资上涨后，四大保险和税金也会增加。看看加薪部分实际有多少进入账户。</p><div><a class="btn" href="/zh/raise/">打开计算器</a></div></div><div class="card"><h3>韩国退职金计算器</h3><p>输入入职日期、最后工作日和最近的月薪，即可计算韩国法定退职金。</p><div><a class="btn" href="/zh/severance/">打开计算器</a></div></div><div class="card"><h3>韩国年假计算器</h3><p>输入入职日期，查看按工龄计算的带薪年假天数，并估算未使用年假补偿。</p><div><a class="btn" href="/zh/leave/">打开计算器</a></div></div><div class="card"><h3>贷款利息计算器</h3><p>比较不同还款方式下，每月还款额和总利息的差别。</p><div><a class="btn" href="/zh/loan/">打开计算器</a></div></div><div class="card"><h3>存款与储蓄利息计算器</h3><p>计算整存整取或按月存入扣税后实际能拿到多少钱，可对比单利、复利和不同税率。</p><div><a class="btn" href="/zh/saving/">打开计算器</a></div></div><div class="card"><h3>复利投资计算器</h3><p>计算初始投资和每月定投在预期年收益率下若干年后会变成多少。</p><div><a class="btn" href="/zh/invest/">打开计算器</a></div></div><div class="card"><h3>通货膨胀计算器</h3><p>物价上涨后，同样的钱能买到的东西会变少。计算几年后同样物品的价格以及现在的钱的价值。</p><div><a class="btn" href="/zh/inflation/">打开计算器</a></div></div><div class="card"><h3>AA分账计算器</h3><p>可以平均分摊总额，也可以按项目只在参加的人之间分摊。</p><div><a class="btn" href="/zh/dutch/">打开计算器</a></div></div></div>
-<h2 class="sec-h">指南</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div>
+<div class="home">
+<section class="hero">
+<div class="hero-t"><h1>在韩国的实发工资、贷款和储蓄：算清实际到手和要付的钱</h1><p class="lede">社会保险按2026年7月费率，所得税按国税厅简易税额表（2026年3月1日施行）计算</p><a class="btn" href="/zh/salary/#pay=50000000&amp;free=200000&amp;fam=1&amp;kid=0&amp;sev=0&amp;wh=100">用这些数字试算</a></div>
+<div class="receipt">
+<div class="rhead"><span>月工资明细</span><span>2026年7月费率</span></div>
+<div><div class="lbl">每月实发工资</div><div class="big"><small style="margin:0 2px 0 0">₩</small>3,571,587</div></div>
+<hr class="dash">
+<ul class="lines"><li><span>税前月薪</span><span>₩4,166,667</span></li><li><span>国民年金</span><span>−₩188,380</span></li><li><span>健康保险</span><span>−₩142,600</span></li><li><span>长期护理保险</span><span>−₩18,730</span></li><li><span>雇佣保险</span><span>−₩35,690</span></li><li><span>所得税</span><span>−₩190,620</span></li><li><span>地方所得税</span><span>−₩19,060</span></li><li class="strong"><span>扣除合计</span><span>₩595,080</span></li></ul>
+<hr class="dash">
+<p class="note">示例 · 年薪 ₩50,000,000，本人1人，免税餐补每月 ₩200,000</p>
+</div>
+</section>
+<div class="tools"><a class="tool" href="/zh/salary/"><h3>韩国实发工资计算器 2026</h3><p>适用于在韩国工作的人：扣除四大保险和税金后，每月实际到账的金额。按2026年7月费率计算。</p></a><a class="tool" href="/zh/raise/"><h3>加薪实发工资计算器</h3><p>工资上涨后，四大保险和税金也会增加。看看加薪部分实际有多少进入账户。</p></a><a class="tool" href="/zh/severance/"><h3>韩国退职金计算器</h3><p>输入入职日期、最后工作日和最近的月薪，即可计算韩国法定退职金。</p></a><a class="tool" href="/zh/leave/"><h3>韩国年假计算器</h3><p>输入入职日期，查看按工龄计算的带薪年假天数，并估算未使用年假补偿。</p></a><a class="tool" href="/zh/loan/"><h3>贷款利息计算器</h3><p>比较不同还款方式下，每月还款额和总利息的差别。</p></a><a class="tool" href="/zh/saving/"><h3>存款与储蓄利息计算器</h3><p>计算整存整取或按月存入扣税后实际能拿到多少钱，可对比单利、复利和不同税率。</p></a><a class="tool" href="/zh/invest/"><h3>复利投资计算器</h3><p>计算初始投资和每月定投在预期年收益率下若干年后会变成多少。</p></a><a class="tool" href="/zh/inflation/"><h3>通货膨胀计算器</h3><p>物价上涨后，同样的钱能买到的东西会变少。计算几年后同样物品的价格以及现在的钱的价值。</p></a><a class="tool" href="/zh/dutch/"><h3>AA分账计算器</h3><p>可以平均分摊总额，也可以按项目只在参加的人之间分摊。</p></a></div>
+<section class="hsec"><h2 class="sec-h">指南</h2><div class="glist"><a href="/en/guide/korean-payslip/"><b>How to Read a Korean Payslip: A Guide for Foreign Workers</b><span>What each line on a Korean payslip (급여명세서) means, from base pay and meal allowance to National Pension, health insurance and income tax, with a worked example.</span></a><a href="/en/guide/severance-and-leave/"><b>Severance Pay and Annual Leave in Korea: What Foreign Workers Should Know</b><span>How severance pay (퇴직금) and paid annual leave (연차) work under Korean law, who qualifies, how they are calculated, and worked examples.</span></a><a href="/en/guide/savings-tax-korea/"><b>How Interest on Korean Savings Is Taxed (and What You Really Receive)</b><span>Simple vs compound interest and the 15.4% interest tax on Korean deposits and savings accounts, with worked examples.</span></a></div></section>
+</div>
   </main>
   <footer><nav class="footlinks"><a href="/en/about/">关于</a><a href="/en/contact/">联系</a><a href="/en/privacy/">隐私政策</a></nav><div class="pwa"><button type="button" id="pwa-install" class="pwa-btn" hidden>
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>添加到主屏幕</button>
