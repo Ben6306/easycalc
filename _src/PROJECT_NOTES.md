@@ -33,6 +33,7 @@
 - 계산기 9종은 카드 전체가 링크(초록 버튼 없음). 홈 전용 CSS는 build.py EXTRA_CSS의 `.home` 아래
 - metaTitle·metaDesc는 그대로 (검색 결과 제목 유지). h1만 새 문구
 - 작업 기록: `_src/context-notes.md`, `_src/checklist.md`
+- 계산기 페이지도 같은 날 정리 (간격 4px 단위, 초록 줄임, 카드 간격·공유 버튼 버그 수정). build.py EXTRA_CSS에는 이제 `.card` 규칙이 없음, 계산기 카드 스타일은 calc.html에서만 관리
 
 ### 콘텐츠 (애드센스 심사용)
 - 가이드 한국어 14편 (`/guide/…`), 영어 3편 (`/en/guide/savings-tax-korea/`, `/en/guide/korean-payslip/`, `/en/guide/severance-and-leave/`)
