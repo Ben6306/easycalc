@@ -34,8 +34,10 @@ self.addEventListener('fetch', e => {
   if (!sameOrigin && !isFont) return;           // 광고·분석 스크립트 등은 건드리지 않음
 
   if (req.mode === 'navigate') {
+    // cache:'no-cache': 브라우저 HTTP 캐시(GitHub Pages max-age 10분)를 거치지 않고 서버에 바뀌었는지 확인 → 배포 직후에도 최신 페이지
+    // navigate 요청에는 옵션을 붙일 수 없어 주소로 새로 요청. redirect:'manual'은 원래 요청과 같은 방식 (/loan → /loan/ 이동을 브라우저가 처리)
     e.respondWith(
-      fetch(req).then(res => {
+      fetch(req.url, { cache: 'no-cache', redirect: 'manual', credentials: 'same-origin' }).then(res => {
         if (res.ok) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(url.origin + url.pathname, copy)); }  // 공유 링크의 ?입력값은 저장하지 않음
         return res;
       }).catch(() => caches.match(req, { ignoreSearch: true }).then(r => {
